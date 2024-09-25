@@ -58,3 +58,11 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 * Role: Developer
 * Responsibilities: UI
+
+### He Shi
+<img src="images/lancehaha.png" width="200px">
+
+[[github](http://github.com/chashaobao123)]
+
+* Role: Developer
+* Resposibilities: Non-functional requirements
