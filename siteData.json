@@ -53,7 +53,7 @@
         "implementation": "Implementation",
         "undo-feature": "Undo feature",
         "proposed-data-archiving": "[Proposed] Data archiving",
-        "proposed-update-find-command": "[Proposed] Update Find Command",
+        "update-find-command": "Update Find Command",
         "documentation-logging-testing-configuration-dev-ops": "Documentation, logging, testing, configuration, dev-ops",
         "appendix-requirements": "Appendix: Requirements",
         "product-scope": "Product scope",
