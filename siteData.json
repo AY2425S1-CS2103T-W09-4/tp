@@ -129,7 +129,17 @@
         "archiving-data-files-coming-in-v2-0": "Archiving data files [coming in v2.0]",
         "faq": "FAQ",
         "known-issues": "Known issues",
-        "command-summary": "Command summary"
+        "command-summary": "Command summary",
+        "field-constraints": "Field constraints",
+        "name": "Name",
+        "phone-number": "Phone number",
+        "email": "Email",
+        "address": "Address",
+        "tags": "Tags",
+        "room-number": "Room number",
+        "emergency-contact-name": "Emergency contact name",
+        "emergency-contact-phone-number": "Emergency contact phone number",
+        "graduation-year": "Graduation year"
       },
       "headingKeywords": {}
     },
