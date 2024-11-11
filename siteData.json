@@ -51,6 +51,7 @@
         "storage-component": "Storage component",
         "common-classes": "Common classes",
         "implementation": "Implementation",
+        "add-feature": "Add feature",
         "undo-feature": "Undo feature",
         "clean-feature": "Clean feature",
         "update-find-command": "Update Find Command",
