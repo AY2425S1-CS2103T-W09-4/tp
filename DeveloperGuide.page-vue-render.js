@@ -536,6 +536,9 @@ with(this){return _c('ul',[_c('li',[_c('strong',[_v("Mainstream OS")]),_v(": Win
 with(this){return _c('h2',{attrs:{"id":"appendix-instructions-for-manual-testing"}},[_c('strong',[_v("Appendix: Instructions for manual testing")]),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#appendix-instructions-for-manual-testing","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
+with(this){return _c('p',[_c('strong',[_v("Note:")]),_v(" These instructions only provide a starting point for testers to work on;\ntesters are expected to do more "),_c('em',[_v("exploratory")]),_v(" testing.")])}
+},function anonymous(
+) {
 with(this){return _c('h3',{attrs:{"id":"launch-and-shutdown"}},[_v("Launch and shutdown"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#launch-and-shutdown","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
@@ -620,6 +623,6 @@ with(this){return _c('h4',{attrs:{"id":"challenge-1-implementing-undo-functional
 with(this){return _c('p',[_v("The undo functionality was initially implemented by extending an abstract class "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("ConcreteCommand")]),_v(" with the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("undo")]),_v(" abstract method.\nHowever, the import command is an undoable command that also extends the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("FileAccessCommand")]),_v(" class.\nThis posed a challenge as the import command could not extend two classes at once because Java does not allow multiple inheritance.\nTo overcome this, we had to refactor the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("ConcreteCommand")]),_v(" class to an interface "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Undoable")]),_v(" and let all undoable commands implement this interface.\nThis allowed us to implement the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("undo")]),_v(" method in the import command.")])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(", generated on Tue, 12 Nov 2024, 4:42:31 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(", generated on Tue, 12 Nov 2024, 6:06:44 GMT+8]")])])])}
 }];
   
