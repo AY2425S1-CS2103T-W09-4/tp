@@ -1,5 +1,8 @@
 
-    var pageVueRenderFn = function noop (a, b, c) {};
+    var pageVueRenderFn = function anonymous(
+) {
+with(this){return _c('div',{attrs:{"id":"app"}},[_c('header',{attrs:{"sticky":""}},[_c('navbar',{attrs:{"type":"dark"},scopedSlots:_u([{key:"brand",fn:function(){return [_c('a',{staticClass:"navbar-brand",attrs:{"href":"/tp/index.html","title":"Home"}},[_v("DorManagerPro")])]},proxy:true},{key:"right",fn:function(){return [_c('li',[_c('form',{staticClass:"navbar-form"},[_c('searchbar',{attrs:{"data":searchData,"placeholder":"Search","on-hit":searchCallback,"menu-align-right":""}})],1)])]},proxy:true}])},[_v(" "),_c('li',[_c('a',{staticClass:"nav-link",attrs:{"href":"/tp/index.html"}},[_v("Home")])]),_v(" "),_c('li',[_c('a',{staticClass:"nav-link",attrs:{"href":"/tp/UserGuide.html"}},[_v("User Guide")])]),_v(" "),_c('li',[_c('a',{staticClass:"nav-link",attrs:{"href":"/tp/DeveloperGuide.html"}},[_v("Developer Guide")])]),_v(" "),_c('li',[_c('a',{staticClass:"nav-link",attrs:{"href":"/tp/AboutUs.html"}},[_v("About Us")])]),_v(" "),_c('li',[_c('a',{staticClass:"nav-link",attrs:{"href":"https://github.com/se-edu/addressbook-level3","target":"_blank"}},[_c('span',[_c('span',{staticClass:"fab fa-github",attrs:{"aria-hidden":"true"}})])])])])],1),_v(" "),_c('div',{attrs:{"id":"flex-body"}},[_c('overlay-source',{attrs:{"id":"site-nav","tag-name":"nav","to":"site-nav"}},[_c('div',{staticClass:"site-nav-top"},[_c('div',{staticClass:"fw-bold mb-2",staticStyle:{"font-size":"1.25rem"}},[_v("Site Map")])]),_v(" "),_c('div',{staticClass:"nav-component slim-scroll"},[_c('site-nav',[_c('overlay-source',{staticClass:"site-nav-list site-nav-list-root",attrs:{"tag-name":"ul","to":"mb-site-nav"}},[_c('li',{staticClass:"site-nav-custom-list-item site-nav-list-item-0"},[_c('p',[_c('a',{attrs:{"href":"/tp/index.html"}},[_v("Home")])])]),_v(" "),_c('li',[_c('div',{staticClass:"site-nav-default-list-item site-nav-list-item-0",attrs:{"onclick":"handleSiteNavClick(this)"}},[_c('p',[_c('a',{attrs:{"href":"/tp/UserGuide.html"}},[_v("User Guide")])]),_v(" "),_c('div',{staticClass:"site-nav-dropdown-btn-container"},[_c('i',{staticClass:"site-nav-dropdown-btn-icon site-nav-rotate-icon",attrs:{"onclick":"handleSiteNavClick(this.parentNode.parentNode, false); event.stopPropagation();"}},[_c('span',{staticClass:"glyphicon glyphicon-menu-down",attrs:{"aria-hidden":"true"}})])])]),_c('ul',{staticClass:"site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list"},[_c('li',[_c('div',{staticClass:"site-nav-default-list-item site-nav-list-item-1",attrs:{"onclick":"handleSiteNavClick(this)"}},[_c('a',{attrs:{"href":"/tp/UserGuide.html#quick-start"}},[_v("Quick Start")])])]),_v(" "),_c('li',[_c('div',{staticClass:"site-nav-default-list-item site-nav-list-item-1",attrs:{"onclick":"handleSiteNavClick(this)"}},[_c('a',{attrs:{"href":"/tp/UserGuide.html#features"}},[_v("Features")])])]),_v(" "),_c('li',[_c('div',{staticClass:"site-nav-default-list-item site-nav-list-item-1",attrs:{"onclick":"handleSiteNavClick(this)"}},[_c('a',{attrs:{"href":"/tp/UserGuide.html#faq"}},[_v("FAQ")])])]),_v(" "),_c('li',[_c('div',{staticClass:"site-nav-default-list-item site-nav-list-item-1",attrs:{"onclick":"handleSiteNavClick(this)"}},[_c('a',{attrs:{"href":"/tp/UserGuide.html#faq"}},[_v("Command Summary")])])])])]),_v(" "),_c('li',[_c('div',{staticClass:"site-nav-default-list-item site-nav-list-item-0",attrs:{"onclick":"handleSiteNavClick(this)"}},[_c('p',[_c('a',{attrs:{"href":"/tp/DeveloperGuide.html"}},[_v("Developer Guide")])]),_v(" "),_c('div',{staticClass:"site-nav-dropdown-btn-container"},[_c('i',{staticClass:"site-nav-dropdown-btn-icon site-nav-rotate-icon",attrs:{"onclick":"handleSiteNavClick(this.parentNode.parentNode, false); event.stopPropagation();"}},[_c('span',{staticClass:"glyphicon glyphicon-menu-down",attrs:{"aria-hidden":"true"}})])])]),_c('ul',{staticClass:"site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list"},[_c('li',{staticClass:"site-nav-custom-list-item site-nav-list-item-1"},[_c('p',[_c('a',{attrs:{"href":"/tp/DeveloperGuide.html#acknowledgements"}},[_v("Acknowledgements")])])]),_v(" "),_c('li',{staticClass:"site-nav-custom-list-item site-nav-list-item-1"},[_c('p',[_c('a',{attrs:{"href":"/tp/DeveloperGuide.html#setting-up-getting-started"}},[_v("Setting Up")])])]),_v(" "),_c('li',{staticClass:"site-nav-custom-list-item site-nav-list-item-1"},[_c('p',[_c('a',{attrs:{"href":"/tp/DeveloperGuide.html#design"}},[_v("Design")])])]),_v(" "),_c('li',{staticClass:"site-nav-custom-list-item site-nav-list-item-1"},[_c('p',[_c('a',{attrs:{"href":"/tp/DeveloperGuide.html#implementation"}},[_v("Implementation")])])]),_v(" "),_c('li',{staticClass:"site-nav-custom-list-item site-nav-list-item-1"},[_c('p',[_c('a',{attrs:{"href":"/tp/DeveloperGuide.html#documentation-logging-testing-configuration-dev-ops"}},[_v("Documentation, logging, testing, configuration, dev-ops")])])]),_v(" "),_c('li',{staticClass:"site-nav-custom-list-item site-nav-list-item-1"},[_c('p',[_c('a',{attrs:{"href":"/tp/DeveloperGuide.html#appendix-requirements"}},[_v("Appendix: Requirements")])])]),_v(" "),_c('li',{staticClass:"site-nav-custom-list-item site-nav-list-item-1"},[_c('p',[_c('a',{attrs:{"href":"/tp/DeveloperGuide.html#appendix-instructions-for-manual-testing"}},[_v("Appendix: Instructions for manual testing")])])])])]),_v(" "),_c('li',{staticClass:"site-nav-custom-list-item site-nav-list-item-0"},[_c('p',[_c('a',{attrs:{"href":"/tp/AboutUs.html"}},[_v("About Us")])])])])],1)],1)]),_v(" "),_c('div',{attrs:{"id":"content-wrapper"}},[_m(0),_v(" "),_c('div',{pre:true,attrs:{"class":"page-nav-print d-none d-print-block"}}),_v(" "),_c('hr'),_v(" "),_m(1),_v(" "),_m(2),_v(" "),_c('hr'),_v(" "),_m(3),_v(" "),_m(4),_v(" "),_c('hr'),_v(" "),_m(5),_v(" "),_m(6),_v(" "),_c('pic',{attrs:{"src":"/tp/diagrams/ArchitectureDiagram.png","width":"280"}}),_v(" "),_m(7),_v(" "),_c('p',[_v("Given below is a quick overview of main components and how they interact with each other.")]),_v(" "),_m(8),_v(" "),_m(9),_v(" "),_m(10),_v(" "),_c('p',[_v("The bulk of the app's work is done by the following four components:")]),_v(" "),_m(11),_v(" "),_m(12),_v(" "),_m(13),_v(" "),_m(14),_v(" "),_c('pic',{attrs:{"src":"/tp/diagrams/ArchitectureSequenceDiagram.png","width":"574"}}),_v(" "),_c('p',[_v("Each of the four main components (also shown in the diagram above),")]),_v(" "),_m(15),_v(" "),_m(16),_v(" "),_c('pic',{attrs:{"src":"/tp/diagrams/ComponentManagers.png","width":"300"}}),_v(" "),_c('p',[_v("The sections below give more details of each component.")]),_v(" "),_m(17),_v(" "),_m(18),_v(" "),_c('pic',{attrs:{"src":"/tp/diagrams/UiClassDiagram.png","alt":"Structure of the UI Component"}}),_v(" "),_m(19),_v(" "),_m(20),_v(" "),_m(21),_v(" "),_m(22),_v(" "),_m(23),_v(" "),_m(24),_v(" "),_m(25),_v(" "),_c('pic',{attrs:{"src":"/tp/diagrams/LogicClassDiagram.png","width":"650"}}),_v(" "),_m(26),_v(" "),_c('pic',{attrs:{"src":"/tp/diagrams/DeleteSequenceDiagram.png","alt":"Interactions Inside the Logic Component for the `delete 1` Command"}}),_v(" "),_c('box',{attrs:{"type":"info","seamless":""}},[_c('p',[_c('strong',[_v("Note:")]),_v(" The lifeline for "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("DeleteCommandParser")]),_v(" should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline continues till the end of diagram.")])]),_v(" "),_m(27),_v(" "),_m(28),_v(" "),_m(29),_v(" "),_c('pic',{attrs:{"src":"/tp/diagrams/ParserClasses.png","width":"600"}}),_v(" "),_c('p',[_v("How the parsing works:")]),_v(" "),_m(30),_v(" "),_m(31),_v(" "),_m(32),_v(" "),_c('pic',{attrs:{"src":"/tp/diagrams/ModelClassDiagram.png","width":"450"}}),_v(" "),_m(33),_v(" "),_m(34),_v(" "),_c('box',{attrs:{"type":"info","seamless":""}},[_c('p',[_c('strong',[_v("Note:")]),_v(" An alternative (arguably, a more OOP) model is given below. It has a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Tag")]),_v(" list in the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("AddressBook")]),_v(", which "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Person")]),_v(" references. This allows "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("AddressBook")]),_v(" to only require one "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Tag")]),_v(" object per unique tag, instead of each "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Person")]),_v(" needing their own "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Tag")]),_v(" objects."),_c('br')]),_v(" "),_c('pic',{attrs:{"src":"/tp/diagrams/BetterModelClassDiagram.png","width":"450"}})],1),_v(" "),_m(35),_v(" "),_m(36),_v(" "),_c('pic',{attrs:{"src":"/tp/diagrams/StorageClassDiagram.png","width":"550"}}),_v(" "),_m(37),_v(" "),_m(38),_v(" "),_m(39),_v(" "),_m(40),_v(" "),_c('hr'),_v(" "),_m(41),_v(" "),_c('p',[_v("This section describes some noteworthy details on how certain features are implemented.")]),_v(" "),_m(42),_v(" "),_m(43),_v(" "),_m(44),_v(" "),_m(45),_v(" "),_m(46),_v(" "),_m(47),_v(" "),_m(48),_v(" "),_m(49),_v(" "),_c('pic',{attrs:{"src":"/tp/diagrams/AddSequenceDiagram.png","alt":"AddSequenceDiagram"}}),_v(" "),_c('br'),_v(" "),_m(50),_v(" "),_m(51),_v(" "),_c('pic',{attrs:{"src":"/tp/diagrams/AddActivityDiagram.png","height":"800","width":"900"}}),_v(" "),_m(52),_v(" "),_m(53),_v(" "),_m(54),_v(" "),_m(55),_v(" "),_m(56),_v(" "),_m(57),_v(" "),_m(58),_v(" "),_m(59),_v(" "),_c('pic',{attrs:{"src":"/tp/diagrams/EditSequenceDiagram.png","alt":"EditSequenceDiagram"}}),_v(" "),_c('br'),_v(" "),_m(60),_v(" "),_m(61),_v(" "),_c('pic',{attrs:{"src":"/tp/diagrams/EditActivityDiagram.png","height":"800","width":"900"}}),_v(" "),_m(62),_v(" "),_m(63),_v(" "),_m(64),_v(" "),_m(65),_v(" "),_m(66),_v(" "),_m(67),_v(" "),_m(68),_v(" "),_m(69),_v(" "),_m(70),_v(" "),_c('pic',{attrs:{"src":"/tp/diagrams/DeleteSequenceDiagram.png","alt":"Interactions inside the Logic Component for the `delete 1` Command"}}),_v(" "),_c('p',[_v("The following activity diagram summarizes the delete pop-up mechanism:")]),_v(" "),_c('pic',{attrs:{"src":"/tp/diagrams/DeletePopupActivityDiagram.png","alt":"Popup interactions inside the Logic Component for the `delete 1` Command"}}),_v(" "),_m(71),_v(" "),_m(72),_v(" "),_m(73),_v(" "),_m(74),_v(" "),_m(75),_v(" "),_m(76),_v(" "),_m(77),_v(" "),_m(78),_v(" "),_c('pic',{attrs:{"src":"/tp/diagrams/CleanSequenceDiagram.png","alt":"CleanSequenceDiagram-Logic"}}),_v(" "),_c('box',{attrs:{"type":"info","seamless":""}},[_c('p',[_c('strong',[_v("Note:")]),_v(" There are no destroy markers (X) for "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("CleanCommand")]),_v(" and "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("GradYearPredicate")]),_v(" as they are preserved in the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("undo")]),_v(" command stack.")])]),_v(" "),_m(79),_v(" "),_c('pic',{attrs:{"src":"/tp/diagrams/CleanActivityDiagram.png","height":"600","width":"900"}}),_v(" "),_m(80),_v(" "),_m(81),_v(" "),_m(82),_v(" "),_m(83),_v(" "),_m(84),_v(" "),_m(85),_v(" "),_m(86),_v(" "),_m(87),_v(" "),_m(88),_v(" "),_m(89),_v(" "),_c('p',[_v("results based on the specified criteria.")]),_v(" "),_c('pic',{attrs:{"src":"/tp/diagrams/FindSequenceDiagram.png","alt":"FindSequenceDiagram"}}),_v(" "),_m(90),_v(" "),_m(91),_v(" "),_m(92),_v(" "),_m(93),_v(" "),_m(94),_v(" "),_m(95),_v(" "),_m(96),_v(" "),_m(97),_v(" "),_m(98),_v(" "),_m(99),_v(" "),_m(100),_v(" "),_m(101),_v(" "),_m(102),_v(" "),_m(103),_v(" "),_m(104),_v(" "),_c('p',[_v("Step 2. The")]),_v(" "),_m(105),_v(" "),_m(106),_v(" "),_m(107),_v(" "),_m(108),_v(" "),_m(109),_v(" "),_m(110),_v(" "),_m(111),_v(" "),_m(112),_v(" "),_m(113),_v(" "),_c('p',[_v("Given below is an example usage scenario and how the undo mechanism behaves at each step.")]),_v(" "),_c('p',[_v("Step 1. The user launches the application for the first time. The undo stack is initialised as empty.")]),_v(" "),_m(114),_v(" "),_m(115),_v(" "),_m(116),_v(" "),_m(117),_v(" "),_m(118),_v(" "),_m(119),_v(" "),_c('pic',{attrs:{"src":"/tp/diagrams/UndoSequenceDiagram-Logic.png","alt":"UndoSequenceDiagram-Logic"}}),_v(" "),_c('br'),_v(" "),_m(120),_v(" "),_m(121),_v(" "),_c('pic',{attrs:{"src":"/tp/diagrams/UndoSequenceDiagram-Model.png","alt":"UndoSequenceDiagram-Model"}}),_v(" "),_m(122),_v(" "),_m(123),_v(" "),_c('p',[_v("The following activity diagram summarizes what happens when a user executes a new command:")]),_v(" "),_c('pic',{attrs:{"src":"/tp/diagrams/CommitActivityDiagram.png","height":"600","width":"600"}}),_v(" "),_m(124),_v(" "),_m(125),_v(" "),_m(126),_v(" "),_c('hr'),_v(" "),_m(127),_v(" "),_m(128),_v(" "),_c('hr'),_v(" "),_m(129),_v(" "),_m(130),_v(" "),_m(131),_v(" "),_m(132),_v(" "),_m(133),_v(" "),_m(134),_v(" "),_m(135),_v(" "),_m(136),_v(" "),_m(137),_m(138),_v(" "),_m(139),_v(" "),_m(140),_v(" "),_m(141),_v(" "),_m(142),_v(" "),_m(143),_v(" "),_m(144),_v(" "),_m(145),_v(" "),_m(146),_v(" "),_m(147),_v(" "),_m(148),_v(" "),_m(149),_v(" "),_m(150),_v(" "),_m(151),_v(" "),_m(152),_v(" "),_m(153),_v(" "),_m(154),_v(" "),_m(155),_v(" "),_m(156),_v(" "),_m(157),_v(" "),_m(158),_v(" "),_m(159),_v(" "),_m(160),_v(" "),_m(161),_v(" "),_m(162),_v(" "),_m(163),_v(" "),_m(164),_v(" "),_m(165),_v(" "),_m(166),_v(" "),_m(167),_v(" "),_m(168),_v(" "),_m(169),_v(" "),_m(170),_v(" "),_m(171),_v(" "),_m(172),_v(" "),_m(173),_v(" "),_m(174),_v(" "),_m(175),_v(" "),_m(176),_v(" "),_m(177),_v(" "),_m(178),_v(" "),_m(179),_v(" "),_m(180),_v(" "),_m(181),_v(" "),_m(182),_v(" "),_m(183),_v(" "),_m(184),_v(" "),_m(185),_v(" "),_m(186),_v(" "),_m(187),_v(" "),_m(188),_v(" "),_m(189),_v(" "),_c('hr'),_v(" "),_m(190),_v(" "),_m(191),_v(" "),_m(192),_v(" "),_m(193),_v(" "),_m(194),_v(" "),_m(195),_v(" "),_m(196),_v(" "),_m(197),_v(" "),_m(198),_v(" "),_m(199),_v(" "),_m(200),_v(" "),_m(201),_v(" "),_m(202),_v(" "),_m(203),_v(" "),_m(204),_v(" "),_m(205),_v(" "),_m(206),_v(" "),_m(207),_v(" "),_m(208),_v(" "),_m(209),_v(" "),_m(210),_v(" "),_m(211),_v(" "),_m(212),_v(" "),_m(213),_v(" "),_c('p',[_v("Team size: 5")]),_v(" "),_m(214),_v(" "),_m(215),_v(" "),_m(216),_v(" "),_c('p',[_v("As we have adapted AB3 for university dorm managers, our main efforts were in adding support for other necessary fields, enhancing the duplicate handling and data validation, and providing extra functions to streamline data saving, adding, updating and to safeguard against mistakes.\nThis posed substantial difficulties for us, as we had to work within the AB3 model and implement the multiple features to be compatible with the rest of the app.")]),_v(" "),_c('p',[_v("Here are some of the achievements of DorManagerPro:")]),_v(" "),_m(217),_v(" "),_c('p',[_v("Lines of Code: 24608")]),_v(" "),_c('p',[_v("[comment]: Should we also estimate difficulty level and effort required??")]),_v(" "),_m(218),_v(" "),_m(219),_v(" "),_m(220),_v(" "),_m(221),_v(" "),_m(222),_v(" "),_m(223),_v(" "),_c('p',[_v("While AddressBook3 initially had address as a compulsory field when adding a person to the contact list, our team felt that in the context of DorManagerPro, addresses could instead be optional. In most cases, all the residents would by default live in the dorm managed by the user, and by extension have a common address.\nWe then had to contemplate between the outright removal of the field or only making it optional. We decided to make it optional as it could still provide helpful information such as the students permanent residence outside the dorm in case the user had to contact them.\nRegardless, it was still quite a challenge to make the once compulsory field optional since it was so intertwined with the original AddressBook3.")])],1),_v(" "),_c('overlay-source',{attrs:{"id":"page-nav","tag-name":"nav","to":"page-nav"}},[_c('div',{staticClass:"nav-component slim-scroll"},[_c('overlay-source',{staticClass:"nav nav-pills flex-column my-0 small no-flex-wrap",attrs:{"id":"mb-page-nav","tag-name":"nav","to":"mb-page-nav"}},[_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#dormanagerpro-developer-guide"}},[_v("DorManagerPro Developer Guide‎")]),_v(" "),_c('nav',{staticClass:"nav nav-pills flex-column my-0 nested no-flex-wrap"},[_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#acknowledgements"}},[_v("Acknowledgements‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#setting-up-getting-started"}},[_v("Setting up, getting started‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#design"}},[_v("Design‎")]),_v(" "),_c('nav',{staticClass:"nav nav-pills flex-column my-0 nested no-flex-wrap"},[_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#architecture"}},[_v("Architecture‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#ui-component"}},[_v("UI component‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#logic-component"}},[_v("Logic component‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#model-component"}},[_v("Model component‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#storage-component"}},[_v("Storage component‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#common-classes"}},[_v("Common classes‎")])]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#implementation"}},[_v("Implementation‎")]),_v(" "),_c('nav',{staticClass:"nav nav-pills flex-column my-0 nested no-flex-wrap"},[_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#add-feature"}},[_v("Add feature‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#edit-feature"}},[_v("Edit feature‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#delete-command"}},[_v("Delete Command‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#clean-feature"}},[_v("Clean feature‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#find-command"}},[_v("Find Command‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#export-feature"}},[_v("Export feature‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#implementation-7"}},[_v("Implementation‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#design-considerations-2"}},[_v("Design considerations:‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#import-feature"}},[_v("Import feature‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#implementation-8"}},[_v("Implementation‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#design-considerations-3"}},[_v("Design considerations:‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#undo-feature"}},[_v("Undo feature‎")])]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#documentation-logging-testing-configuration-dev-ops"}},[_v("Documentation, logging, testing, configuration, dev-ops‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#appendix-requirements"}},[_v("Appendix: Requirements‎")]),_v(" "),_c('nav',{staticClass:"nav nav-pills flex-column my-0 nested no-flex-wrap"},[_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#product-scope"}},[_v("Product scope‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#user-stories"}},[_v("User stories‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#use-cases"}},[_v("Use cases‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#non-functional-requirements"}},[_v("Non-Functional Requirements‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#glossary"}},[_v("Glossary‎")])]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#appendix-instructions-for-manual-testing"}},[_v("Appendix: Instructions for manual testing‎")]),_v(" "),_c('nav',{staticClass:"nav nav-pills flex-column my-0 nested no-flex-wrap"},[_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#launch-and-shutdown"}},[_v("Launch and shutdown‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#deleting-a-person"}},[_v("Deleting a person‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#finding-a-person"}},[_v("Finding a person‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#saving-data"}},[_v("Saving data‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#exporting-data"}},[_v("Exporting data‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#importing-data"}},[_v("Importing data‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#adding-a-person"}},[_v("Adding a person‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#editing-a-person"}},[_v("Editing a person‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#undo-a-command"}},[_v("Undo a command‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#deleting-all-graduated-students"}},[_v("Deleting all graduated students‎")])]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#appendix-planned-enhancements"}},[_v("Appendix: Planned enhancements‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#appendix-effort"}},[_v("Appendix: Effort‎")]),_v(" "),_c('nav',{staticClass:"nav nav-pills flex-column my-0 nested no-flex-wrap"},[_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#overview"}},[_v("Overview‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#challenges-faced"}},[_v("Challenges faced‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#challenge-2-creating-a-dependency-between-storage-and-fileaccesscommand-for-export-and-import"}},[_v("Challenge 2: Creating a dependency between Storage and FileAccessCommand for export and import‎")]),_v(" "),_c('a',{pre:true,attrs:{"class":"nav-link py-1","href":"#challenge-3-removal-of-address-field-as-a-compulsory-field"}},[_v("Challenge 3: Removal of address field as a compulsory field‎")])])])])],1)]),_v(" "),_c('scroll-top-button')],1),_v(" "),_m(224)])}
+};
     var pageVueStaticRenderFns = [function anonymous(
 ) {
 with(this){return _c('h1',{attrs:{"id":"dormanagerpro-developer-guide"}},[_v("DorManagerPro Developer Guide"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#dormanagerpro-developer-guide","onclick":"event.stopPropagation()"}})])}
@@ -140,13 +143,19 @@ with(this){return _c('p',[_v("The "),_c('code',{pre:true,attrs:{"class":"hljs in
 with(this){return _c('p',[_v("Given below is an example usage scenario and how the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("add")]),_v(" command behaves at each step.")])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_v("Step 1. The user executes "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("add n/John Doe p/+65 98765432 e/johnd@example.com r/01-1008 a/John street t/Floor 1")]),_v(".")])}
+with(this){return _c('p',[_v("Step 1. The user executes "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("add n/John Doe p/+65 98765432 e/johnd@example.com r/01-1008 a/John street t/Floor 1")]),_v(".\n"),_c('br')])}
+},function anonymous(
+) {
+with(this){return _c('blockquote',[_c('p',[_c('strong',[_v("Note:")]),_v(" An error message will be displayed if attempting to add a contact with duplicate "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("NAME")]),_v(", "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("PHONE")]),_v(" or "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("EMAIL")]),_v(".")])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_v("Step 2. The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("add")]),_v(" command adds a contact with the name John Doe, phone number +65 98765432, email "),_c('a',{attrs:{"href":"mailto:johnd@example.com"}},[_v("johnd@example.com")]),_v(", room number #01-1008, address John street, tag \"Floor 1\" to the address book.")])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_v("The following sequence diagram shows how an "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("add")]),_v(" command goes through the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Logic")]),_v(" component:")])}
+},function anonymous(
+) {
+with(this){return _c('blockquote',[_c('p',[_c('strong',[_v("Note:")]),_v(" There are no destroy markers (X) for "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("AddCommand")]),_v(" as it is preserved in the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("undo")]),_v(" command stack.")])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_v("The following activity diagram summarizes what happens when a user executes a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("add")]),_v(" command:")])}
@@ -164,7 +173,10 @@ with(this){return _c('p',[_v("The "),_c('code',{pre:true,attrs:{"class":"hljs in
 with(this){return _c('p',[_v("Given below is an example usage scenario and how the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("edit")]),_v(" command behaves at each step.")])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_v("Step 1. The user executes "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("edit 1 n/John Doe p/+65 98765432")]),_v(".")])}
+with(this){return _c('p',[_v("Step 1. The user executes "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("edit 1 n/John Doe p/+65 98765432")]),_v(".\n"),_c('br')])}
+},function anonymous(
+) {
+with(this){return _c('blockquote',[_c('p',[_c('strong',[_v("Note:")]),_v(" An error message will be displayed if attempting to edit a contact to have with duplicate "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("NAME")]),_v(", "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("PHONE")]),_v(" or "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("EMAIL")]),_v(".")])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_v("Step 2. The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("edit")]),_v(" command updates the details of the contact with index 1 to have the name John Doe and phone number +65 98765432.")])}
@@ -173,13 +185,157 @@ with(this){return _c('p',[_v("Step 2. The "),_c('code',{pre:true,attrs:{"class":
 with(this){return _c('p',[_v("The following sequence diagram shows how an "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("edit")]),_v(" command goes through the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Logic")]),_v(" component:")])}
 },function anonymous(
 ) {
+with(this){return _c('blockquote',[_c('p',[_c('strong',[_v("Note:")]),_v(" There are no destroy markers (X) for "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("EditCommand")]),_v(" as it is preserved in the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("undo")]),_v(" command stack.")])])}
+},function anonymous(
+) {
 with(this){return _c('p',[_v("The following activity diagram summarizes what happens when a user executes a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("edit")]),_v(" command:")])}
+},function anonymous(
+) {
+with(this){return _c('h3',{attrs:{"id":"delete-command"}},[_v("Delete Command"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#delete-command","onclick":"event.stopPropagation()"}})])}
+},function anonymous(
+) {
+with(this){return _c('h4',{attrs:{"id":"implementation-4"}},[_v("Implementation"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#implementation-4","onclick":"event.stopPropagation()"}})])}
+},function anonymous(
+) {
+with(this){return _c('p',[_v("The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("delete")]),_v(" command extends "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Command")]),_v(" and implements "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Undoable")]),_v(". The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("delete")]),_v(" command deletes a contact based on its index. The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("delete")]),_v(" command is undoable.")])}
+},function anonymous(
+) {
+with(this){return _c('p',[_v("Given below is an example usage scenario and how the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("delete")]),_v(" command behaves at each step.")])}
+},function anonymous(
+) {
+with(this){return _c('p',[_v("Step 1. The user input a delete command followed by an index. For example: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("delete 1")]),_v(" deletes the contact with an index of 1.")])}
+},function anonymous(
+) {
+with(this){return _c('p',[_v("Step 2. The parser parses the input command and returns a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("DeleteCommand")]),_v(".")])}
+},function anonymous(
+) {
+with(this){return _c('p',[_v("Step 3. The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("DeleteCommand")]),_v(" is executed by the LogicManager and delete popup get displayed.")])}
+},function anonymous(
+) {
+with(this){return _c('p',[_v("Step 4. If user click "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Ok")]),_v(" on the pop-up, model updates the filteredPersonList and removes the contact, otherwise cancel the deletion.")])}
+},function anonymous(
+) {
+with(this){return _c('p',[_v("The following sequence diagram shows how a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("delete")]),_v(" command goes through the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Logic")]),_v(" component:")])}
+},function anonymous(
+) {
+with(this){return _c('h3',{attrs:{"id":"clean-feature"}},[_v("Clean feature"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#clean-feature","onclick":"event.stopPropagation()"}})])}
+},function anonymous(
+) {
+with(this){return _c('h4',{attrs:{"id":"implementation-5"}},[_v("Implementation"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#implementation-5","onclick":"event.stopPropagation()"}})])}
+},function anonymous(
+) {
+with(this){return _c('p',[_v("The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("clean")]),_v(" command extends "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Command")]),_v(" and implements "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Undoable")]),_v(". The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("clean")]),_v(" command deletes the contacts whose "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("GradYear")]),_v(" field is earlier than the current year, deleting contacts who have graduated from the address book. The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("clean")]),_v(" command is undoable.")])}
+},function anonymous(
+) {
+with(this){return _c('p',[_v("Given below is an example usage scenario and how the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("clean")]),_v(" command behaves at each step.")])}
+},function anonymous(
+) {
+with(this){return _c('p',[_v("Step 1. The user executes "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("clean")]),_v(" in 2024.\n"),_c('br')])}
+},function anonymous(
+) {
+with(this){return _c('blockquote',[_c('p',[_c('strong',[_v("Note:")]),_v(" The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("clean")]),_v(" command checks if there are contacts with "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("GradYear")]),_v(" 2023 or earlier. If there are none, it will return an error message to the user.")])])}
+},function anonymous(
+) {
+with(this){return _c('p',[_v("Step 2. The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("clean")]),_v(" command deletes all contacts with "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("GradYear")]),_v(" 2023 or earlier.")])}
+},function anonymous(
+) {
+with(this){return _c('p',[_v("The following sequence diagram shows how a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("clean")]),_v(" command goes through the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Logic")]),_v(" component:")])}
+},function anonymous(
+) {
+with(this){return _c('p',[_v("The following activity diagram summarizes what happens when a user executes a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("clean")]),_v(" command:")])}
+},function anonymous(
+) {
+with(this){return _c('h4',{attrs:{"id":"design-considerations"}},[_v("Design considerations:"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#design-considerations","onclick":"event.stopPropagation()"}})])}
+},function anonymous(
+) {
+with(this){return _c('p',[_c('strong',[_v("Aspect: UI display when "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("clean")]),_v(" executes after a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("find")]),_v(" command:")])])}
+},function anonymous(
+) {
+with(this){return _c('ul',[_c('li',[_c('p',[_c('strong',[_v("Alternative 1:")]),_v(" Display all contacts.")]),_v(" "),_c('ul',[_c('li',[_v("Pros: Shows users the full result of "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("clean")]),_v(".")]),_v(" "),_c('li',[_v("Cons: Forgets the results of the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("find")]),_v(" command.")])])]),_v(" "),_c('li',[_c('p',[_c('strong',[_v("Alternative 2 (current implementation):")]),_v(" Retain the search results of "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("find")]),_v(" and only display those contacts.")]),_v(" "),_c('ul',[_c('li',[_v("Pros: Allow users to retain their serach results from "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("find")]),_v(".")]),_v(" "),_c('li',[_v("Cons: Users cannot see the full extent of "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("clean")]),_v(" until they return to the default view with "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("list")]),_v(".")])])])])}
+},function anonymous(
+) {
+with(this){return _c('h3',{attrs:{"id":"find-command"}},[_v("Find Command"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#find-command","onclick":"event.stopPropagation()"}})])}
+},function anonymous(
+) {
+with(this){return _c('h4',{attrs:{"id":"implementation-6"}},[_v("Implementation"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#implementation-6","onclick":"event.stopPropagation()"}})])}
+},function anonymous(
+) {
+with(this){return _c('p',[_v("The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("find")]),_v(" command extends "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Command")]),_v(" and implements "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Undoable")]),_v(". The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("find")]),_v(" command searches and filters the contacts based on the following parameters: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("NAME")]),_v(", "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("PHONE")]),_v(", "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("ROOM_NUMBER")]),_v(", and "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("TAG")]),_v(".The find command is undoable.")])}
+},function anonymous(
+) {
+with(this){return _c('p',[_v("Given below is an example usage scenario and how the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("find")]),_v(" command behaves at each step.")])}
+},function anonymous(
+) {
+with(this){return _c('p',[_v("Step 1. The user issues a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("find")]),_v(" command followed by specific parameters.\nFor example: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("t/friends n/Alex r/08-0805 p/9124 6892")]),_v(", searches for a profile with a\ntag of friends, a name called Alex, a room number of 08-0805, and a phone number of 9124 6842.\n"),_c('br')])}
+},function anonymous(
+) {
+with(this){return _c('blockquote',[_c('p',[_c('strong',[_v("Note")]),_v(" : These parameters can be combined in any sequence, allowing for versatile parameter configurations.")])])}
+},function anonymous(
+) {
+with(this){return _c('p',[_v("Step 3. The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("FindCommand")]),_v(" get executed and updates the filteredPersonList within the model, reflecting the search.")])}
+},function anonymous(
+) {
+with(this){return _c('h3',{attrs:{"id":"export-feature"}},[_v("Export feature"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#export-feature","onclick":"event.stopPropagation()"}})])}
+},function anonymous(
+) {
+with(this){return _c('h3',{attrs:{"id":"implementation-7"}},[_v("Implementation"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#implementation-7","onclick":"event.stopPropagation()"}})])}
+},function anonymous(
+) {
+with(this){return _c('p',[_v("The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("export")]),_v(" command extends "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Command")]),_v(". The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("export")]),_v(" command exports the data into a new file.")])}
+},function anonymous(
+) {
+with(this){return _c('p',[_v("Given below is an example usage scenario and how the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("export")]),_v(" command behaves at each step.")])}
+},function anonymous(
+) {
+with(this){return _c('p',[_v("Step 1: The user executes "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("export")]),_v(".")])}
+},function anonymous(
+) {
+with(this){return _c('p',[_v("Step 2: The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("export")]),_v(" command exports all data currently contained by DorManagerPro to a JSON file in the data folder. The name of the JSON file is the time of export.")])}
+},function anonymous(
+) {
+with(this){return _c('p',[_v("The following sequence diagram shows how a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("export")]),_v(" command goes through the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Logic")]),_v(" component:")])}
+},function anonymous(
+) {
+with(this){return _c('h3',{attrs:{"id":"design-considerations-2"}},[_v("Design considerations:"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#design-considerations-2","onclick":"event.stopPropagation()"}})])}
+},function anonymous(
+) {
+with(this){return _c('p',[_c('strong',[_v("Aspect")]),_v(": The name of the JSON file on "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("export")]),_v(".")])}
+},function anonymous(
+) {
+with(this){return _c('ul',[_c('li',[_c('p',[_c('strong',[_v("Alternative 1:")]),_v(" Use a generic format such as "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("SAVE_FILE_1")]),_v(", "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("SAVE_FILE_2")]),_v(".")]),_v(" "),_c('ul',[_c('li',[_v("Pros: Easy for the user to know at first glance which save file was created latest as well as the chronological order of their creation.")]),_v(" "),_c('li',[_v("Cons: Does not tell the user at what time they actually exported the save file or contents of the save file.")])])]),_v(" "),_c('li',[_c('p',[_c('strong',[_v("Alternative 2 (current implementation):")]),_v(" The time of the device's system at the moment of "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("export")]),_v(".")]),_v(" "),_c('ul',[_c('li',[_v("Pros: Allows for pinpoint of exact save files as no two files can be exported at the same time.")]),_v(" "),_c('li',[_v("Cons: Takes longer to manually understand the name of the save file when trying to locate a specific one, especially when multiple "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("exports")]),_v(" happen within a short peri            od of time. Also has no mention of contents of JSON file.")])])]),_v(" "),_c('li',[_c('p',[_c('strong',[_v("Alternative 3:")]),_v(" A brief summary of the file such as "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("FIRST-Alex_Jones LENGTH-20")]),_v(".")]),_v(" "),_c('ul',[_c('li',[_v("Pros: Easy for the user to know at first glance what the contents of each file are.")]),_v(" "),_c('li',[_v("Cons: Does not tell the user at what time they actually exported the save file. Also has no indication of the chronology of creation of the files, and hence no information on which file was the last to be created. Additionally, it would become complicated when exporting files with similar data.")])])])])}
+},function anonymous(
+) {
+with(this){return _c('h3',{attrs:{"id":"import-feature"}},[_v("Import feature"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#import-feature","onclick":"event.stopPropagation()"}})])}
+},function anonymous(
+) {
+with(this){return _c('h3',{attrs:{"id":"implementation-8"}},[_v("Implementation"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#implementation-8","onclick":"event.stopPropagation()"}})])}
+},function anonymous(
+) {
+with(this){return _c('p',[_v("The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("import")]),_v(" command implements "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Undoable")]),_v(". The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("import")]),_v(" imports a file to be loaded into DorManagerPro. The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("import")]),_v(" command is undoable.")])}
+},function anonymous(
+) {
+with(this){return _c('p',[_v("Given below is an example usage scenario and how the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("import")]),_v(" command behaves at each step.")])}
+},function anonymous(
+) {
+with(this){return _c('p',[_v("Step 1. The user executes "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("import fp/./data/SaveFile3.json")])])}
+},function anonymous(
+) {
+with(this){return _c('p',[_v("The following sequence diagram shows how a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("import")]),_v(" command goes through the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Logic")]),_v(" component:")])}
+},function anonymous(
+) {
+with(this){return _c('h3',{attrs:{"id":"design-considerations-3"}},[_v("Design considerations:"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#design-considerations-3","onclick":"event.stopPropagation()"}})])}
+},function anonymous(
+) {
+with(this){return _c('p',[_c('strong',[_v("Aspect: The exact format of the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("FILE_PATH")]),_v(" parameter")])])}
+},function anonymous(
+) {
+with(this){return _c('ul',[_c('li',[_c('p',[_c('strong',[_v("Alternative 1:")]),_v(" Take in only the name of the JSON file in the data folder of the home folder.")]),_v(" "),_c('ul',[_c('li',[_v("Pros: Shorter command for the user to type. It is also considerably less complicated than alternative 2, making it more accessible to non-technical users.")]),_v(" "),_c('li',[_v("Cons: Limits the ability of import to only the contents of the data folder. Also requires user to move any JSON file they may want to "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("import")]),_v(" into the data folder.")])])]),_v(" "),_c('li',[_c('p',[_c('strong',[_v("Alternative 2 (current implementation):")]),_v(" Require the user to type in the full file path of the JSON file they wish to "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("import")]),_v(".")]),_v(" "),_c('ul',[_c('li',[_v("Pros: Allow greater flexibility for user to import JSON files from any location of the device.")]),_v(" "),_c('li',[_v("Cons: Significantly longer command for the user to type. Requires user to have prior knowledge of what the JSON's filepath is, increasing complexity.")])])])])}
 },function anonymous(
 ) {
 with(this){return _c('h3',{attrs:{"id":"undo-feature"}},[_v("Undo feature"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#undo-feature","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('h4',{attrs:{"id":"implementation-4"}},[_v("Implementation"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#implementation-4","onclick":"event.stopPropagation()"}})])}
+with(this){return _c('h4',{attrs:{"id":"implementation-9"}},[_v("Implementation"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#implementation-9","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_v("The undo mechanism is facilitated by the interface "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Undoable")]),_v(".\nIt has the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("undo()")]),_v(" method. The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("undo()")]),_v(" method is called when the user executes the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("undo")]),_v(" command.\nThe "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("undo()")]),_v(" method reverses the effects of the command that was previously executed.\nThe "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("undo()")]),_v(" method is implemented in the undoable command classes, such as "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("AddCommand")]),_v(", "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("DeleteCommand")]),_v(", "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("EditCommand")]),_v(", etc.")])}
@@ -194,13 +350,22 @@ with(this){return _c('p',[_v("These operations are exposed in the "),_c('code',{
 with(this){return _c('p',[_v("Step 2. The user executes "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("delete 5")]),_v(" command to delete the 5th person in the address book. The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("delete")]),_v(" command is pushed onto the undo stack.")])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_v("Step 3. The user executes "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("add n/David …​")]),_v(" to add a new person. The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("add")]),_v(" command is also pushed onto the undo stack.")])}
+with(this){return _c('p',[_v("Step 3. The user executes "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("add n/David …​")]),_v(" to add a new person. The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("add")]),_v(" command is also pushed onto the undo stack.\n"),_c('br')])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_v("Step 4. The user now decides that adding the person was a mistake, and decides to undo that action by executing the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("undo")]),_v(" command. The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("undo")]),_v(" command will call "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Model#undoAddressBook()")]),_v(", which will pop the last command from the undo stack and call its "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("undo()")]),_v(" method. The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("undo()")]),_v(" method of the command will then reverse the effects of the command.")])}
+with(this){return _c('blockquote',[_c('p',[_c('strong',[_v("Note:")]),_v(" If a command is not undoable or fails its execution, it will not be pushed onto the undo stack.")])])}
+},function anonymous(
+) {
+with(this){return _c('p',[_v("Step 4. The user now decides that adding the person was a mistake, and decides to undo that action by executing the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("undo")]),_v(" command. The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("undo")]),_v(" command will call "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Model#undoAddressBook()")]),_v(", which will pop the last command from the undo stack and call its "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("undo()")]),_v(" method. The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("undo()")]),_v(" method of the command will then reverse the effects of the command.\n"),_c('br')])}
+},function anonymous(
+) {
+with(this){return _c('blockquote',[_c('p',[_c('strong',[_v("Note:")]),_v(" If the undo stack is empty, then there are no commands to undo. The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("undo")]),_v(" command checks if this is the case. If so, it will return an error to the user.")])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_v("The following sequence diagram shows how an undo operation goes through the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Logic")]),_v(" component:")])}
+},function anonymous(
+) {
+with(this){return _c('blockquote',[_c('p',[_c('strong',[_v("Note:")]),_v(" The lifeline for "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("UndoCommand")]),_v(" should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.")])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_v("Similarly, how an undo operation goes through the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Model")]),_v(" component is shown below:")])}
@@ -212,136 +377,13 @@ with(this){return _c('p',[_v("Step 5. The user then decides to execute the comma
 with(this){return _c('p',[_v("Step 6. The user executes "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("clear")]),_v(", which is pushed to the undo stack.")])}
 },function anonymous(
 ) {
-with(this){return _c('h4',{attrs:{"id":"design-considerations"}},[_v("Design considerations:"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#design-considerations","onclick":"event.stopPropagation()"}})])}
+with(this){return _c('h4',{attrs:{"id":"design-considerations-4"}},[_v("Design considerations:"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#design-considerations-4","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('strong',[_v("Aspect: How undo executes:")])])}
 },function anonymous(
 ) {
 with(this){return _c('ul',[_c('li',[_c('p',[_c('strong',[_v("Alternative 1:")]),_v(" Saves the entire address book.")]),_v(" "),_c('ul',[_c('li',[_v("Pros: Easy to implement.")]),_v(" "),_c('li',[_v("Cons: May have performance issues in terms of memory usage.")])])]),_v(" "),_c('li',[_c('p',[_c('strong',[_v("Alternative 2 (current implementation):")]),_v(" Individual command knows how to undo by itself.")]),_v(" "),_c('ul',[_c('li',[_v("Pros: Will use less memory (e.g. for "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("delete")]),_v(", just save the person being deleted).")]),_v(" "),_c('li',[_v("Cons: We must ensure that the implementation of each individual command are correct.")])])])])}
-},function anonymous(
-) {
-with(this){return _c('h3',{attrs:{"id":"clean-feature"}},[_v("Clean feature"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#clean-feature","onclick":"event.stopPropagation()"}})])}
-},function anonymous(
-) {
-with(this){return _c('h4',{attrs:{"id":"implementation-5"}},[_v("Implementation"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#implementation-5","onclick":"event.stopPropagation()"}})])}
-},function anonymous(
-) {
-with(this){return _c('p',[_v("The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("clean")]),_v(" command extends "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Command")]),_v(" and implements "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Undoable")]),_v(". The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("clean")]),_v(" command deletes the contacts whose "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("GradYear")]),_v(" field is earlier\nthan the current year, deleting contacts who have graduated from the address book.\nThe "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("clean")]),_v(" command is undoable.")])}
-},function anonymous(
-) {
-with(this){return _c('p',[_v("Given below is an example usage scenario and how the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("clean")]),_v(" command behaves at each step.")])}
-},function anonymous(
-) {
-with(this){return _c('p',[_v("Step 1. The user executes "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("clean")]),_v(" in 2024.")])}
-},function anonymous(
-) {
-with(this){return _c('p',[_v("Step 2. The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("clean")]),_v(" command deletes all contacts with "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("GradYear")]),_v(" 2023 or earlier.")])}
-},function anonymous(
-) {
-with(this){return _c('p',[_v("The following sequence diagram shows how a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("clean")]),_v(" command goes through the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Logic")]),_v(" component:")])}
-},function anonymous(
-) {
-with(this){return _c('p',[_v("The following activity diagram summarizes what happens when a user executes a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("clean")]),_v(" command:")])}
-},function anonymous(
-) {
-with(this){return _c('h4',{attrs:{"id":"design-considerations-2"}},[_v("Design considerations:"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#design-considerations-2","onclick":"event.stopPropagation()"}})])}
-},function anonymous(
-) {
-with(this){return _c('p',[_c('strong',[_v("Aspect: UI display when "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("clean")]),_v(" executes after a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("find")]),_v(" command:")])])}
-},function anonymous(
-) {
-with(this){return _c('ul',[_c('li',[_c('p',[_c('strong',[_v("Alternative 1:")]),_v(" Display all contacts.")]),_v(" "),_c('ul',[_c('li',[_v("Pros: Shows users the full result of "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("clean")]),_v(".")]),_v(" "),_c('li',[_v("Cons: Forgets the results of the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("find")]),_v(" command.")])])]),_v(" "),_c('li',[_c('p',[_c('strong',[_v("Alternative 2 (current implementation):")]),_v(" Retain the search results of "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("find")]),_v(" and only display those contacts.")]),_v(" "),_c('ul',[_c('li',[_v("Pros: Allow users to retain their serach results from "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("find")]),_v(".")]),_v(" "),_c('li',[_v("Cons: Users cannot see the full extent of "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("clean")]),_v(" until they return to the default view with "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("list")]),_v(".")])])])])}
-},function anonymous(
-) {
-with(this){return _c('h3',{attrs:{"id":"update-find-command"}},[_v("Update Find Command"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#update-find-command","onclick":"event.stopPropagation()"}})])}
-},function anonymous(
-) {
-with(this){return _c('h4',{attrs:{"id":"implementation-6"}},[_v("Implementation"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#implementation-6","onclick":"event.stopPropagation()"}})])}
-},function anonymous(
-) {
-with(this){return _c('ul',[_c('li',[_v("the findCommand is enhanced by new Predicates")]),_v(" "),_c('li',[_v("RoomNumber predicates, PhonePredicate, and TagContainsKeywordsPredicate allows\na wider range of searching based on more features")])])}
-},function anonymous(
-) {
-with(this){return _c('p',[_v("Step 1. The user issues a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("find")]),_v(" command followed by specific parameters,\nfor example: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("t/friends n/Alex r/08-0805 p/9124 6892")]),_v(", searches for a profile with a\ntag of friends, a name called Alex, a roomNumber of 08-0805, and a phone call of 9124 6842")])}
-},function anonymous(
-) {
-with(this){return _c('p',[_c('strong',[_v("Note")]),_v(" : These parameters can be combined in any sequence, allowing for versatile parameter configurations.")])}
-},function anonymous(
-) {
-with(this){return _c('p',[_v("Step 2. The parser interprets the user command and constructs corresponding predicates for the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("FindCommand")]),_v(" object.")])}
-},function anonymous(
-) {
-with(this){return _c('p',[_v("Step 3. The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("FindCommand")]),_v(" get executed and updates the filteredPersonList within the model, reflecting the search")])}
-},function anonymous(
-) {
-with(this){return _c('h2',{attrs:{"id":"export-feature"}},[_v("Export feature"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#export-feature","onclick":"event.stopPropagation()"}})])}
-},function anonymous(
-) {
-with(this){return _c('h3',{attrs:{"id":"implementation-7"}},[_v("Implementation"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#implementation-7","onclick":"event.stopPropagation()"}})])}
-},function anonymous(
-) {
-with(this){return _c('p',[_v("Step 1: The user executes "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("export")])])}
-},function anonymous(
-) {
-with(this){return _c('p',[_v("Step 2: The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("export")]),_v(" command exports all data currently contained by DorManagerPro to a JSON file in the data folder.\nThe name of the JSON file is the time of export.")])}
-},function anonymous(
-) {
-with(this){return _c('p',[_v("The following sequence diagram shows how a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("export")]),_v(" command goes through the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Logic")]),_v(" component:")])}
-},function anonymous(
-) {
-with(this){return _c('h3',{attrs:{"id":"design-considerations-3"}},[_v("Design considerations:"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#design-considerations-3","onclick":"event.stopPropagation()"}})])}
-},function anonymous(
-) {
-with(this){return _c('p',[_v("**Aspect: The name of the JSON file on "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("export")])])}
-},function anonymous(
-) {
-with(this){return _c('ul',[_c('li',[_c('p',[_c('strong',[_v("Alternative 1:")]),_v(" Use a generic format such as "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("SAVE_FILE_1")]),_v(", "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("SAVE_FILE_2")])]),_v(" "),_c('ul',[_c('li',[_v("Pros: Easy for the user to know at first glance which save file was created latest as well as the chronological order of their creation.")]),_v(" "),_c('li',[_v("Cons: Does not tell the user at what time they actually exported the save file or contents of the save file.")])])]),_v(" "),_c('li',[_c('p',[_c('strong',[_v("Alternative 2 (current implementation):")]),_v(" The time of the device's system at the moment of "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("export")])]),_v(" "),_c('ul',[_c('li',[_v("Pros: Allows for pinpoint of exact save files as no two files can be exported at the same time.")]),_v(" "),_c('li',[_v("Cons: Takes longer to manually understand the name of the save file when trying to locate a specific one,\nespecially when multiple "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("exports")]),_v(" happen within a short period of time. Also has no mention of contents of JSON file.")])])]),_v(" "),_c('li',[_c('p',[_c('strong',[_v("Alternative 3:")]),_v(" A brief summary of the file such as "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("FIRST-Alex_Jones LENGTH-20")])]),_v(" "),_c('ul',[_c('li',[_v("Pros: Easy for the user to know at first glance which save file contains what.")]),_v(" "),_c('li',[_v("Cons: Does not tell the user at what time they actually exported the save file. Also has no indication of the\nchronology of creation of the files, and hence no information on which file was the last to be created. Additionally,\nit would become complicated when exporting files with similar data.")])])])])}
-},function anonymous(
-) {
-with(this){return _c('h2',{attrs:{"id":"import-feature"}},[_v("Import feature"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#import-feature","onclick":"event.stopPropagation()"}})])}
-},function anonymous(
-) {
-with(this){return _c('h3',{attrs:{"id":"implementation-8"}},[_v("Implementation"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#implementation-8","onclick":"event.stopPropagation()"}})])}
-},function anonymous(
-) {
-with(this){return _c('p',[_v("The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("import")]),_v(" command implements "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Undoable")]),_v(". The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("import")]),_v(" command deletes the contacts whose "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("GradYear")]),_v(" field is earlier\nthan the current year, deleting contacts who have graduated from the address book.\nThe "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("clean")]),_v(" command is undoable.")])}
-},function anonymous(
-) {
-with(this){return _c('p',[_v("Given below is an example usage scenario and how the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("import")]),_v(" command behaves at each step.")])}
-},function anonymous(
-) {
-with(this){return _c('p',[_v("Step 1. The user executes "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("import fp/./data/SaveFile3.json")])])}
-},function anonymous(
-) {
-with(this){return _c('p',[_v("The following sequence diagram shows how a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("import")]),_v(" command goes through the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Logic")]),_v(" component:")])}
-},function anonymous(
-) {
-with(this){return _c('h3',{attrs:{"id":"design-considerations-4"}},[_v("Design considerations:"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#design-considerations-4","onclick":"event.stopPropagation()"}})])}
-},function anonymous(
-) {
-with(this){return _c('p',[_c('strong',[_v("Aspect: The exact format of the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("FILE_PATH")]),_v(" parameter")])])}
-},function anonymous(
-) {
-with(this){return _c('ul',[_c('li',[_c('p',[_c('strong',[_v("Alternative 1:")]),_v(" Take in only the name of the JSON file in the data folder of the home folder.")]),_v(" "),_c('ul',[_c('li',[_v("Pros: Shorter command for the user to type. It is also considerably less complicated than alternative 2, making it more accessible to non-technical users.")]),_v(" "),_c('li',[_v("Cons: Limits the ability of import to only the contents of the data folder. Also requires user to move any JSON file they may want to "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("import")]),_v(" into the data folder.")])])]),_v(" "),_c('li',[_c('p',[_c('strong',[_v("Alternative 2 (current implementation):")]),_v(" Require the user to type in the full file path of the JSON file they wish to "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("import")]),_v(".")]),_v(" "),_c('ul',[_c('li',[_v("Pros: Allow greater flexibility for user to import JSON files from any location of the device.")]),_v(" "),_c('li',[_v("Cons: Significantly longer command for the user to type. Requires user to have prior knowledge of what the JSON's filepath is, increasing complexity.")])])])])}
-},function anonymous(
-) {
-with(this){return _c('h3',{attrs:{"id":"delete-command"}},[_v("Delete Command"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#delete-command","onclick":"event.stopPropagation()"}})])}
-},function anonymous(
-) {
-with(this){return _c('h4',{attrs:{"id":"implementation-9"}},[_v("Implementation"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#implementation-9","onclick":"event.stopPropagation()"}})])}
-},function anonymous(
-) {
-with(this){return _c('ul',[_c('li',[_v("The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("delete")]),_v(" command extends "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Command")]),_v(" and implements "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Undoable")]),_v(".")]),_v(" "),_c('li',[_v("The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("delete")]),_v(" command is based on the index of the contact.")])])}
-},function anonymous(
-) {
-with(this){return _c('p',[_v("Step 1. The user input a delete command followed by an index,\nfor example: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("delete 1")]),_v(", delete the contact with an index of 1.")])}
-},function anonymous(
-) {
-with(this){return _c('p',[_v("Step 2. The parser parses the input command and returns a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("DeleteCommand")]),_v(".")])}
-},function anonymous(
-) {
-with(this){return _c('p',[_v("Step 3. The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("DeleteCommand")]),_v(" is executed by the LogicManager and delete popup get displayed.")])}
 },function anonymous(
 ) {
 with(this){return _c('h2',{attrs:{"id":"documentation-logging-testing-configuration-dev-ops"}},[_c('strong',[_v("Documentation, logging, testing, configuration, dev-ops")]),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#documentation-logging-testing-configuration-dev-ops","onclick":"event.stopPropagation()"}})])}
@@ -536,6 +578,12 @@ with(this){return _c('ul',[_c('li',[_c('strong',[_v("Mainstream OS")]),_v(": Win
 with(this){return _c('h2',{attrs:{"id":"appendix-instructions-for-manual-testing"}},[_c('strong',[_v("Appendix: Instructions for manual testing")]),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#appendix-instructions-for-manual-testing","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
+with(this){return _c('p',[_v("Given below are instructions to test the app manually.\n"),_c('br')])}
+},function anonymous(
+) {
+with(this){return _c('blockquote',[_c('p',[_c('strong',[_v("Note:")]),_v(" These instructions only provide a starting point for testers to work on; testers are expected to do more "),_c('em',[_v("exploratory")]),_v(" testing.")])])}
+},function anonymous(
+) {
 with(this){return _c('h3',{attrs:{"id":"launch-and-shutdown"}},[_v("Launch and shutdown"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#launch-and-shutdown","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
@@ -563,7 +611,7 @@ with(this){return _c('ol',[_c('li',[_v("Dealing with missing/corrupted data file
 with(this){return _c('h3',{attrs:{"id":"exporting-data"}},[_v("Exporting data"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#exporting-data","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('li',[_c('p',[_v("Exporting a contact list with one or more contacts.")]),_v(" "),_c('ol',[_c('li',[_v("Prerequisites: There is at least one person in DorManagerPro")]),_v(" "),_c('li',[_v("Test case: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("export")]),_v(" "),_c('br'),_v("\nExpected: A json file is exported to the data folder of the application, with the name of the json file being the time of export.")]),_v(" "),_c('li',[_v("More positive tests can be done for different numbers of people in DorManagerPro")])])])}
+with(this){return _c('ol',[_c('li',[_c('p',[_v("Exporting a contact list with one or more contacts.")]),_v(" "),_c('ol',[_c('li',[_v("Prerequisites: There is at least one person in DorManagerPro")]),_v(" "),_c('li',[_v("Test case: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("export")]),_v(" "),_c('br'),_v("\nExpected: A json file is exported to the data folder of the application, with the name of the json file being the time of export.")]),_v(" "),_c('li',[_v("More positive tests can be done for different numbers of people in DorManagerPro")])])]),_v(" "),_c('li',[_c('p',[_v("Exporting a contact list with zero contacts")]),_v(" "),_c('ol',[_c('li',[_v("Prerequisites: There are no people in DorManagerPro")]),_v(" "),_c('li',[_v("Test case: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("export")]),_v(" "),_c('br'),_v("\nExpected: A json file is exported to the data folder of the application, with the name of the json file being the time of export. The contents of the json file is as follows: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("{ \"persons\" : [ ] }")])])])])])}
 },function anonymous(
 ) {
 with(this){return _c('h3',{attrs:{"id":"importing-data"}},[_v("Importing data"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#importing-data","onclick":"event.stopPropagation()"}})])}
@@ -599,7 +647,7 @@ with(this){return _c('ol',[_c('li',[_v("Deleting all graduated students when all
 with(this){return _c('h2',{attrs:{"id":"appendix-planned-enhancements"}},[_c('strong',[_v("Appendix: Planned enhancements")]),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#appendix-planned-enhancements","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('ol',[_c('li',[_c('p',[_c('strong',[_v("Add more precise functionality to the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("clean")]),_v(" command")]),_v(". The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("clean")]),_v(" command currently does not allow removal of students who have graduated in the current year, as it can only detect the graduation year but not the month. We plan to add support for storing a more specific graduation date, such that we can accurately remove students who have graduated immediately after their graduation.")])]),_v(" "),_c('li',[_c('p',[_c('strong',[_v("Add support for setting EmergencyName, EmergencyPhone and GraduationYear using the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("add")]),_v(" command.")]),_v("\nThe "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("add")]),_v(" command currently does not allow setting emergency contact details and graduation year of students.\nThe only way to set these fields is through the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("edit")]),_v(" command, which can be inconvenient for users.\nWe plan to add support for setting EmergencyName, EmergencyPhone and GraduationYear to the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("add")]),_v(" command.")])]),_v(" "),_c('li',[_c('p',[_c('strong',[_v("Add more features to the help command pop up window.")]),_v(" The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("help")]),_v(" command pop up window currently only shows instructions for three commands, "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("add")]),_v(", "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("edit")]),_v(" and "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("delete")]),_v(". We plan\nto add instructions for all other features to make it easier to familiarise themselves with the commands without going to the external User Guide.")])]),_v(" "),_c('li',[_c('p',[_c('strong',[_v("Add support to file path formatting in "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("import")]),_v(".")]),_v(" Currently, the FILE_PATH parameter for the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("import")]),_v(" command only takes in forward slashes, "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("/")]),_v(", when taking in user input, e.g. "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("import fp/./data/SaveFile.json")]),_v(" would be a valid file path for "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("import")]),_v(", but "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("import fp/.\\data\\SaveFile.json")]),_v(" would not be valid. We plan to add support to "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("\\")]),_v(" as a delimited between folders and files in the future to be more intuitive for users of all Operating Systems, especially those that use backslashes in file paths like Windows.")])]),_v(" "),_c('li',[_c('p',[_c('strong',[_v("Improve specificity of "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("import")]),_v(" error messages.")]),_v(" Currently, the error message for when the file exists on the device but is otherwise incompatible with DorManagerPro, whether this be because it is of the wrong file type, has a format incompatible with DorManagerPro or contains invalid data is as follows: "),_c('br'),_v("\nCould not read data from file FILE_PATH due to inability to find or access the file. "),_c('br'),_v("\nThis error message could be more specific and our team plans to update this to the following error message: "),_c('br'),_v("\nDorManagerPro could not access the file at FILE_PATH. This could be because the file is of the wrong type, it has a format incompatible with DorManagerPro or it contains invalid data. Please check that the file path leads to a JSON file with valid data and formatting.")])])])}
+with(this){return _c('ol',[_c('li',[_c('p',[_c('strong',[_v("Add more precise functionality to the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("clean")]),_v(" command")]),_v(". The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("clean")]),_v(" command currently does not allow removal of students who have graduated in the current year, as it can only detect the graduation year but not the month. We plan to add support for storing a more specific graduation date, such that we can accurately remove students who have graduated immediately after their graduation.")])]),_v(" "),_c('li',[_c('p',[_c('strong',[_v("Add support for setting EmergencyName, EmergencyPhone and GraduationYear using the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("add")]),_v(" command.")]),_v("\nThe "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("add")]),_v(" command currently does not allow setting emergency contact details and graduation year of students.\nThe only way to set these fields is through the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("edit")]),_v(" command, which can be inconvenient for users.\nWe plan to add support for setting EmergencyName, EmergencyPhone and GraduationYear to the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("add")]),_v(" command.")])]),_v(" "),_c('li',[_c('p',[_c('strong',[_v("Add more features to the help command pop up window.")]),_v(" The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("help")]),_v(" command pop up window currently only shows instructions for three commands, "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("add")]),_v(", "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("edit")]),_v(" and "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("delete")]),_v(". We plan\nto add instructions for all other features to make it easier to familiarise themselves with the commands without going to the external User Guide.")])]),_v(" "),_c('li',[_c('p',[_c('strong',[_v("Add support to file path formatting in "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("import")]),_v(".")]),_v(" Currently, the FILE_PATH parameter for the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("import")]),_v(" command only takes in forward slashes, "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("/")]),_v(", when taking in user input, e.g. "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("import fp/./data/SaveFile.json")]),_v(" would be a valid file path for "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("import")]),_v(", but "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("import fp/.\\data\\SaveFile.json")]),_v(" would not be valid. We plan to add support to "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("\\")]),_v(" as a delimiter between folders and files in the future to be more intuitive for users of all Operating Systems, especially those that use backslashes in file paths like Windows.")])]),_v(" "),_c('li',[_c('p',[_c('strong',[_v("Improve specificity of "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("import")]),_v(" error messages.")]),_v(" Currently, the error message for when the file exists on the device but is otherwise incompatible with DorManagerPro, whether this be because it is of the wrong file type, has a format incompatible with DorManagerPro or contains invalid data is as follows: "),_c('br'),_v("\nCould not read data from file FILE_PATH due to inability to find or access the file. "),_c('br'),_v("\nThis error message could be more specific and our team plans to update this to the following error message: "),_c('br'),_v("\nDorManagerPro could not access the file at FILE_PATH. This could be because the file is of the wrong type, it has a format incompatible with DorManagerPro or it contains invalid data. Please check that the file path leads to a JSON file with valid data and formatting.")])])])}
 },function anonymous(
 ) {
 with(this){return _c('h2',{attrs:{"id":"appendix-effort"}},[_c('strong',[_v("Appendix: Effort")]),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#appendix-effort","onclick":"event.stopPropagation()"}})])}
@@ -629,6 +677,6 @@ with(this){return _c('p',[_v("Import and export was initially deemed odd to do s
 with(this){return _c('h3',{attrs:{"id":"challenge-3-removal-of-address-field-as-a-compulsory-field"}},[_v("Challenge 3: Removal of address field as a compulsory field"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#challenge-3-removal-of-address-field-as-a-compulsory-field","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(", generated on Tue, 12 Nov 2024, 11:46:52 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(", generated on Tue, 12 Nov 2024, 12:13:25 GMT+8]")])])])}
 }];
   
