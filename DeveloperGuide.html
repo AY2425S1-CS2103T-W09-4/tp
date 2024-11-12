@@ -19,99 +19,769 @@ Note that although this is shown as a single step in the diagram above (for simp
 <code class="hljs inline no-lang">NAME</code>, <code class="hljs inline no-lang">PHONE</code>, and <code class="hljs inline no-lang">EMAIL</code> are compulsory while <code class="hljs inline no-lang">ADDRESS</code>, <code class="hljs inline no-lang">ROOM_NUMBER</code>, and <code class="hljs inline no-lang">TAG</code> are optional.
 The <code class="hljs inline no-lang">add</code> command is undoable.</p> <p>Given below is an example usage scenario and how the <code class="hljs inline no-lang">add</code> command behaves at each step.</p> <p>Step 1. The user executes <code class="hljs inline no-lang">add n/John Doe p/+65 98765432 e/johnd@example.com r/01-1008 a/John street t/Floor 1</code>.</p> <div class="alert box-container seamless" data-v-474166ec><!----> <div class="header-and-body" data-v-474166ec><!----> <div class="box-body-wrapper" data-v-474166ec><div class="icon-wrapper  text-info" data-v-474166ec><i class="fas fa-info" data-v-474166ec></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-474166ec></div> <div class="contents" data-v-474166ec><p data-v-474166ec><strong data-v-474166ec>Note:</strong> An error message will be displayed if attempting to add a contact with duplicate <code class="hljs inline no-lang" data-v-474166ec>NAME</code>, <code class="hljs inline no-lang" data-v-474166ec>PHONE</code> or <code class="hljs inline no-lang" data-v-474166ec>EMAIL</code>.</p></div> <!----></div></div></div> <p>Step 2. The <code class="hljs inline no-lang">add</code> command adds a contact with the name John Doe, phone number +65 98765432, email <a href="mailto:johnd@example.com">johnd@example.com</a>, room number #01-1008, address John street, tag &quot;Floor 1&quot; to the address book.</p> <p>The following sequence diagram shows how an <code class="hljs inline no-lang">add</code> command goes through the <code class="hljs inline no-lang">Logic</code> component:</p> <span class="image-wrapper"><img src="/tp/diagrams/AddSequenceDiagram.png" alt="AddSequenceDiagram" width="" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <div class="alert box-container seamless" data-v-474166ec><!----> <div class="header-and-body" data-v-474166ec><!----> <div class="box-body-wrapper" data-v-474166ec><div class="icon-wrapper  text-info" data-v-474166ec><i class="fas fa-info" data-v-474166ec></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-474166ec></div> <div class="contents" data-v-474166ec><p data-v-474166ec><strong data-v-474166ec>Note:</strong> There are no destroy markers (X) for <code class="hljs inline no-lang" data-v-474166ec>AddCommand</code> as it is preserved in the <code class="hljs inline no-lang" data-v-474166ec>undo</code> command stack.</p></div> <!----></div></div></div> <p>The following activity diagram summarizes what happens when a user executes a <code class="hljs inline no-lang">add</code> command:</p> <span class="image-wrapper"><img src="/tp/diagrams/AddActivityDiagram.png" width="1000" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <h3 id="edit-feature">Edit feature<a href="#edit-feature" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <h4 id="implementation-3">Implementation<a href="#implementation-3" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <p>The <code class="hljs inline no-lang">edit</code> command extends <code class="hljs inline no-lang">Command</code> and implements <code class="hljs inline no-lang">Undoable</code>. The <code class="hljs inline no-lang">edit</code> command updates an existing contact based on the supplied index and parameters, of which
 only the <code class="hljs inline no-lang">INDEX</code> supplied, as well as any one field to update is compulsory.
-The <code class="hljs inline no-lang">edit</code> command is undoable.</p> <p>Given below is an example usage scenario and how the <code class="hljs inline no-lang">edit</code> command behaves at each step.</p> <p>Step 1. The user executes <code class="hljs inline no-lang">edit 1 n/John Doe p/+65 98765432</code>.</p> <div class="alert box-container seamless" data-v-474166ec><!----> <div class="header-and-body" data-v-474166ec><!----> <div class="box-body-wrapper" data-v-474166ec><div class="icon-wrapper  text-info" data-v-474166ec><i class="fas fa-info" data-v-474166ec></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-474166ec></div> <div class="contents" data-v-474166ec><p data-v-474166ec><strong data-v-474166ec>Note:</strong> An error message will be displayed if attempting to edit a contact to have with duplicate <code class="hljs inline no-lang" data-v-474166ec>NAME</code>, <code class="hljs inline no-lang" data-v-474166ec>PHONE</code> or <code class="hljs inline no-lang" data-v-474166ec>EMAIL</code>.</p></div> <!----></div></div></div> <p>Step 2. The <code class="hljs inline no-lang">edit</code> command updates the details of the contact with index 1 to have the name John Doe and phone number +65 98765432.</p> <p>The following sequence diagram shows how an <code class="hljs inline no-lang">edit</code> command goes through the <code class="hljs inline no-lang">Logic</code> component:</p> <span class="image-wrapper"><img src="/tp/diagrams/EditSequenceDiagram.png" alt="EditSequenceDiagram" width="" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <div class="alert box-container seamless" data-v-474166ec><!----> <div class="header-and-body" data-v-474166ec><!----> <div class="box-body-wrapper" data-v-474166ec><div class="icon-wrapper  text-info" data-v-474166ec><i class="fas fa-info" data-v-474166ec></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-474166ec></div> <div class="contents" data-v-474166ec><p data-v-474166ec><strong data-v-474166ec>Note:</strong> There are no destroy markers (X) for <code class="hljs inline no-lang" data-v-474166ec>EditCommand</code> as it is preserved in the <code class="hljs inline no-lang" data-v-474166ec>undo</code> command stack.</p> <p data-v-474166ec>The following activity diagram summarizes what happens when a user executes a <code class="hljs inline no-lang" data-v-474166ec>edit</code> command:</p> <span class="image-wrapper"><img src="/tp/diagrams/EditActivityDiagram.png" width="1000" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <h3 id="delete-command" data-v-474166ec>Delete Command<a href="#delete-command" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h3> <h4 id="implementation-4" data-v-474166ec>Implementation<a href="#implementation-4" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h4> <p data-v-474166ec>The <code class="hljs inline no-lang" data-v-474166ec>delete</code> command extends <code class="hljs inline no-lang" data-v-474166ec>Command</code> and implements <code class="hljs inline no-lang" data-v-474166ec>Undoable</code>. The <code class="hljs inline no-lang" data-v-474166ec>delete</code> command deletes a contact based on its index. The <code class="hljs inline no-lang" data-v-474166ec>delete</code> command is undoable.</p> <p data-v-474166ec>Given below is an example usage scenario and how the <code class="hljs inline no-lang" data-v-474166ec>delete</code> command behaves at each step.</p> <p data-v-474166ec>Step 1. The user input a delete command followed by an index. For example: <code class="hljs inline no-lang" data-v-474166ec>delete 1</code> deletes the contact with an index of 1.</p> <p data-v-474166ec>Step 2. The parser parses the input command and returns a <code class="hljs inline no-lang" data-v-474166ec>DeleteCommand</code>.</p> <p data-v-474166ec>Step 3. The <code class="hljs inline no-lang" data-v-474166ec>DeleteCommand</code> is executed by the LogicManager and delete popup get displayed.</p> <p data-v-474166ec>Step 4. If user click <code class="hljs inline no-lang" data-v-474166ec>Ok</code> on the pop-up, model updates the filteredPersonList and removes the contact, otherwise cancel the deletion.</p> <p data-v-474166ec>The following sequence diagram shows how a <code class="hljs inline no-lang" data-v-474166ec>delete</code> command goes through the <code class="hljs inline no-lang" data-v-474166ec>Logic</code> component:</p> <span class="image-wrapper"><img src="/tp/diagrams/DeleteSequenceDiagram.png" alt="Interactions inside the Logic Component for the `delete 1` Command" width="" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <p data-v-474166ec>The following activity diagram summarizes the delete pop-up mechanism:</p> <span class="image-wrapper"><img src="/tp/diagrams/DeletePopupActivityDiagram.png" alt="Popup interactions inside the Logic Component for the `delete 1` Command" width="800" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <h3 id="clean-feature" data-v-474166ec>Clean feature<a href="#clean-feature" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h3> <h4 id="implementation-5" data-v-474166ec>Implementation<a href="#implementation-5" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h4> <p data-v-474166ec>The <code class="hljs inline no-lang" data-v-474166ec>clean</code> command extends <code class="hljs inline no-lang" data-v-474166ec>Command</code> and implements <code class="hljs inline no-lang" data-v-474166ec>Undoable</code>. The <code class="hljs inline no-lang" data-v-474166ec>clean</code> command deletes the contacts whose <code class="hljs inline no-lang" data-v-474166ec>GradYear</code> field is earlier than the current year, deleting contacts who have graduated from the address book. The <code class="hljs inline no-lang" data-v-474166ec>clean</code> command is undoable.</p> <p data-v-474166ec>Given below is an example usage scenario and how the <code class="hljs inline no-lang" data-v-474166ec>clean</code> command behaves at each step.</p> <p data-v-474166ec>Step 1. The user executes <code class="hljs inline no-lang" data-v-474166ec>clean</code> in 2024.</p> <div class="alert box-container seamless" data-v-474166ec><!----> <div class="header-and-body" data-v-474166ec><!----> <div class="box-body-wrapper" data-v-474166ec><div class="icon-wrapper  text-info" data-v-474166ec><i class="fas fa-info" data-v-474166ec></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-474166ec></div> <div class="contents" data-v-474166ec><p data-v-474166ec><strong data-v-474166ec>Note:</strong> The <code class="hljs inline no-lang" data-v-474166ec>clean</code> command checks if there are contacts with <code class="hljs inline no-lang" data-v-474166ec>GradYear</code> 2023 or earlier. If there are none, it will return an error message to the user.</p></div> <!----></div></div></div> <p data-v-474166ec>Step 2. The <code class="hljs inline no-lang" data-v-474166ec>clean</code> command deletes all contacts with <code class="hljs inline no-lang" data-v-474166ec>GradYear</code> 2023 or earlier.</p> <p data-v-474166ec>The following sequence diagram shows how a <code class="hljs inline no-lang" data-v-474166ec>clean</code> command goes through the <code class="hljs inline no-lang" data-v-474166ec>Logic</code> component:</p> <span class="image-wrapper"><img src="/tp/diagrams/CleanSequenceDiagram.png" alt="CleanSequenceDiagram-Logic" width="" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <div class="alert box-container seamless" data-v-474166ec><!----> <div class="header-and-body" data-v-474166ec><!----> <div class="box-body-wrapper" data-v-474166ec><div class="icon-wrapper  text-info" data-v-474166ec><i class="fas fa-info" data-v-474166ec></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-474166ec></div> <div class="contents" data-v-474166ec><p data-v-474166ec><strong data-v-474166ec>Note:</strong> There are no destroy markers (X) for <code class="hljs inline no-lang" data-v-474166ec>CleanCommand</code> and <code class="hljs inline no-lang" data-v-474166ec>GradYearPredicate</code> as they are preserved in the <code class="hljs inline no-lang" data-v-474166ec>undo</code> command stack.</p></div> <!----></div></div></div> <p data-v-474166ec>The following activity diagram summarizes what happens when a user executes a <code class="hljs inline no-lang" data-v-474166ec>clean</code> command:</p> <span class="image-wrapper"><img src="/tp/diagrams/CleanActivityDiagram.png" width="800" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <h4 id="design-considerations" data-v-474166ec>Design considerations:<a href="#design-considerations" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h4> <p data-v-474166ec><strong data-v-474166ec>Aspect: UI display when <code class="hljs inline no-lang" data-v-474166ec>clean</code> executes after a <code class="hljs inline no-lang" data-v-474166ec>find</code> command:</strong></p> <ul data-v-474166ec><li data-v-474166ec><p data-v-474166ec><strong data-v-474166ec>Alternative 1:</strong> Display all contacts.</p> <ul data-v-474166ec><li data-v-474166ec>Pros: Shows users the full result of <code class="hljs inline no-lang" data-v-474166ec>clean</code>.</li> <li data-v-474166ec>Cons: Forgets the results of the <code class="hljs inline no-lang" data-v-474166ec>find</code> command.</li></ul></li> <li data-v-474166ec><p data-v-474166ec><strong data-v-474166ec>Alternative 2 (current implementation):</strong> Retain the search results of <code class="hljs inline no-lang" data-v-474166ec>find</code> and only display those contacts.</p> <ul data-v-474166ec><li data-v-474166ec>Pros: Allow users to retain their serach results from <code class="hljs inline no-lang" data-v-474166ec>find</code>.</li> <li data-v-474166ec>Cons: Users cannot see the full extent of <code class="hljs inline no-lang" data-v-474166ec>clean</code> until they return to the default view with <code class="hljs inline no-lang" data-v-474166ec>list</code>.</li></ul></li></ul> <h3 id="find-command" data-v-474166ec>Find Command<a href="#find-command" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h3> <h4 id="implementation-6" data-v-474166ec>Implementation<a href="#implementation-6" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h4> <p data-v-474166ec>The <code class="hljs inline no-lang" data-v-474166ec>find</code> command extends <code class="hljs inline no-lang" data-v-474166ec>Command</code> and implements <code class="hljs inline no-lang" data-v-474166ec>Undoable</code>. The <code class="hljs inline no-lang" data-v-474166ec>find</code> command searches and filters the contacts based on the following parameters: <code class="hljs inline no-lang" data-v-474166ec>NAME</code>, <code class="hljs inline no-lang" data-v-474166ec>PHONE</code>, <code class="hljs inline no-lang" data-v-474166ec>ROOM_NUMBER</code>, and <code class="hljs inline no-lang" data-v-474166ec>TAG</code>.The find command is undoable.</p> <p data-v-474166ec>Given below is an example usage scenario and how the <code class="hljs inline no-lang" data-v-474166ec>find</code> command behaves at each step.</p> <p data-v-474166ec>Step 1. The user issues a <code class="hljs inline no-lang" data-v-474166ec>find</code> command followed by specific parameters.
-For example: <code class="hljs inline no-lang" data-v-474166ec>t/friends n/Alex r/08-0805 p/9124 6892</code>, searches for a profile with a
-tag of friends, a name called Alex, a room number of 08-0805, and a phone number of 9124 6842.</p> <div class="alert box-container seamless" data-v-474166ec><!----> <div class="header-and-body" data-v-474166ec><!----> <div class="box-body-wrapper" data-v-474166ec><div class="icon-wrapper  text-info" data-v-474166ec><i class="fas fa-info" data-v-474166ec></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-474166ec></div> <div class="contents" data-v-474166ec><p data-v-474166ec><strong data-v-474166ec>Note</strong> : These parameters can be combined in any sequence, allowing for versatile parameter configurations.</p></div> <!----></div></div></div> <p data-v-474166ec>Step 3. The <code class="hljs inline no-lang" data-v-474166ec>FindCommand</code> get executed and updates the filteredPersonList within the model, reflecting the search.</p> <p data-v-474166ec>results based on the specified criteria.</p> <span class="image-wrapper"><img src="/tp/diagrams/FindSequenceDiagram.png" alt="FindSequenceDiagram" width="1000" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <h3 id="export-feature" data-v-474166ec>Export feature<a href="#export-feature" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h3> <h3 id="implementation-7" data-v-474166ec>Implementation<a href="#implementation-7" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h3> <p data-v-474166ec>The <code class="hljs inline no-lang" data-v-474166ec>export</code> command extends <code class="hljs inline no-lang" data-v-474166ec>Command</code>. The <code class="hljs inline no-lang" data-v-474166ec>export</code> command exports the data into a new file.</p> <p data-v-474166ec>Given below is an example usage scenario and how the <code class="hljs inline no-lang" data-v-474166ec>export</code> command behaves at each step.</p> <p data-v-474166ec>Step 1: The user executes <code class="hljs inline no-lang" data-v-474166ec>export</code>.</p> <p data-v-474166ec>Step 2: The <code class="hljs inline no-lang" data-v-474166ec>export</code> command exports all data currently contained by DorManagerPro to a JSON file in the data folder. The name of the JSON file is the time of export.</p> <p data-v-474166ec>The following sequence diagram shows how a <code class="hljs inline no-lang" data-v-474166ec>export</code> command goes through the <code class="hljs inline no-lang" data-v-474166ec>Logic</code> component:</p> <h3 id="design-considerations-2" data-v-474166ec>Design considerations:<a href="#design-considerations-2" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h3> <p data-v-474166ec><strong data-v-474166ec>Aspect</strong>: The name of the JSON file on <code class="hljs inline no-lang" data-v-474166ec>export</code>.</p> <ul data-v-474166ec><li data-v-474166ec><p data-v-474166ec><strong data-v-474166ec>Alternative 1:</strong> Use a generic format such as <code class="hljs inline no-lang" data-v-474166ec>SAVE_FILE_1</code>, <code class="hljs inline no-lang" data-v-474166ec>SAVE_FILE_2</code>.</p> <ul data-v-474166ec><li data-v-474166ec>Pros: Easy for the user to know at first glance which save file was created latest as well as the chronological order of their creation.</li> <li data-v-474166ec>Cons: Does not tell the user at what time they actually exported the save file or contents of the save file.</li></ul></li> <li data-v-474166ec><p data-v-474166ec><strong data-v-474166ec>Alternative 2 (current implementation):</strong> The time of the device's system at the moment of <code class="hljs inline no-lang" data-v-474166ec>export</code>.</p> <ul data-v-474166ec><li data-v-474166ec>Pros: Allows for pinpoint of exact save files as no two files can be exported at the same time.</li> <li data-v-474166ec>Cons: Takes longer to manually understand the name of the save file when trying to locate a specific one, especially when multiple <code class="hljs inline no-lang" data-v-474166ec>exports</code> happen within a short peri            od of time. Also has no mention of contents of JSON file.</li></ul></li> <li data-v-474166ec><p data-v-474166ec><strong data-v-474166ec>Alternative 3:</strong> A brief summary of the file such as <code class="hljs inline no-lang" data-v-474166ec>FIRST-Alex_Jones LENGTH-20</code>.</p> <ul data-v-474166ec><li data-v-474166ec>Pros: Easy for the user to know at first glance what the contents of each file are.</li> <li data-v-474166ec>Cons: Does not tell the user at what time they actually exported the save file. Also has no indication of the chronology of creation of the files, and hence no information on which file was the last to be created. Additionally, it would become complicated when exporting files with similar data.</li></ul></li></ul> <h3 id="import-feature" data-v-474166ec>Import feature<a href="#import-feature" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h3> <h3 id="implementation-8" data-v-474166ec>Implementation<a href="#implementation-8" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h3> <p data-v-474166ec>The <code class="hljs inline no-lang" data-v-474166ec>import</code> command implements <code class="hljs inline no-lang" data-v-474166ec>Undoable</code>. The <code class="hljs inline no-lang" data-v-474166ec>import</code> imports a file to be loaded into DorManagerPro. The <code class="hljs inline no-lang" data-v-474166ec>import</code> command is undoable.</p> <p data-v-474166ec>Given below is an example usage scenario and how the <code class="hljs inline no-lang" data-v-474166ec>import</code> command behaves at each step.</p> <p data-v-474166ec>Step 1. The user executes <code class="hljs inline no-lang" data-v-474166ec>import fp/./data/SaveFile3.json</code></p> <p data-v-474166ec>Step 2. The</p> <p data-v-474166ec>The following sequence diagram shows how a <code class="hljs inline no-lang" data-v-474166ec>import</code> command goes through the <code class="hljs inline no-lang" data-v-474166ec>Logic</code> component:</p> <h3 id="design-considerations-3" data-v-474166ec>Design considerations:<a href="#design-considerations-3" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h3> <p data-v-474166ec><strong data-v-474166ec>Aspect: The exact format of the <code class="hljs inline no-lang" data-v-474166ec>FILE_PATH</code> parameter</strong></p> <ul data-v-474166ec><li data-v-474166ec><p data-v-474166ec><strong data-v-474166ec>Alternative 1:</strong> Take in only the name of the JSON file in the data folder of the home folder.</p> <ul data-v-474166ec><li data-v-474166ec>Pros: Shorter command for the user to type. It is also considerably less complicated than alternative 2, making it more accessible to non-technical users.</li> <li data-v-474166ec>Cons: Limits the ability of import to only the contents of the data folder. Also requires user to move any JSON file they may want to <code class="hljs inline no-lang" data-v-474166ec>import</code> into the data folder.</li></ul></li> <li data-v-474166ec><p data-v-474166ec><strong data-v-474166ec>Alternative 2 (current implementation):</strong> Require the user to type in the full file path of the JSON file they wish to <code class="hljs inline no-lang" data-v-474166ec>import</code>.</p> <ul data-v-474166ec><li data-v-474166ec>Pros: Allow greater flexibility for user to import JSON files from any location of the device.</li> <li data-v-474166ec>Cons: Significantly longer command for the user to type. Requires user to have prior knowledge of what the JSON's filepath is, increasing complexity.</li></ul></li></ul> <h3 id="undo-feature" data-v-474166ec>Undo feature<a href="#undo-feature" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h3> <h4 id="implementation-9" data-v-474166ec>Implementation<a href="#implementation-9" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h4> <p data-v-474166ec>The undo mechanism is facilitated by the interface <code class="hljs inline no-lang" data-v-474166ec>Undoable</code>.
-It has the <code class="hljs inline no-lang" data-v-474166ec>undo()</code> method. The <code class="hljs inline no-lang" data-v-474166ec>undo()</code> method is called when the user executes the <code class="hljs inline no-lang" data-v-474166ec>undo</code> command.
-The <code class="hljs inline no-lang" data-v-474166ec>undo()</code> method reverses the effects of the command that was previously executed.
-The <code class="hljs inline no-lang" data-v-474166ec>undo()</code> method is implemented in the undoable command classes, such as <code class="hljs inline no-lang" data-v-474166ec>AddCommand</code>, <code class="hljs inline no-lang" data-v-474166ec>DeleteCommand</code>, <code class="hljs inline no-lang" data-v-474166ec>EditCommand</code>, etc.</p> <p data-v-474166ec>The <code class="hljs inline no-lang" data-v-474166ec>Model</code> component stores a history of executed undoable commands in a stack.
+The <code class="hljs inline no-lang">edit</code> command is undoable.</p> <p>Given below is an example usage scenario and how the <code class="hljs inline no-lang">edit</code> command behaves at each step.</p> <p>Step 1. The user executes <code class="hljs inline no-lang">edit 1 n/John Doe p/+65 98765432</code>.</p> <div class="alert box-container seamless" data-v-474166ec><!----> <div class="header-and-body" data-v-474166ec><!----> <div class="box-body-wrapper" data-v-474166ec><div class="icon-wrapper  text-info" data-v-474166ec><i class="fas fa-info" data-v-474166ec></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-474166ec></div> <div class="contents" data-v-474166ec><p data-v-474166ec><strong data-v-474166ec>Note:</strong> An error message will be displayed if attempting to edit a contact to have with duplicate <code class="hljs inline no-lang" data-v-474166ec>NAME</code>, <code class="hljs inline no-lang" data-v-474166ec>PHONE</code> or <code class="hljs inline no-lang" data-v-474166ec>EMAIL</code>.</p></div> <!----></div></div></div> <p>Step 2. The <code class="hljs inline no-lang">edit</code> command updates the details of the contact with index 1 to have the name John Doe and phone number +65 98765432.</p> <p>The following sequence diagram shows how an <code class="hljs inline no-lang">edit</code> command goes through the <code class="hljs inline no-lang">Logic</code> component:</p> <span class="image-wrapper"><img src="/tp/diagrams/EditSequenceDiagram.png" alt="EditSequenceDiagram" width="" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <div class="alert box-container seamless" data-v-474166ec><!----> <div class="header-and-body" data-v-474166ec><!----> <div class="box-body-wrapper" data-v-474166ec><div class="icon-wrapper  text-info" data-v-474166ec><i class="fas fa-info" data-v-474166ec></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-474166ec></div> <div class="contents" data-v-474166ec><p data-v-474166ec><strong data-v-474166ec>Note:</strong> There are no destroy markers (X) for <code class="hljs inline no-lang" data-v-474166ec>EditCommand</code> as it is preserved in the <code class="hljs inline no-lang" data-v-474166ec>undo</code> command stack.</p></div> <!----></div></div></div> <p>The following activity diagram summarizes what happens when a user executes a <code class="hljs inline no-lang">edit</code> command:</p> <span class="image-wrapper"><img src="/tp/diagrams/EditActivityDiagram.png" width="1000" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <h3 id="delete-command">Delete Command<a href="#delete-command" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <h4 id="implementation-4">Implementation<a href="#implementation-4" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <p>The <code class="hljs inline no-lang">delete</code> command extends <code class="hljs inline no-lang">Command</code> and implements <code class="hljs inline no-lang">Undoable</code>. The <code class="hljs inline no-lang">delete</code> command deletes a contact based on its index. The <code class="hljs inline no-lang">delete</code> command is undoable.</p> <p>Given below is an example usage scenario and how the <code class="hljs inline no-lang">delete</code> command behaves at each step.</p> <p>Step 1. The user input a delete command followed by an index. For example: <code class="hljs inline no-lang">delete 1</code> deletes the contact with an index of 1.</p> <p>Step 2. The parser parses the input command and returns a <code class="hljs inline no-lang">DeleteCommand</code>.</p> <p>Step 3. The <code class="hljs inline no-lang">DeleteCommand</code> is executed by the LogicManager and delete popup get displayed.</p> <p>Step 4. If user click <code class="hljs inline no-lang">Ok</code> on the pop-up, model updates the filteredPersonList and removes the contact, otherwise cancel the deletion.</p> <p>The following sequence diagram shows how a <code class="hljs inline no-lang">delete</code> command goes through the <code class="hljs inline no-lang">Logic</code> component:</p> <span class="image-wrapper"><img src="/tp/diagrams/DeleteSequenceDiagram.png" alt="Interactions inside the Logic Component for the `delete 1` Command" width="" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <p>The following activity diagram summarizes the delete pop-up mechanism:</p> <span class="image-wrapper"><img src="/tp/diagrams/DeletePopupActivityDiagram.png" alt="Popup interactions inside the Logic Component for the `delete 1` Command" width="800" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <h3 id="clean-feature">Clean feature<a href="#clean-feature" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <h4 id="implementation-5">Implementation<a href="#implementation-5" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <p>The <code class="hljs inline no-lang">clean</code> command extends <code class="hljs inline no-lang">Command</code> and implements <code class="hljs inline no-lang">Undoable</code>. The <code class="hljs inline no-lang">clean</code> command deletes the contacts whose <code class="hljs inline no-lang">GradYear</code> field is earlier than the current year, deleting contacts who have graduated from the address book. The <code class="hljs inline no-lang">clean</code> command is undoable.</p> <p>Given below is an example usage scenario and how the <code class="hljs inline no-lang">clean</code> command behaves at each step.</p> <p>Step 1. The user executes <code class="hljs inline no-lang">clean</code> in 2024.</p> <div class="alert box-container seamless" data-v-474166ec><!----> <div class="header-and-body" data-v-474166ec><!----> <div class="box-body-wrapper" data-v-474166ec><div class="icon-wrapper  text-info" data-v-474166ec><i class="fas fa-info" data-v-474166ec></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-474166ec></div> <div class="contents" data-v-474166ec><p data-v-474166ec><strong data-v-474166ec>Note:</strong> The <code class="hljs inline no-lang" data-v-474166ec>clean</code> command checks if there are contacts with <code class="hljs inline no-lang" data-v-474166ec>GradYear</code> 2023 or earlier. If there are none, it will return an error message to the user.</p></div> <!----></div></div></div> <p>Step 2. The <code class="hljs inline no-lang">clean</code> command deletes all contacts with <code class="hljs inline no-lang">GradYear</code> 2023 or earlier.</p> <p>The following sequence diagram shows how a <code class="hljs inline no-lang">clean</code> command goes through the <code class="hljs inline no-lang">Logic</code> component:</p> <span class="image-wrapper"><img src="/tp/diagrams/CleanSequenceDiagram.png" alt="CleanSequenceDiagram-Logic" width="" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <div class="alert box-container seamless" data-v-474166ec><!----> <div class="header-and-body" data-v-474166ec><!----> <div class="box-body-wrapper" data-v-474166ec><div class="icon-wrapper  text-info" data-v-474166ec><i class="fas fa-info" data-v-474166ec></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-474166ec></div> <div class="contents" data-v-474166ec><p data-v-474166ec><strong data-v-474166ec>Note:</strong> There are no destroy markers (X) for <code class="hljs inline no-lang" data-v-474166ec>CleanCommand</code> and <code class="hljs inline no-lang" data-v-474166ec>GradYearPredicate</code> as they are preserved in the <code class="hljs inline no-lang" data-v-474166ec>undo</code> command stack.</p></div> <!----></div></div></div> <p>The following activity diagram summarizes what happens when a user executes a <code class="hljs inline no-lang">clean</code> command:</p> <span class="image-wrapper"><img src="/tp/diagrams/CleanActivityDiagram.png" width="800" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <h4 id="design-considerations">Design considerations:<a href="#design-considerations" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <p><strong>Aspect: UI display when <code class="hljs inline no-lang">clean</code> executes after a <code class="hljs inline no-lang">find</code> command:</strong></p> <ul><li><p><strong>Alternative 1:</strong> Display all contacts.</p> <ul><li>Pros: Shows users the full result of <code class="hljs inline no-lang">clean</code>.</li> <li>Cons: Forgets the results of the <code class="hljs inline no-lang">find</code> command.</li></ul></li> <li><p><strong>Alternative 2 (current implementation):</strong> Retain the search results of <code class="hljs inline no-lang">find</code> and only display those contacts.</p> <ul><li>Pros: Allow users to retain their serach results from <code class="hljs inline no-lang">find</code>.</li> <li>Cons: Users cannot see the full extent of <code class="hljs inline no-lang">clean</code> until they return to the default view with <code class="hljs inline no-lang">list</code>.</li></ul></li></ul> <h3 id="find-command">Find Command<a href="#find-command" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <h4 id="implementation-6">Implementation<a href="#implementation-6" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <p>The <code class="hljs inline no-lang">find</code> command extends <code class="hljs inline no-lang">Command</code> and implements <code class="hljs inline no-lang">Undoable</code>. The <code class="hljs inline no-lang">find</code> command searches and filters the contacts based on the following parameters: <code class="hljs inline no-lang">NAME</code>, <code class="hljs inline no-lang">PHONE</code>, <code class="hljs inline no-lang">ROOM_NUMBER</code>, and <code class="hljs inline no-lang">TAG</code>.The find command is undoable.</p> <p>Given below is an example usage scenario and how the <code class="hljs inline no-lang">find</code> command behaves at each step.</p> <p>Step 1. The user issues a <code class="hljs inline no-lang">find</code> command followed by specific parameters.
+For example: <code class="hljs inline no-lang">t/friends n/Alex r/08-0805 p/9124 6892</code>, searches for a profile with a
+tag of friends, a name called Alex, a room number of 08-0805, and a phone number of 9124 6842.</p> <div class="alert box-container seamless" data-v-474166ec><!----> <div class="header-and-body" data-v-474166ec><!----> <div class="box-body-wrapper" data-v-474166ec><div class="icon-wrapper  text-info" data-v-474166ec><i class="fas fa-info" data-v-474166ec></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-474166ec></div> <div class="contents" data-v-474166ec><p data-v-474166ec><strong data-v-474166ec>Note</strong> : These parameters can be combined in any sequence, allowing for versatile parameter configurations.</p></div> <!----></div></div></div> <p>Step 3. The <code class="hljs inline no-lang">FindCommand</code> get executed and updates the filteredPersonList within the model, reflecting the search.</p> <p>results based on the specified criteria.</p> <span class="image-wrapper"><img src="/tp/diagrams/FindSequenceDiagram.png" alt="FindSequenceDiagram" width="1000" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <h3 id="export-feature">Export feature<a href="#export-feature" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <h3 id="implementation-7">Implementation<a href="#implementation-7" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>The <code class="hljs inline no-lang">export</code> command extends <code class="hljs inline no-lang">FileAccessCommand</code> and by extension, <code class="hljs inline no-lang">Command</code>. The <code class="hljs inline no-lang">export</code> command exports the contacts in DorManagerPro to a JSON file in the data folder of the app.</p> <p>Given below is an example usage scenario and how the <code class="hljs inline no-lang">export</code> command behaves at each step.</p> <p>Step 1: The user executes the <code class="hljs inline no-lang">export</code> command.</p> <p>Step 2: The <code class="hljs inline no-lang">export</code> command exports all data currently contained by DorManagerPro to a JSON file in the data folder of the application.</p> <div class="alert box-container seamless" data-v-474166ec><!----> <div class="header-and-body" data-v-474166ec><!----> <div class="box-body-wrapper" data-v-474166ec><div class="icon-wrapper  text-info" data-v-474166ec><i class="fas fa-info" data-v-474166ec></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-474166ec></div> <div class="contents" data-v-474166ec><p data-v-474166ec><strong data-v-474166ec>Note:</strong> The name of the JSON file is the time of export in the format MM-dd-yyyy-HHmmssPM.</p></div> <!----></div></div></div> <p>The following sequence diagram shows how an <code class="hljs inline no-lang">export</code> command goes through the <code class="hljs inline no-lang">Logic</code> component:</p> <span class="image-wrapper"><img src="/tp/diagrams/ExportSequenceDiagram.png" alt="ExportSequenceDiagram" width="" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span>
+
+&gt; The lifeline for `ExportCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+
+The following activity diagram summarizes what happens when a user executes an `export` command:
+
+<span class="image-wrapper"><img src="/tp/diagrams/ExportActivityDiagram.png" alt="ExportActivityDiagram" width="" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span>
+
+
+### Design considerations:
+
+**Aspect**: The name of the JSON file on `export`.
+
+* **Alternative 1:** Use a generic format such as `SAVE_FILE_1`, `SAVE_FILE_2`.
+    * Pros: Easy for the user to know at first glance which save file was created latest as well as the chronological order of their creation.
+    * Cons: Does not tell the user at what time they actually exported the save file or contents of the save file.
+
+* **Alternative 2 (current implementation):** The time of the device's system at the moment of `export`.
+    * Pros: Allows for pinpoint of exact save files as no two files can be exported at the same time.
+    * Cons: Takes longer to manually understand the name of the save file when trying to locate a specific one, especially when multiple `exports` happen within a short peri            od of time. Also has no mention of contents of JSON file.
+
+* **Alternative 3:** A brief summary of the file such as `FIRST-Alex_Jones LENGTH-20`.
+    * Pros: Easy for the user to know at first glance what the contents of each file are.
+    * Cons: Does not tell the user at what time they actually exported the save file. Also has no indication of the chronology of creation of the files, and hence no information on which file was the last to be created. Additionally, it would become complicated when exporting files with similar data.
+
+### Import feature
+
+### Implementation
+
+The `import` command extends `FileAccessCommand` and by extension, `Command`. It also implements `Undoable`. `import` loads data from a save file into DorManagerPro, with the file path of the save file provided by the user. The `import` command is undoable.
+
+Given below is an example usage scenario and how the `import` command behaves at each step.
+
+Step 1. The user executes `import fp/./data/SaveFile3.json`
+
+Step 2. The `import` command locates the save file via the file path and reads the data in the save file into DorManagerPro if it is of the correct format and has valid data.
+
+<div class="alert box-container seamless" data-v-474166ec><!----> <div class="header-and-body" data-v-474166ec><!----> <div class="box-body-wrapper" data-v-474166ec><div class="icon-wrapper  text-info" data-v-474166ec><i class="fas fa-info" data-v-474166ec></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-474166ec></div> <div class="contents" data-v-474166ec>
+
+**Note:** An error message is raised if the file path does not exist in the device or if the file itself cannot be read into DorManagerPro.
+
+</div> <!----></div></div></div>
+
+The following sequence diagram shows how an `import fp/./data/SaveFile3.json` command goes through the `Logic` component:
+<span class="image-wrapper"><img src="/tp/diagrams/ImportSequenceDiagram.png" alt="ImportSequenceDiagram" width="" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <div class="alert box-container seamless" data-v-474166ec><!----> <div class="header-and-body" data-v-474166ec><!----> <div class="box-body-wrapper" data-v-474166ec><div class="icon-wrapper  text-info" data-v-474166ec><i class="fas fa-info" data-v-474166ec></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-474166ec></div> <div class="contents" data-v-474166ec>
+
+**Note:** There is no destroy marker (X) for `ImportCommand` as it is preserved in the `undo` command stack. <br data-v-474166ec>
+The lifeline for `ImportCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+
+</div> <!----></div></div></div>
+
+The following activity diagram summarizes what happens when a user executes an `import` command:
+
+<span class="image-wrapper"><img src="/tp/diagrams/ImportActivityDiagram.png" alt="ImportActivityDiagram" width="" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span>
+
+### Design considerations:
+
+**Aspect: The exact format of the `FILE_PATH` parameter**
+
+* **Alternative 1:** Take in only the name of the JSON file in the data folder of the home folder.
+    * Pros: Shorter command for the user to type. It is also considerably less complicated than alternative 2, making it more accessible to non-technical users.
+    * Cons: Limits the ability of import to only the contents of the data folder. Also requires user to move any JSON file they may want to `import` into the data folder.
+
+* **Alternative 2 (current implementation):** Require the user to type in the full file path of the JSON file they wish to `import`.
+    * Pros: Allow greater flexibility for user to import JSON files from any location of the device.
+    * Cons: Significantly longer command for the user to type. Requires user to have prior knowledge of what the JSON's filepath is, increasing complexity.
+
+### Undo feature
+
+#### Implementation
+
+The undo mechanism is facilitated by the interface `Undoable`.
+It has the `undo()` method. The `undo()` method is called when the user executes the `undo` command.
+The `undo()` method reverses the effects of the command that was previously executed.
+The `undo()` method is implemented in the undoable command classes, such as `AddCommand`, `DeleteCommand`, `EditCommand`, etc.
+
+The `Model` component stores a history of executed undoable commands in a stack.
 When a command is executed successfully, the command is pushed onto the stack.
-When the user executes the <code class="hljs inline no-lang" data-v-474166ec>undo</code> command, the <code class="hljs inline no-lang" data-v-474166ec>Model</code> component pops the last command from the stack and calls the <code class="hljs inline no-lang" data-v-474166ec>undo()</code> method of the command.</p> <p data-v-474166ec>These operations are exposed in the <code class="hljs inline no-lang" data-v-474166ec>Model</code> interface as <code class="hljs inline no-lang" data-v-474166ec>Model#pushToUndoStack()</code> and <code class="hljs inline no-lang" data-v-474166ec>Model#undoAddressBook()</code>.</p> <p data-v-474166ec>Given below is an example usage scenario and how the undo mechanism behaves at each step.</p> <p data-v-474166ec>Step 1. The user launches the application for the first time. The undo stack is initialised as empty.</p> <p data-v-474166ec>Step 2. The user executes <code class="hljs inline no-lang" data-v-474166ec>delete 5</code> command to delete the 5th person in the address book. The <code class="hljs inline no-lang" data-v-474166ec>delete</code> command is pushed onto the undo stack.</p> <p data-v-474166ec>Step 3. The user executes <code class="hljs inline no-lang" data-v-474166ec>add n/David …​</code> to add a new person. The <code class="hljs inline no-lang" data-v-474166ec>add</code> command is also pushed onto the undo stack.</p> <div class="alert box-container seamless" data-v-474166ec><!----> <div class="header-and-body" data-v-474166ec><!----> <div class="box-body-wrapper" data-v-474166ec><div class="icon-wrapper  text-info" data-v-474166ec><i class="fas fa-info" data-v-474166ec></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-474166ec></div> <div class="contents" data-v-474166ec><p data-v-474166ec><strong data-v-474166ec>Note:</strong> If a command is not undoable or fails its execution, it will not be pushed onto the undo stack.
-Step 4. The user now decides that adding the person was a mistake, and decides to undo that action by executing the <code class="hljs inline no-lang" data-v-474166ec>undo</code> command. The <code class="hljs inline no-lang" data-v-474166ec>undo</code> command will call <code class="hljs inline no-lang" data-v-474166ec>Model#undoAddressBook()</code>, which will pop the last command from the undo stack and call its <code class="hljs inline no-lang" data-v-474166ec>undo()</code> method. The <code class="hljs inline no-lang" data-v-474166ec>undo()</code> method of the command will then reverse the effects of the command.
-<br data-v-474166ec></p> <p data-v-474166ec><strong data-v-474166ec>Note:</strong> If the undo stack is empty, then there are no commands to undo. The <code class="hljs inline no-lang" data-v-474166ec>undo</code> command checks if this is the case. If so, it will return an error to the user.</p></div> <!----></div></div></div> <p data-v-474166ec>The following sequence diagram shows how an undo operation goes through the <code class="hljs inline no-lang" data-v-474166ec>Logic</code> component:</p> <span class="image-wrapper"><img src="/tp/diagrams/UndoSequenceDiagram-Logic.png" alt="UndoSequenceDiagram-Logic" width="" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <div class="alert box-container seamless" data-v-474166ec><!----> <div class="header-and-body" data-v-474166ec><!----> <div class="box-body-wrapper" data-v-474166ec><div class="icon-wrapper  text-info" data-v-474166ec><i class="fas fa-info" data-v-474166ec></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-474166ec></div> <div class="contents" data-v-474166ec><p data-v-474166ec><strong data-v-474166ec>Note:</strong> The lifeline for <code class="hljs inline no-lang" data-v-474166ec>UndoCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.</p></div> <!----></div></div></div> <p data-v-474166ec>Similarly, how an undo operation goes through the <code class="hljs inline no-lang" data-v-474166ec>Model</code> component is shown below:</p> <span class="image-wrapper"><img src="/tp/diagrams/UndoSequenceDiagram-Model.png" alt="UndoSequenceDiagram-Model" width="" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <p data-v-474166ec>Step 5. The user then decides to execute the command <code class="hljs inline no-lang" data-v-474166ec>list</code>. Commands that do not modify the address book, such as <code class="hljs inline no-lang" data-v-474166ec>list</code>, will not be pushed to the undo stack. Thus, the undo stack remains unchanged.</p> <p data-v-474166ec>Step 6. The user executes <code class="hljs inline no-lang" data-v-474166ec>clear</code>, which is pushed to the undo stack.</p> <p data-v-474166ec>The following activity diagram summarizes what happens when a user executes a new command:</p> <span class="image-wrapper"><img src="/tp/diagrams/CommitActivityDiagram.png" width="400" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <h4 id="design-considerations-4" data-v-474166ec>Design considerations:<a href="#design-considerations-4" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h4> <p data-v-474166ec><strong data-v-474166ec>Aspect: How undo executes:</strong></p> <ul data-v-474166ec><li data-v-474166ec><p data-v-474166ec><strong data-v-474166ec>Alternative 1:</strong> Saves the entire address book.</p> <ul data-v-474166ec><li data-v-474166ec>Pros: Easy to implement.</li> <li data-v-474166ec>Cons: May have performance issues in terms of memory usage.</li></ul></li> <li data-v-474166ec><p data-v-474166ec><strong data-v-474166ec>Alternative 2 (current implementation):</strong> Individual command knows how to undo by itself.</p> <ul data-v-474166ec><li data-v-474166ec>Pros: Will use less memory (e.g. for <code class="hljs inline no-lang" data-v-474166ec>delete</code>, just save the person being deleted).</li> <li data-v-474166ec>Cons: We must ensure that the implementation of each individual command are correct.</li></ul></li></ul> <hr data-v-474166ec> <h2 id="documentation-logging-testing-configuration-dev-ops" data-v-474166ec><strong data-v-474166ec>Documentation, logging, testing, configuration, dev-ops</strong><a href="#documentation-logging-testing-configuration-dev-ops" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h2> <ul data-v-474166ec><li data-v-474166ec><a href="/tp/Documentation.html" data-v-474166ec>Documentation guide</a></li> <li data-v-474166ec><a href="/tp/Testing.html" data-v-474166ec>Testing guide</a></li> <li data-v-474166ec><a href="/tp/Logging.html" data-v-474166ec>Logging guide</a></li> <li data-v-474166ec><a href="/tp/Configuration.html" data-v-474166ec>Configuration guide</a></li> <li data-v-474166ec><a href="/tp/DevOps.html" data-v-474166ec>DevOps guide</a></li></ul> <hr data-v-474166ec> <h2 id="appendix-requirements" data-v-474166ec><strong data-v-474166ec>Appendix: Requirements</strong><a href="#appendix-requirements" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h2> <h3 id="product-scope" data-v-474166ec>Product scope<a href="#product-scope" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h3> <p data-v-474166ec><strong data-v-474166ec>Target user profile</strong>: University dormitory manager (teacher residents or admins at Dorm Halls)</p> <ul data-v-474166ec><li data-v-474166ec>has a need to manage a significant number of student contacts</li> <li data-v-474166ec>prefer desktop apps over other types</li> <li data-v-474166ec>has experience and prefers using CLI apps</li></ul> <p data-v-474166ec><strong data-v-474166ec>Value proposition</strong>: Provide fast and centralised access to vital resident information.</p> <ul data-v-474166ec><li data-v-474166ec>keeps track of residents' contact details</li> <li data-v-474166ec>manages room number and roles of residents</li> <li data-v-474166ec>allows for quick input of details and querying by different conditions for dorm managers of large dorms.</li></ul> <h3 id="user-stories" data-v-474166ec>User stories<a href="#user-stories" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h3> <p data-v-474166ec>Priorities: High (must have) - <code class="hljs inline no-lang" data-v-474166ec>* * *</code>, Medium (nice to have) - <code class="hljs inline no-lang" data-v-474166ec>* *</code>, Low (unlikely to have) - <code class="hljs inline no-lang" data-v-474166ec>*</code></p> <div class="table-responsive" data-v-474166ec><table class="markbind-table table table-bordered table-striped" data-v-474166ec><thead data-v-474166ec><tr data-v-474166ec><th data-v-474166ec>Priority</th> <th data-v-474166ec>As a …​</th> <th data-v-474166ec>I want to …​</th> <th data-v-474166ec>So that I can…​</th></tr></thead> <tbody data-v-474166ec><tr data-v-474166ec><td data-v-474166ec><code class="hljs inline no-lang" data-v-474166ec>* * *</code></td> <td data-v-474166ec>forgetful dorm manager</td> <td data-v-474166ec>see usage instructions</td> <td data-v-474166ec>refer to instructions when I forget how to use the App</td></tr> <tr data-v-474166ec><td data-v-474166ec><code class="hljs inline no-lang" data-v-474166ec>* * *</code></td> <td data-v-474166ec>dorm manager</td> <td data-v-474166ec>add a new contact</td> <td data-v-474166ec>keep track of students in my dorm</td></tr> <tr data-v-474166ec><td data-v-474166ec><code class="hljs inline no-lang" data-v-474166ec>* * *</code></td> <td data-v-474166ec>dorm manager</td> <td data-v-474166ec>delete a contact</td> <td data-v-474166ec>remove entries when residents leave the dorm to prevent clutter</td></tr> <tr data-v-474166ec><td data-v-474166ec><code class="hljs inline no-lang" data-v-474166ec>* * *</code></td> <td data-v-474166ec>dorm manager</td> <td data-v-474166ec>view contacts</td> <td data-v-474166ec></td></tr> <tr data-v-474166ec><td data-v-474166ec><code class="hljs inline no-lang" data-v-474166ec>* * *</code></td> <td data-v-474166ec>dorm manager</td> <td data-v-474166ec>see emergency contacts of my residents</td> <td data-v-474166ec>act quickly in the event of an emergency</td></tr> <tr data-v-474166ec><td data-v-474166ec><code class="hljs inline no-lang" data-v-474166ec>* * *</code></td> <td data-v-474166ec>strict dorm manager</td> <td data-v-474166ec>know my residents' room number</td> <td data-v-474166ec>go check on them</td></tr> <tr data-v-474166ec><td data-v-474166ec><code class="hljs inline no-lang" data-v-474166ec>* *</code></td> <td data-v-474166ec>bustling dorm manager</td> <td data-v-474166ec>find a contact by their details (eg. name, room)</td> <td data-v-474166ec>locate contacts without having to go through the entire list</td></tr> <tr data-v-474166ec><td data-v-474166ec><code class="hljs inline no-lang" data-v-474166ec>* *</code></td> <td data-v-474166ec>dorm manager</td> <td data-v-474166ec>edit a contact</td> <td data-v-474166ec>update contact details</td></tr> <tr data-v-474166ec><td data-v-474166ec><code class="hljs inline no-lang" data-v-474166ec>* *</code></td> <td data-v-474166ec>clumsy dorm manager</td> <td data-v-474166ec>undo my actions</td> <td data-v-474166ec>restore information if I accidentally delete them</td></tr> <tr data-v-474166ec><td data-v-474166ec><code class="hljs inline no-lang" data-v-474166ec>* *</code></td> <td data-v-474166ec>dorm manager</td> <td data-v-474166ec>give roles (responsibilities) to my residents</td> <td data-v-474166ec>foster communal living</td></tr> <tr data-v-474166ec><td data-v-474166ec><code class="hljs inline no-lang" data-v-474166ec>* *</code></td> <td data-v-474166ec>forgetful dorm manager</td> <td data-v-474166ec>keep track of the roles of my residents (eg. RA, CCA leader)</td> <td data-v-474166ec>know their responsibilities</td></tr> <tr data-v-474166ec><td data-v-474166ec><code class="hljs inline no-lang" data-v-474166ec>* *</code></td> <td data-v-474166ec>dorm manager</td> <td data-v-474166ec>find residents with certain roles (eg. RA, CCA leader)</td> <td data-v-474166ec>view and contact them as a group</td></tr> <tr data-v-474166ec><td data-v-474166ec><code class="hljs inline no-lang" data-v-474166ec>* *</code></td> <td data-v-474166ec>impatient dorm manager</td> <td data-v-474166ec>load / save all resident details to a file</td> <td data-v-474166ec>avoid typing in each resident's details</td></tr> <tr data-v-474166ec><td data-v-474166ec><code class="hljs inline no-lang" data-v-474166ec>*</code></td> <td data-v-474166ec>dorm manager</td> <td data-v-474166ec>sort contacts by name, room number</td> <td data-v-474166ec>locate a contact easily</td></tr> <tr data-v-474166ec><td data-v-474166ec><code class="hljs inline no-lang" data-v-474166ec>*</code></td> <td data-v-474166ec>forgetful dorm manager</td> <td data-v-474166ec>search by partial matches</td> <td data-v-474166ec>find contacts without memorising their full name</td></tr> <tr data-v-474166ec><td data-v-474166ec><code class="hljs inline no-lang" data-v-474166ec>*</code></td> <td data-v-474166ec>neat dorm manager</td> <td data-v-474166ec>group residents by block, floor, cluster, year</td> <td data-v-474166ec>keep contacts organised in specific groups</td></tr> <tr data-v-474166ec><td data-v-474166ec><code class="hljs inline no-lang" data-v-474166ec>*</code></td> <td data-v-474166ec>dorm manager</td> <td data-v-474166ec>filter search results by roles or groups</td> <td data-v-474166ec>find contacts in specific groups quickly</td></tr> <tr data-v-474166ec><td data-v-474166ec><code class="hljs inline no-lang" data-v-474166ec>*</code></td> <td data-v-474166ec>dorm manager</td> <td data-v-474166ec>view a summary of resident groups</td> <td data-v-474166ec>get an overview of the dorm population</td></tr> <tr data-v-474166ec><td data-v-474166ec><code class="hljs inline no-lang" data-v-474166ec>*</code></td> <td data-v-474166ec>dorm manager</td> <td data-v-474166ec>keep track of demerit points of my residents</td> <td data-v-474166ec>evict them when needed</td></tr> <tr data-v-474166ec><td data-v-474166ec><code class="hljs inline no-lang" data-v-474166ec>*</code></td> <td data-v-474166ec>anxious dorm manager</td> <td data-v-474166ec>know the phone, email and home address of my residents</td> <td data-v-474166ec>contact residents through multiple channels in case they don't respond</td></tr> <tr data-v-474166ec><td data-v-474166ec><code class="hljs inline no-lang" data-v-474166ec>*</code></td> <td data-v-474166ec>thoughtful dorm manager</td> <td data-v-474166ec>know the major of my residents</td> <td data-v-474166ec>provide care and support during stressful periods</td></tr> <tr data-v-474166ec><td data-v-474166ec><code class="hljs inline no-lang" data-v-474166ec>*</code></td> <td data-v-474166ec>wholesome dorm manager</td> <td data-v-474166ec>know the clubs of my residents</td> <td data-v-474166ec>support their arts showcases / sports competitions</td></tr> <tr data-v-474166ec><td data-v-474166ec><code class="hljs inline no-lang" data-v-474166ec>*</code></td> <td data-v-474166ec>enthusiastic dorm manager</td> <td data-v-474166ec>know the food preferences of my residents</td> <td data-v-474166ec>prepare welfare packs for them</td></tr> <tr data-v-474166ec><td data-v-474166ec><code class="hljs inline no-lang" data-v-474166ec>*</code></td> <td data-v-474166ec>dorm manager</td> <td data-v-474166ec>know the medical conditions of my residents</td> <td data-v-474166ec>provide timely medical assistance</td></tr> <tr data-v-474166ec><td data-v-474166ec><code class="hljs inline no-lang" data-v-474166ec>*</code></td> <td data-v-474166ec>dorm manager</td> <td data-v-474166ec>know the nationality of my residents</td> <td data-v-474166ec>better respect their culture</td></tr> <tr data-v-474166ec><td data-v-474166ec><code class="hljs inline no-lang" data-v-474166ec>*</code></td> <td data-v-474166ec>thoughtful dorm manager</td> <td data-v-474166ec>add a small description of each resident</td> <td data-v-474166ec>note the quirks and interests of each resident</td></tr> <tr data-v-474166ec><td data-v-474166ec><code class="hljs inline no-lang" data-v-474166ec>*</code></td> <td data-v-474166ec>dorm manager</td> <td data-v-474166ec>keep the commands short and powerful</td> <td data-v-474166ec>use it effectively with CLI experience</td></tr></tbody></table></div><h3 id="use-cases" data-v-474166ec>Use cases<a href="#use-cases" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h3> <p data-v-474166ec>(For all use cases below, the <strong data-v-474166ec>System</strong> is <code class="hljs inline no-lang" data-v-474166ec>DorManagerPro</code>, and the <strong data-v-474166ec>Actor</strong> is the <code class="hljs inline no-lang" data-v-474166ec>user</code> who refers to university dormitory managers unless specified otherwise.)</p> <p data-v-474166ec><strong data-v-474166ec>Use Case: UC01 - Add a profile</strong></p> <p data-v-474166ec><strong data-v-474166ec>MSS:</strong></p> <ol data-v-474166ec><li data-v-474166ec><p data-v-474166ec>User requests to add a specific profile, specifying name, contact number and email address.</p></li> <li data-v-474166ec><p data-v-474166ec>DorManagerPro adds the profile.</p> <p data-v-474166ec>Use case ends.</p></li></ol> <p data-v-474166ec><strong data-v-474166ec>Extensions:</strong></p> <ul data-v-474166ec><li data-v-474166ec><p data-v-474166ec>1a. DorManagerPro detects an error in the command format.</p> <ul data-v-474166ec><li data-v-474166ec>1a1. DorManagerPro requests for the correct command format.</li> <li data-v-474166ec>1a2. User enters command again.</li></ul> <p data-v-474166ec>Steps 1a1-1a2 are repeated until the command is correct.
-Use case resumes from step 2.</p></li> <li data-v-474166ec><p data-v-474166ec>1c. DorManagerPro detects that the specified profile already exists.</p> <ul data-v-474166ec><li data-v-474166ec>1c1. DorManagerPro informs the user and asks for another profile to add.</li> <li data-v-474166ec>1c2. User specifies another profile to add.</li></ul> <p data-v-474166ec>Steps 1c1-1c2 are repeated until a valid profile is indicated.
-Use case resumes from step 2.</p></li> <li data-v-474166ec><p data-v-474166ec>1d. DorManagerPro detects invalid parameters specified by user.</p> <ul data-v-474166ec><li data-v-474166ec>1d1. DorManagerPro requests for valid parameters.</li> <li data-v-474166ec>1d2. User re-supplies parameters.</li></ul> <p data-v-474166ec>Steps 1d1-1d2 are repeated until the parameters are valid.
-Use case resumes from step 2.</p></li> <li data-v-474166ec><p data-v-474166ec>*a. At any time, User chooses to stop adding a profile.</p> <p data-v-474166ec>Use case ends.</p></li></ul> <p data-v-474166ec><strong data-v-474166ec>Use Case: UC02 - Edit profile</strong></p> <p data-v-474166ec><strong data-v-474166ec>Precondition: There is at least one profile added into DorManagerPro.</strong></p> <p data-v-474166ec><strong data-v-474166ec>MSS:</strong></p> <ol data-v-474166ec><li data-v-474166ec><p data-v-474166ec>User requests to edit or add additional information for a specific profile. This can be the name, phone number, email address, address, emergency contact details, graduation year or tags.</p></li> <li data-v-474166ec><p data-v-474166ec>DorManagerPro updates the profile with the new or updated information.</p> <p data-v-474166ec>Use case ends.</p></li></ol> <p data-v-474166ec><strong data-v-474166ec>Extensions:</strong></p> <ul data-v-474166ec><li data-v-474166ec><p data-v-474166ec>1a. DorManagerPro detects an error in the command format.</p> <ul data-v-474166ec><li data-v-474166ec>1a1. DorManagerPro requests for the correct command format.</li> <li data-v-474166ec>1a2. User enters command again.</li></ul> <p data-v-474166ec>Steps 1a1-1a2 are repeated until the command is correct.
-Use case resumes from step 2.</p></li> <li data-v-474166ec><p data-v-474166ec>1b. DorManagerPro cannot find the specified profile to update.</p> <ul data-v-474166ec><li data-v-474166ec>1b1. DorManagerPro requests for a profile that exists to update.</li> <li data-v-474166ec>1b2. User specifies profile again.</li></ul> <p data-v-474166ec>Steps 1b1-1b2 are repeated until the command is correct.
-Use case resumes from step 2.</p></li> <li data-v-474166ec><p data-v-474166ec>1c. DorManagerPro detects invalid parameters specified by user.</p> <ul data-v-474166ec><li data-v-474166ec>1c1. DorManagerPro requests for valid parameters.</li> <li data-v-474166ec>1c2. User re-supplies parameters.</li></ul> <p data-v-474166ec>Steps 1c1-1c2 are repeated until the parameters are valid.
-Use case resumes from step 2.</p></li> <li data-v-474166ec><p data-v-474166ec>*a. At any time, User chooses to stop editing.</p> <p data-v-474166ec>Use case ends.</p></li></ul> <p data-v-474166ec><strong data-v-474166ec>Use Case: UC03 - Delete all graduated students</strong></p> <p data-v-474166ec><strong data-v-474166ec>Precondition: There is at least one graduated student profile added into DorManagerPro.</strong></p> <p data-v-474166ec><strong data-v-474166ec>MSS:</strong></p> <ol data-v-474166ec><li data-v-474166ec><p data-v-474166ec>User requests to delete all graduated students from the DorManagerPro address book.</p></li> <li data-v-474166ec><p data-v-474166ec>DorManagerPro deletes all students with graduation years earlier than the current year.</p> <p data-v-474166ec>Use case ends.</p></li></ol> <p data-v-474166ec><strong data-v-474166ec>Extensions:</strong></p> <ul data-v-474166ec><li data-v-474166ec><p data-v-474166ec>1a. DorManagerPro detects an error in the command format.</p> <ul data-v-474166ec><li data-v-474166ec>1a1. DorManagerPro requests for the correct command format.</li> <li data-v-474166ec>1a2. User enters command again.</li></ul> <p data-v-474166ec>Steps 1a1-1a2 are repeated until the command is correct.
-Use case resumes from step 2.</p></li> <li data-v-474166ec><p data-v-474166ec>1b. DorManagerPro cannot find any students who have graduated.</p> <ul data-v-474166ec><li data-v-474166ec>1b1. DorManagerPro displays an error message informing the user all students in the address book have yet to graduate.</li></ul> <p data-v-474166ec>Use case ends.</p></li> <li data-v-474166ec><p data-v-474166ec>*a. At any time, User chooses to stop deleting all graduated students.</p> <p data-v-474166ec>Use case ends.</p></li></ul> <p data-v-474166ec><strong data-v-474166ec>Use Case: UC04 - View profiles</strong></p> <p data-v-474166ec><strong data-v-474166ec>Precondition: There is at least one profile added into DorManagerPro.</strong></p> <p data-v-474166ec><strong data-v-474166ec>MSS:</strong></p> <ol data-v-474166ec><li data-v-474166ec><p data-v-474166ec>User requests to view all profiles.</p></li> <li data-v-474166ec><p data-v-474166ec>DorManagerPro displays all profiles.</p></li> <li data-v-474166ec><p data-v-474166ec>User requests to view certain profiles based on the profiles features (tags, roomNumber, number, name).</p></li> <li data-v-474166ec><p data-v-474166ec>DorManagerPro displays all profiles with all attached information.</p> <p data-v-474166ec>Use case ends.</p></li></ol> <p data-v-474166ec><strong data-v-474166ec>Extensions:</strong></p> <ul data-v-474166ec><li data-v-474166ec><p data-v-474166ec>1a. DorManagerPro detects an error in the command format.</p> <ul data-v-474166ec><li data-v-474166ec>1a1. DorManagerPro requests for the correct command format.</li> <li data-v-474166ec>1a2. User enters command again.</li></ul> <p data-v-474166ec>Steps 1a1-1a2 are repeated until the command is correct.
-Use case resumes from step 2.</p></li> <li data-v-474166ec><p data-v-474166ec>3a. DorManagerPro detects an error in the command format.</p> <ul data-v-474166ec><li data-v-474166ec>3a1. DorManagerPro requests for the correct command format.</li> <li data-v-474166ec>3a2. User enters command again.</li></ul> <p data-v-474166ec>Steps 3a1-3a2 are repeated until the command is correct.
-Use case resumes from step 4.</p></li> <li data-v-474166ec><p data-v-474166ec>*a. At any time, User chooses to stop viewing a profile.</p> <p data-v-474166ec>Use case ends.</p></li></ul> <p data-v-474166ec><strong data-v-474166ec>Use Case: UC05 - Delete a profile</strong></p> <p data-v-474166ec><strong data-v-474166ec>Precondition: There is at least one profile added into DorManagerPro.</strong></p> <p data-v-474166ec><strong data-v-474166ec>MSS:</strong></p> <ol data-v-474166ec><li data-v-474166ec><p data-v-474166ec>User requests to delete a specific profile.</p></li> <li data-v-474166ec><p data-v-474166ec>DorManagerPro asks if user to confirm they want to delete the profile.</p></li> <li data-v-474166ec><p data-v-474166ec>User confirms.</p></li> <li data-v-474166ec><p data-v-474166ec>DorManagerPro deletes the profile.</p> <p data-v-474166ec>Use case ends.</p></li></ol> <p data-v-474166ec><strong data-v-474166ec>Extensions:</strong></p> <ul data-v-474166ec><li data-v-474166ec><p data-v-474166ec>1a. DorManagerPro detects an error in the command format.</p> <ul data-v-474166ec><li data-v-474166ec>1a1. DorManagerPro requests for the correct command format.</li> <li data-v-474166ec>1a2. User enters command again.</li></ul> <p data-v-474166ec>Steps 1a1-1a2 are repeated until the command is correct.
-Use case resumes from step 2.</p></li> <li data-v-474166ec><p data-v-474166ec>1b. DorManagerPro cannot find the specified profile to delete.</p> <ul data-v-474166ec><li data-v-474166ec>1b1. DorManagerPro requests for a profile that exists to delete.</li> <li data-v-474166ec>1b2. User specifies profile again.</li></ul> <p data-v-474166ec>Steps 1b1-1b2 are repeated until the command is correct.
-Use case resumes from step 2.</p></li> <li data-v-474166ec><p data-v-474166ec>1c. DorManagerPro detects invalid parameters specified by user.</p> <ul data-v-474166ec><li data-v-474166ec>1c1. DorManagerPro requests for valid parameters.</li> <li data-v-474166ec>1c2. User re-supplies parameters.</li></ul> <p data-v-474166ec>Steps 1c1-1c2 are repeated until the parameters are valid.
-Use case resumes from step 2.</p></li> <li data-v-474166ec><p data-v-474166ec>2a. User expresses they do not want to delete the profile after all.</p> <ul data-v-474166ec><li data-v-474166ec>2a1. DorManagerPro acknowledges the rejection.</li></ul> <p data-v-474166ec>Use case ends.</p></li> <li data-v-474166ec><p data-v-474166ec>*a. At any time, User chooses to stop deleting a profile.</p> <p data-v-474166ec>Use case ends.</p></li></ul> <p data-v-474166ec><strong data-v-474166ec>Use Case: UC06 - Undoing an action</strong></p> <p data-v-474166ec><strong data-v-474166ec>Precondition: There is at least one undoable action in the current session of DorManagerPro that has yet to be undone.</strong></p> <p data-v-474166ec><strong data-v-474166ec>MSS:</strong></p> <ol data-v-474166ec><li data-v-474166ec><p data-v-474166ec>User requests to undo the latest undoable action.</p></li> <li data-v-474166ec><p data-v-474166ec>DorManagerPro restores the app to the state it was before the latest undoable action was carried out.</p> <p data-v-474166ec>Use case ends.</p></li></ol> <p data-v-474166ec><strong data-v-474166ec>Extensions:</strong></p> <ul data-v-474166ec><li data-v-474166ec><p data-v-474166ec>1a. DorManagerPro detects an error in the command format.</p> <ul data-v-474166ec><li data-v-474166ec>1a1. DorManagerPro requests for the correct command format.</li> <li data-v-474166ec>1a2. User enters command again.</li></ul> <p data-v-474166ec>Steps 1a1-1a2 are repeated until the command is correct.
-Use case resumes from step 2.</p></li> <li data-v-474166ec><p data-v-474166ec>1b. DorManagerPro detects that there are no undoable actions in the current session of DorManagerPro that has yet to be undone.</p> <ul data-v-474166ec><li data-v-474166ec>1b1. DorManagerPro displays an error message informing the user that there are no undoable actions.</li></ul> <p data-v-474166ec>Use case ends.</p></li> <li data-v-474166ec><p data-v-474166ec>*a. At any time, User chooses to stop undoing an action.</p> <p data-v-474166ec>Use case ends.</p></li></ul> <p data-v-474166ec><strong data-v-474166ec>Use Case: UC07 - Exporting the current data</strong></p> <p data-v-474166ec><strong data-v-474166ec>MSS:</strong></p> <ol data-v-474166ec><li data-v-474166ec><p data-v-474166ec>User requests to export the current data.</p></li> <li data-v-474166ec><p data-v-474166ec>DorManagerPro exports the current data to a json file.</p> <p data-v-474166ec>Use case ends.</p></li></ol> <p data-v-474166ec><strong data-v-474166ec>Extensions:</strong></p> <ul data-v-474166ec><li data-v-474166ec><p data-v-474166ec>1a. DorManagerPro detects an error in the command format.</p> <ul data-v-474166ec><li data-v-474166ec>1a1. DorManagerPro requests for the correct command format.</li> <li data-v-474166ec>1a2. User enters command again.</li></ul> <p data-v-474166ec>Steps 1a1-1a2 are repeated until the command is correct.
-Use case resumes from step 2.</p></li> <li data-v-474166ec><p data-v-474166ec>*a. At any time, User chooses to stop exporting the current data.</p> <p data-v-474166ec>Use case ends.</p></li></ul> <p data-v-474166ec><strong data-v-474166ec>Use Case: UC08 - Importing data from a json file</strong></p> <p data-v-474166ec><strong data-v-474166ec>Precondition: There is a json file in the valid format required to load to the address book.</strong></p> <p data-v-474166ec><strong data-v-474166ec>MSS:</strong></p> <ol data-v-474166ec><li data-v-474166ec><p data-v-474166ec>User requests to import data from a json file, specifying a file path to the json file.</p></li> <li data-v-474166ec><p data-v-474166ec>DorManagerPro displays all profiles loaded from the imported json file.</p> <p data-v-474166ec>Use case ends.</p></li></ol> <p data-v-474166ec><strong data-v-474166ec>Extensions:</strong></p> <ul data-v-474166ec><li data-v-474166ec><p data-v-474166ec>1a. DorManagerPro detects an error in the command format.</p> <ul data-v-474166ec><li data-v-474166ec>1a1. DorManagerPro requests for the correct command format.</li> <li data-v-474166ec>1a2. User enters command again.</li></ul> <p data-v-474166ec>Steps 1a1-1a2 are repeated until the command is correct.
-Use case resumes from step 2.</p></li> <li data-v-474166ec><p data-v-474166ec>1b. DorManagerPro detects an invalid file path or file format specified by user.</p> <ul data-v-474166ec><li data-v-474166ec>1b1. DorManagerPro requests for valid file path.</li> <li data-v-474166ec>1b2. User re-supplies file path.</li></ul> <p data-v-474166ec>Steps 1b1-1b2 are repeated until the parameters are valid.
-Use case resumes from step 2.</p></li> <li data-v-474166ec><p data-v-474166ec>*a. At any time, User chooses to stop importing.</p> <p data-v-474166ec>Use case ends.</p></li></ul> <h3 id="non-functional-requirements" data-v-474166ec>Non-Functional Requirements<a href="#non-functional-requirements" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h3> <ol data-v-474166ec><li data-v-474166ec>Should work on any <em data-v-474166ec>mainstream OS</em> as long as it has Java <code class="hljs inline no-lang" data-v-474166ec>17</code> or above installed.</li> <li data-v-474166ec>Should work on Mac as long as javafx and java '17' both installed.</li> <li data-v-474166ec>Should be able to hold up to 1000 persons without noticeable sluggishness in performance for typical usage.</li> <li data-v-474166ec>A user with above average typing speed for regular English text (i.e., not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</li> <li data-v-474166ec>Should take less than 1000 milliseconds to finish every command operation.</li> <li data-v-474166ec>Should take less 1 gigabyte of storage.</li> <li data-v-474166ec>Should be able to work offline.</li> <li data-v-474166ec>A new user should be able to be reasonably familiar with the commands within 30 minutes.</li> <li data-v-474166ec>DorManagerPro should support all input in English and not other languages.</li></ol> <h3 id="glossary" data-v-474166ec>Glossary<a href="#glossary" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h3> <ul data-v-474166ec><li data-v-474166ec><strong data-v-474166ec>Mainstream OS</strong>: Windows, Linux, Unix, MacOS</li> <li data-v-474166ec><strong data-v-474166ec>Private contact detail</strong>: A contact detail that is not meant to be shared with others</li> <li data-v-474166ec><strong data-v-474166ec>Dorm</strong>: A university or college hall of residence / hotel for students and teachers</li> <li data-v-474166ec><strong data-v-474166ec>Dorm resident</strong>: Student and / or teacher currently staying in a dorm</li> <li data-v-474166ec><strong data-v-474166ec>Dorm manager</strong>: User of DorManagerPro that has to keep track of the residents in their dorm</li> <li data-v-474166ec><strong data-v-474166ec>Profile</strong>: Collection of information related to a resident that serves as a block of interrelated data in DorManagerPro. Consists of name, contact number, room number, and emergency contact.</li> <li data-v-474166ec><strong data-v-474166ec>Emergency contact</strong>: Person to contact when the resident related to said contact gets into an emergency (injury, immigration related issues etc.). Consists of a name and contact number.</li> <li data-v-474166ec><strong data-v-474166ec>Dorm room</strong>: Rooms of the dorm where residents stay in. Corresponds to a floor and unit number that specify its location.</li> <li data-v-474166ec><strong data-v-474166ec>Graduation Year</strong>: The year during which the student will graduate.</li> <li data-v-474166ec><strong data-v-474166ec>File path</strong>: The path to the file. Is considered to be the location of the file. Can often be found by right-clicking the file as an option in the menu.</li> <li data-v-474166ec><strong data-v-474166ec>JSON</strong>: A type of file like <code class="hljs inline no-lang" data-v-474166ec>pdf</code> and <code class="hljs inline no-lang" data-v-474166ec>docx</code> that is often used for data storage.</li> <li data-v-474166ec><strong data-v-474166ec>Parameter</strong>: A value / characteristic used by a feature that is often defined by the feature, or otherwise by the real world.</li></ul> <hr data-v-474166ec> <h2 id="appendix-instructions-for-manual-testing" data-v-474166ec><strong data-v-474166ec>Appendix: Instructions for manual testing</strong><a href="#appendix-instructions-for-manual-testing" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h2> <p data-v-474166ec>Given below are instructions to test the app manually.</p> <div class="alert box-container seamless" data-v-474166ec><!----> <div class="header-and-body" data-v-474166ec><!----> <div class="box-body-wrapper" data-v-474166ec><div class="icon-wrapper  text-info" data-v-474166ec><i class="fas fa-info" data-v-474166ec></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-474166ec></div> <div class="contents" data-v-474166ec><p data-v-474166ec><strong data-v-474166ec>Note:</strong> These instructions only provide a starting point for testers to work on; testers are expected to do more <em data-v-474166ec>exploratory</em> testing.</p></div> <!----></div></div></div> <h3 id="launch-and-shutdown" data-v-474166ec>Launch and shutdown<a href="#launch-and-shutdown" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h3> <ol data-v-474166ec><li data-v-474166ec><p data-v-474166ec>Initial launch</p> <ol data-v-474166ec><li data-v-474166ec><p data-v-474166ec>Download the jar file and copy into an empty folder</p></li> <li data-v-474166ec><p data-v-474166ec>Double-click the jar file Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.</p></li></ol></li> <li data-v-474166ec><p data-v-474166ec>Saving window preferences</p> <ol data-v-474166ec><li data-v-474166ec><p data-v-474166ec>Resize the window to an optimum size. Move the window to a different location. Close the window.</p></li> <li data-v-474166ec><p data-v-474166ec>Re-launch the app by double-clicking the jar file.<br data-v-474166ec>
-Expected: The most recent window size and location is retained.</p></li></ol></li></ol> <h3 id="deleting-a-person" data-v-474166ec>Deleting a person<a href="#deleting-a-person" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h3> <ol data-v-474166ec><li data-v-474166ec><p data-v-474166ec>Deleting a person while all persons are being shown</p> <ol data-v-474166ec><li data-v-474166ec><p data-v-474166ec>Prerequisites: List all persons using the <code class="hljs inline no-lang" data-v-474166ec>list</code> command. Multiple persons in the list.</p></li> <li data-v-474166ec><p data-v-474166ec>Test case: <code class="hljs inline no-lang" data-v-474166ec>delete 1</code><br data-v-474166ec>
-Expected: Delete popup shows up. After confirming on the popup, first contact is deleted from the list. Details of the deleted contact shown in the status message.</p></li> <li data-v-474166ec><p data-v-474166ec>Test case: <code class="hljs inline no-lang" data-v-474166ec>delete 0</code><br data-v-474166ec>
-Expected: No person is deleted. Error details shown in the status message.</p></li> <li data-v-474166ec><p data-v-474166ec>Other incorrect delete commands to try: <code class="hljs inline no-lang" data-v-474166ec>delete</code>, <code class="hljs inline no-lang" data-v-474166ec>delete x</code>, <code class="hljs inline no-lang" data-v-474166ec>...</code> (where x is larger than the list size)<br data-v-474166ec>
-Expected: Similar to previous.</p></li></ol></li></ol> <h3 id="finding-a-person" data-v-474166ec>Finding a person<a href="#finding-a-person" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h3> <ol data-v-474166ec><li data-v-474166ec>Finding with parameters missing.
-<ol data-v-474166ec><li data-v-474166ec>Test case: <code class="hljs inline no-lang" data-v-474166ec>find</code> <br data-v-474166ec>
-Expected: An error message is shown stating that the command format is incorrect and showing the user the correct format.</li> <li data-v-474166ec>Test case: <code class="hljs inline no-lang" data-v-474166ec>find t/</code> <br data-v-474166ec>
-Expected: Listing out everyone is the contact list.</li></ol></li> <li data-v-474166ec>Finding a person with all possible parameters specified.
-<ol data-v-474166ec><li data-v-474166ec>Prerequisites: There is a contact in the list with a name <code class="hljs inline no-lang" data-v-474166ec>John Doe</code>, a phone number of <code class="hljs inline no-lang" data-v-474166ec>98765432</code>, a room number of <code class="hljs inline no-lang" data-v-474166ec>08-0805</code>, and a tag of <code class="hljs inline no-lang" data-v-474166ec>friends</code>.</li> <li data-v-474166ec>Test case:  <code class="hljs inline no-lang" data-v-474166ec>find n/John Doe p/98765432 r/08-0805 t/friends</code> <br data-v-474166ec>
-Expected: Displaying the contact with name John Doe, a phone number of 98765432, and living in room in the room 08-0805, and has a tag of friends.</li></ol></li> <li data-v-474166ec>Finding a person with parameter that does not conform to data validation.
-<ol data-v-474166ec><li data-v-474166ec>Test case: <code class="hljs inline no-lang" data-v-474166ec>find n/John Doe p/abcd</code> <br data-v-474166ec>
-Expected: An error message is shown informing the user about the correct data format for PHONE.</li> <li data-v-474166ec>Test case: <code class="hljs inline no-lang" data-v-474166ec>find n/John Doe r/abcd</code> <br data-v-474166ec>
-Expected: An error message is shown informing the user about the correct data format for ROOM_NUMBER.</li></ol></li></ol> <h3 id="saving-data" data-v-474166ec>Saving data<a href="#saving-data" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h3> <ol data-v-474166ec><li data-v-474166ec>Dealing with missing/corrupted data files
-<ol data-v-474166ec><li data-v-474166ec>Test case: Edit a record of a person in DorManagerPro.json to have a name containing <code class="hljs inline no-lang" data-v-474166ec>/</code>, which is an invalid character in DorManagerPro. <br data-v-474166ec>
-Expected: On launch, the application has no contacts as it does not read files that contain invalid data.</li></ol></li></ol> <h3 id="exporting-data" data-v-474166ec>Exporting data<a href="#exporting-data" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h3> <ol data-v-474166ec><li data-v-474166ec><p data-v-474166ec>Exporting a contact list with one or more contacts.</p> <ol data-v-474166ec><li data-v-474166ec>Prerequisites: There is at least one person in DorManagerPro</li> <li data-v-474166ec>Test case: <code class="hljs inline no-lang" data-v-474166ec>export</code> <br data-v-474166ec>
-Expected: A json file is exported to the data folder of the application, with the name of the json file being the time of export.</li> <li data-v-474166ec>More positive tests can be done for different numbers of people in DorManagerPro</li></ol></li> <li data-v-474166ec><p data-v-474166ec>Exporting a contact list with zero contacts</p> <ol data-v-474166ec><li data-v-474166ec>Prerequisites: There are no people in DorManagerPro</li> <li data-v-474166ec>Test case: <code class="hljs inline no-lang" data-v-474166ec>export</code> <br data-v-474166ec>
-Expected: A json file is exported to the data folder of the application, with the name of the json file being the time of export. The contents of the json file is as follows: <code class="hljs inline no-lang" data-v-474166ec>{ &quot;persons&quot; : [ ] }</code></li></ol></li></ol> <h3 id="importing-data" data-v-474166ec>Importing data<a href="#importing-data" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h3> <ol data-v-474166ec><li data-v-474166ec><p data-v-474166ec>Importing a json file with valid data</p> <ol data-v-474166ec><li data-v-474166ec>Prerequisites: There is a json file with valid data in the device. In this case, it is assumed the file path to the json file is <code class="hljs inline no-lang" data-v-474166ec>./data/SaveFile.json</code>.</li> <li data-v-474166ec>Test case: <code class="hljs inline no-lang" data-v-474166ec>import fp/./data/SaveFile.json</code> <br data-v-474166ec>
-Expected: The contents of <code class="hljs inline no-lang" data-v-474166ec>SaveFile.json</code> is loaded into DorManagerPro.</li></ol></li> <li data-v-474166ec><p data-v-474166ec>Importing a json file with invalid data</p> <ol data-v-474166ec><li data-v-474166ec>Prerequisites: There is a json file with invalid data in the device. In this case, it is assumed the file path to the json file is <code class="hljs inline no-lang" data-v-474166ec>./data/SaveFile.json</code>.</li> <li data-v-474166ec>Test case: <code class="hljs inline no-lang" data-v-474166ec>import fp/./data/SaveFile.json</code>
-Expected: No information is imported into DorManagerPro. Error details shown in the status message.</li></ol></li> <li data-v-474166ec><p data-v-474166ec>Importing a file that is not of json format</p> <ol data-v-474166ec><li data-v-474166ec>Prerequisites: There is a file not of json format on the device. In this case, it is assumed the file path to this file is <code class="hljs inline no-lang" data-v-474166ec>./data/text</code>.</li> <li data-v-474166ec>Test case: <code class="hljs inline no-lang" data-v-474166ec>import fp/./data/text</code>
-Expected: Same as above.</li></ol></li> <li data-v-474166ec><p data-v-474166ec>Importing a folder</p> <ol data-v-474166ec><li data-v-474166ec>Prerequisites: There is a folder on the device. In this case, it is assumed the file path to this file is <code class="hljs inline no-lang" data-v-474166ec>./data</code>.</li> <li data-v-474166ec>Test case: <code class="hljs inline no-lang" data-v-474166ec>import fp/./data</code>
-Expected: Same as above.</li></ol></li> <li data-v-474166ec><p data-v-474166ec>Trying to import a file that does not exist on the device</p> <ol data-v-474166ec><li data-v-474166ec>Test case: <code class="hljs inline no-lang" data-v-474166ec>import fp/./data/SaveFile4.json</code> where SaveFile4.json does not exist on the device <br data-v-474166ec>
-Expected: Same as above, with error message now instead specifying that the file path must correspond to an existing system path.</li></ol></li></ol> <h3 id="adding-a-person" data-v-474166ec>Adding a person<a href="#adding-a-person" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h3> <ol data-v-474166ec><li data-v-474166ec><p data-v-474166ec>Adding a person with only compulsory parameters specified.</p> <ol data-v-474166ec><li data-v-474166ec>Test case: <code class="hljs inline no-lang" data-v-474166ec>add n/John Doe p/98765432 e/johnd@example.com</code> <br data-v-474166ec>
-Expected: John Doe is added to the address book with a success message, as shown below.
-<a href="/tp/images/AddCommandTestSuccessMessage.png" target="_self" data-v-474166ec><img src="/tp/images/AddCommandTestSuccessMessage.png" alt="add success" class="img-fluid" data-v-474166ec></a></li></ol></li> <li data-v-474166ec><p data-v-474166ec>Adding a person with all possible parameters specified.</p> <ol data-v-474166ec><li data-v-474166ec>Test case: <code class="hljs inline no-lang" data-v-474166ec>add n/John Doe p/98765432 e/johnd@example.com r/05-0523 a/311, Clementi Ave 2, #02-25 t/Floor10 t/Table Tennis t/Floor 5</code> <br data-v-474166ec>
-Expected: John Doe is added to the address books with all the other details and a success message.</li></ol></li> <li data-v-474166ec><p data-v-474166ec>Adding a person with some compulsory parameters missing.</p> <ol data-v-474166ec><li data-v-474166ec>Test case: <code class="hljs inline no-lang" data-v-474166ec>add n/John Doe</code> <br data-v-474166ec>
-Expected: An error message is shown stating that the command format is incorrect and showing the user the correct format.</li> <li data-v-474166ec>Test case: <code class="hljs inline no-lang" data-v-474166ec>add n/John Doe e/johnd@example.com r/05-0523 a/311, Clementi Ave 2, #02-25 t/Floor10 t/Table Tennis t/Floor 5</code> <br data-v-474166ec>
-Expected: Similar to (i).</li></ol></li> <li data-v-474166ec><p data-v-474166ec>Adding a person with data that does not conform to data validation.</p> <ol data-v-474166ec><li data-v-474166ec>Test case: <code class="hljs inline no-lang" data-v-474166ec>add n/John Doe p/abcd e/johnd@example.com</code> <br data-v-474166ec>
-Expected: An error message is shown informing the user about the correct data format for PHONE.</li> <li data-v-474166ec>Test case: <code class="hljs inline no-lang" data-v-474166ec>add n/John Doe p/1234567 e/HAI</code> <br data-v-474166ec>
-Expected: An error message is shown informing the user about the correct data format for EMAIL.</li></ol></li> <li data-v-474166ec><p data-v-474166ec>Adding a person with duplicate phone.</p> <ol data-v-474166ec><li data-v-474166ec>Prerequisites: There is at least one person in the address book.</li> <li data-v-474166ec>Test case:
-<ol data-v-474166ec><li data-v-474166ec>Step 1: <code class="hljs inline no-lang" data-v-474166ec>add n/John Doe p/12345678 e/johnd@example.com</code> <br data-v-474166ec></li> <li data-v-474166ec>Step 2: <code class="hljs inline no-lang" data-v-474166ec>add n/Alex Yeoh p/12345678 e/heyhey@example.com</code> <br data-v-474166ec>
-Expected: An error message appears informing the user that there is already someone with that phone number in the address book.</li></ol></li></ol></li></ol> <h3 id="editing-a-person" data-v-474166ec>Editing a person<a href="#editing-a-person" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h3> <ol data-v-474166ec><li data-v-474166ec><p data-v-474166ec>Editing a person with only some optional parameters specified.</p> <ol data-v-474166ec><li data-v-474166ec>Prerequisites: There is at least one person in the address book and edit will not result in duplicates.</li> <li data-v-474166ec>Test case: <code class="hljs inline no-lang" data-v-474166ec>edit 1 n/John Doe</code> <br data-v-474166ec>
-Expected: The name of the first person in the address book is changed to John Doe. Success message shown in the status message.</li></ol></li> <li data-v-474166ec><p data-v-474166ec>Editing a person with all possible parameters specified.</p> <ol data-v-474166ec><li data-v-474166ec>Prerequisites: There is at least one person in the address book and edit will not result in duplicates.</li> <li data-v-474166ec>Test case: <code class="hljs inline no-lang" data-v-474166ec>edit 1 n/John Doe p/98765432 e/johndoe@example.com r/05-0523 a/311, Clementi Ave 2, #02-25 en/Bob ep/12346789 g/2020 t/Floor10</code> <br data-v-474166ec>
-Expected: The first person in the address book is updated with the new details. Success message shown in the status message.</li></ol></li> <li data-v-474166ec><p data-v-474166ec>Editing a person with data that does not conform to data validation.</p> <ol data-v-474166ec><li data-v-474166ec>Prerequisites: There is at least one person in the address book.</li> <li data-v-474166ec>Test case: <code class="hljs inline no-lang" data-v-474166ec>edit 1 p/abcd</code> <br data-v-474166ec>
-Expected: An error message is shown informing the user about the correct data format for PHONE.</li> <li data-v-474166ec>Test case: <code class="hljs inline no-lang" data-v-474166ec>edit 1 e/HAI</code> <br data-v-474166ec>
-Expected: An error message is shown informing the user about the correct data format for EMAIL.</li></ol></li> <li data-v-474166ec><p data-v-474166ec>Editing a person with duplicate phone.</p> <ol data-v-474166ec><li data-v-474166ec>Prerequisites: There are at least two persons in the address book.</li> <li data-v-474166ec>Test case:
-<ol data-v-474166ec><li data-v-474166ec>Step 1: <code class="hljs inline no-lang" data-v-474166ec>edit 1 p/12345678</code> <br data-v-474166ec></li> <li data-v-474166ec>Step 2: <code class="hljs inline no-lang" data-v-474166ec>edit 2 p/12345678</code> <br data-v-474166ec>
-Expected: An error message appears informing the user that there is already someone with that phone number in the address book.</li></ol></li></ol></li></ol> <h3 id="undo-a-command" data-v-474166ec>Undo a command<a href="#undo-a-command" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h3> <ol data-v-474166ec><li data-v-474166ec><p data-v-474166ec>Undoing a <code class="hljs inline no-lang" data-v-474166ec>delete</code> command</p> <ol data-v-474166ec><li data-v-474166ec>Prerequisites: The previous successfully executed command is a <code class="hljs inline no-lang" data-v-474166ec>delete</code> command.</li> <li data-v-474166ec>Test case: <code class="hljs inline no-lang" data-v-474166ec>undo</code><br data-v-474166ec>
-Expected: The previous deletion is reverted. Details of the restored contact shown in the status message.</li></ol></li> <li data-v-474166ec><p data-v-474166ec>Undoing a <code class="hljs inline no-lang" data-v-474166ec>clear</code> command</p> <ol data-v-474166ec><li data-v-474166ec>Prerequisites: The previous successfully executed command is a <code class="hljs inline no-lang" data-v-474166ec>clear</code> command.</li> <li data-v-474166ec>Test case: <code class="hljs inline no-lang" data-v-474166ec>undo</code><br data-v-474166ec>
-Expected: All contacts that were cleared are restored. Result &quot;Address book has been restored&quot; shown in the status message.</li></ol></li> <li data-v-474166ec><p data-v-474166ec>No command to undo</p> <ol data-v-474166ec><li data-v-474166ec>Prerequisites: No undoable commands have been executed since the starting of the app.</li> <li data-v-474166ec>Test case: <code class="hljs inline no-lang" data-v-474166ec>undo</code><br data-v-474166ec>
-Expected: No command is undone. Error message &quot;No commands to undo&quot; displayed in the status message.</li></ol></li></ol> <h3 id="deleting-all-graduated-students" data-v-474166ec>Deleting all graduated students<a href="#deleting-all-graduated-students" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h3> <ol data-v-474166ec><li data-v-474166ec>Deleting all graduated students when all persons are being shown.
-<ol data-v-474166ec><li data-v-474166ec>Prerequisites: List all persons using the <code class="hljs inline no-lang" data-v-474166ec>list</code> command. Multiple persons in the list, with at least 1 person with GRADUATION_YEAR field earlier than the current year.</li> <li data-v-474166ec>Test case: <code class="hljs inline no-lang" data-v-474166ec>clean</code>, executed in YEAR, where YEAR is the current year. <br data-v-474166ec>
-Expected: All persons with GRADUATION_YEAR field YEAR - 1 or earlier deleted from the address book. Status message informs the user that graduated students have been deleted, and deleted persons visibly disappear from the list of all students.</li> <li data-v-474166ec>Test case: <code class="hljs inline no-lang" data-v-474166ec>clean dasd</code>, executed in YEAR, where YEAR is the current year. <br data-v-474166ec>
-Expected: Similar to (ii). All trailing characters in a valid command is ignored.</li></ol></li> <li data-v-474166ec>Deleting all graduated students when only some persons are being shown, or when no people are shown.
-<ol data-v-474166ec><li data-v-474166ec>Prerequisites: Multiple persons in the list, with at least 1 person with GRADUATION_YEAR field earlier than the current year. Find a specific student with the <code class="hljs inline no-lang" data-v-474166ec>find</code> command, typing <code class="hljs inline no-lang" data-v-474166ec>find n/NAME</code>, replacing NAME with the name of any person in the address book.</li> <li data-v-474166ec>Test case: <code class="hljs inline no-lang" data-v-474166ec>clean</code>, executed in YEAR, where YEAR is the current year. <br data-v-474166ec>
-Expected: All persons with GRADUATION_YEAR field YEAR - 1 or earlier deleted from the address book. Status message informs the user that graduated students have been deleted. However, if none of the graduated students have name NAME, the view does not change, as we continue to see the view of the address book after applying <code class="hljs inline no-lang" data-v-474166ec>find n\NAME</code>. Use <code class="hljs inline no-lang" data-v-474166ec>list</code> to see the effects of the deletion. An example is shown below with screenshots.
-<ol data-v-474166ec><li data-v-474166ec>It is currently 2024. Alex is the only student with GRADUATION_YEAR 2023 or earlier. <a href="/tp/images/CleanManualTestingAfterFindStep1.png" target="_self" data-v-474166ec><img src="/tp/images/CleanManualTestingAfterFindStep1.png" alt="step 1" class="img-fluid" data-v-474166ec></a></li> <li data-v-474166ec>We execute <code class="hljs inline no-lang" data-v-474166ec>find n/Bernice</code>, such that only Bernice is in the view. <a href="/tp/images/CleanManualTestingAfterFindStep2.png" target="_self" data-v-474166ec><img src="/tp/images/CleanManualTestingAfterFindStep2.png" alt="step 2" class="img-fluid" data-v-474166ec></a></li> <li data-v-474166ec>We execute <code class="hljs inline no-lang" data-v-474166ec>clean</code>. The view remains the same. <a href="/tp/images/CleanManualTestingAfterFindStep2.png" target="_self" data-v-474166ec><img src="/tp/images/CleanManualTestingAfterFindStep2.png" alt="step 3" class="img-fluid" data-v-474166ec></a></li> <li data-v-474166ec>We execute <code class="hljs inline no-lang" data-v-474166ec>list</code> and see that Alex is deleted. <a href="/tp/images/CleanManualTestingAfterFindStep4.png" target="_self" data-v-474166ec><img src="/tp/images/CleanManualTestingAfterFindStep4.png" alt="step 4" class="img-fluid" data-v-474166ec></a></li></ol></li></ol></li> <li data-v-474166ec>Attempting to delete all graduated students when there are none.
-<ol data-v-474166ec><li data-v-474166ec>Prerequisites: No persons present in the address book with GRADUATION_YEAR field earlier than the current year.</li> <li data-v-474166ec>Test case: <code class="hljs inline no-lang" data-v-474166ec>clean</code>, executed in YEAR, where YEAR is the current year. <br data-v-474166ec>
-Expected: An error message displayed informing the user that there are no graduated students to be deleted.</li></ol></li></ol> <h2 id="appendix-planned-enhancements" data-v-474166ec><strong data-v-474166ec>Appendix: Planned enhancements</strong><a href="#appendix-planned-enhancements" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h2> <p data-v-474166ec>Team size: 5</p> <ol data-v-474166ec><li data-v-474166ec><p data-v-474166ec><strong data-v-474166ec>Add more precise functionality to the <code class="hljs inline no-lang" data-v-474166ec>clean</code> command</strong>. The <code class="hljs inline no-lang" data-v-474166ec>clean</code> command currently does not allow removal of students who have graduated in the current year, as it can only detect the graduation year but not the month. We plan to add support for storing a more specific graduation date, such that we can accurately remove students who have graduated immediately after their graduation.</p></li> <li data-v-474166ec><p data-v-474166ec><strong data-v-474166ec>Add support for setting EmergencyName, EmergencyPhone and GraduationYear using the <code class="hljs inline no-lang" data-v-474166ec>add</code> command.</strong>
-The <code class="hljs inline no-lang" data-v-474166ec>add</code> command currently does not allow setting emergency contact details and graduation year of students.
-The only way to set these fields is through the <code class="hljs inline no-lang" data-v-474166ec>edit</code> command, which can be inconvenient for users.
-We plan to add support for setting EmergencyName, EmergencyPhone and GraduationYear to the <code class="hljs inline no-lang" data-v-474166ec>add</code> command.</p></li> <li data-v-474166ec><p data-v-474166ec><strong data-v-474166ec>Add more features to the help command pop up window.</strong> The <code class="hljs inline no-lang" data-v-474166ec>help</code> command pop up window currently only shows instructions for three commands, <code class="hljs inline no-lang" data-v-474166ec>add</code>, <code class="hljs inline no-lang" data-v-474166ec>edit</code> and <code class="hljs inline no-lang" data-v-474166ec>delete</code>. We plan
-to add instructions for all other features to make it easier to familiarise themselves with the commands without going to the external User Guide.</p></li> <li data-v-474166ec><p data-v-474166ec><strong data-v-474166ec>Add support to file path formatting in <code class="hljs inline no-lang" data-v-474166ec>import</code>.</strong> Currently, the FILE_PATH parameter for the <code class="hljs inline no-lang" data-v-474166ec>import</code> command only takes in forward slashes, <code class="hljs inline no-lang" data-v-474166ec>/</code>, when taking in user input, e.g. <code class="hljs inline no-lang" data-v-474166ec>import fp/./data/SaveFile.json</code> would be a valid file path for <code class="hljs inline no-lang" data-v-474166ec>import</code>, but <code class="hljs inline no-lang" data-v-474166ec>import fp/.\data\SaveFile.json</code> would not be valid. We plan to add support to <code class="hljs inline no-lang" data-v-474166ec>\</code> as a delimiter between folders and files in the future to be more intuitive for users of all Operating Systems, especially those that use backslashes in file paths like Windows.</p></li> <li data-v-474166ec><p data-v-474166ec><strong data-v-474166ec>Improve specificity of <code class="hljs inline no-lang" data-v-474166ec>import</code> error messages.</strong> Currently, the error message for when the file exists on the device but is otherwise incompatible with DorManagerPro, whether this be because it is of the wrong file type, has a format incompatible with DorManagerPro or contains invalid data is as follows: <br data-v-474166ec>
-Could not read data from file FILE_PATH due to inability to find or access the file. <br data-v-474166ec>
-This error message could be more specific and our team plans to update this to the following error message: <br data-v-474166ec>
-DorManagerPro could not access the file at FILE_PATH. This could be because the file is of the wrong type, it has a format incompatible with DorManagerPro or it contains invalid data. Please check that the file path leads to a JSON file with valid data and formatting.</p></li> <li data-v-474166ec><p data-v-474166ec><strong data-v-474166ec>Consistent behavior for <code class="hljs inline no-lang" data-v-474166ec>find</code>.</strong> Currently, <code class="hljs inline no-lang" data-v-474166ec>find</code> has some inconsistent behaviour depending on the field that it is being searched by, making it counterintuitive for users. The problems are as following: <br data-v-474166ec>
-The name search is case-insensitive, but tag search is not. We plan to modify <code class="hljs inline no-lang" data-v-474166ec>find t/</code> tag search to make it case-insensitive. <br data-v-474166ec>
-Searching by name filters contacts that match at least one keyword (i.e. <code class="hljs inline no-lang" data-v-474166ec>OR</code> search). E.g. <code class="hljs inline no-lang" data-v-474166ec>Hans Bo</code> will return <code class="hljs inline no-lang" data-v-474166ec>Hans Gruber</code>, <code class="hljs inline no-lang" data-v-474166ec>Bo Yang</code>. However, searching by phone number only filters contacts that match exactly to the optional country code, optional area code, and compulsory number. E.g. <code class="hljs inline no-lang" data-v-474166ec>98765432</code> will not return <code class="hljs inline no-lang" data-v-474166ec>+65 98765432</code>.<br data-v-474166ec>
-We plan to modify <code class="hljs inline no-lang" data-v-474166ec>find p/</code> to allow searching by country code or area code only, and compulsory number only, so as to make this more versatile for users. <br data-v-474166ec></p></li></ol> <h2 id="appendix-effort" data-v-474166ec><strong data-v-474166ec>Appendix: Effort</strong><a href="#appendix-effort" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h2> <h3 id="overview" data-v-474166ec>Overview<a href="#overview" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h3> <p data-v-474166ec>As we have adapted AB3 for university dorm managers, our main efforts were in adding support for other necessary fields, enhancing the duplicate handling and data validation, and providing extra functions to streamline data saving, adding, updating and to safeguard against mistakes.
-This posed substantial difficulties for us, as we had to work within the AB3 model and implement the multiple features to be compatible with the rest of the app.</p> <p data-v-474166ec>Here are some of the achievements of DorManagerPro:</p> <ul data-v-474166ec><li data-v-474166ec>Fields
-<ul data-v-474166ec><li data-v-474166ec>Added fields for room number, emergency contacts, and graduation year.</li> <li data-v-474166ec>Implemented relevant duplicate handling and field constraints for room number, emergency contacts, and graduation years.</li> <li data-v-474166ec>More specific and relevant field constraints and duplication handling for name, phone number, email address and tags.</li></ul></li> <li data-v-474166ec>Features
-<ul data-v-474166ec><li data-v-474166ec>All commands that change the state of the address book are now undoable!</li> <li data-v-474166ec>It is now possible to export the state of the address book to a json file.</li> <li data-v-474166ec>It is now possible to import a json file into the address book.</li> <li data-v-474166ec>It is now possible to delete all students who have graduated at once in one command.</li></ul></li></ul> <p data-v-474166ec>Lines of Code: 24608</p> <p data-v-474166ec>[comment]: Should we also estimate difficulty level and effort required??</p> <h3 id="challenges-faced" data-v-474166ec>Challenges faced<a href="#challenges-faced" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h3> <h4 id="challenge-1-implementing-undo-functionality-for-import-command" data-v-474166ec>Challenge 1: Implementing undo functionality for import command<a href="#challenge-1-implementing-undo-functionality-for-import-command" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h4> <p data-v-474166ec>The undo functionality was initially implemented by extending an abstract class <code class="hljs inline no-lang" data-v-474166ec>ConcreteCommand</code> with the <code class="hljs inline no-lang" data-v-474166ec>undo</code> abstract method.
-However, the import command is an undoable command that also extends the <code class="hljs inline no-lang" data-v-474166ec>FileAccessCommand</code> class.
+When the user executes the `undo` command, the `Model` component pops the last command from the stack and calls the `undo()` method of the command.
+
+These operations are exposed in the `Model` interface as `Model#pushToUndoStack()` and `Model#undoAddressBook()`.
+
+Given below is an example usage scenario and how the undo mechanism behaves at each step.
+
+Step 1. The user launches the application for the first time. The undo stack is initialised as empty.
+
+Step 2. The user executes `delete 5` command to delete the 5th person in the address book. The `delete` command is pushed onto the undo stack.
+
+Step 3. The user executes `add n/David …​` to add a new person. The `add` command is also pushed onto the undo stack.
+
+<div class="alert box-container seamless" data-v-474166ec><!----> <div class="header-and-body" data-v-474166ec><!----> <div class="box-body-wrapper" data-v-474166ec><div class="icon-wrapper  text-info" data-v-474166ec><i class="fas fa-info" data-v-474166ec></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-474166ec></div> <div class="contents" data-v-474166ec>
+ 
+**Note:** If a command is not undoable or fails its execution, it will not be pushed onto the undo stack.
+Step 4. The user now decides that adding the person was a mistake, and decides to undo that action by executing the `undo` command. The `undo` command will call `Model#undoAddressBook()`, which will pop the last command from the undo stack and call its `undo()` method. The `undo()` method of the command will then reverse the effects of the command.
+<br data-v-474166ec>
+
+**Note:** If the undo stack is empty, then there are no commands to undo. The `undo` command checks if this is the case. If so, it will return an error to the user.
+</div> <!----></div></div></div>
+
+The following sequence diagram shows how an undo operation goes through the `Logic` component:
+<span class="image-wrapper"><img src="/tp/diagrams/UndoSequenceDiagram-Logic.png" alt="UndoSequenceDiagram-Logic" width="" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <div class="alert box-container seamless" data-v-474166ec><!----> <div class="header-and-body" data-v-474166ec><!----> <div class="box-body-wrapper" data-v-474166ec><div class="icon-wrapper  text-info" data-v-474166ec><i class="fas fa-info" data-v-474166ec></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-474166ec></div> <div class="contents" data-v-474166ec>
+
+**Note:** The lifeline for `UndoCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+</div> <!----></div></div></div>
+
+Similarly, how an undo operation goes through the `Model` component is shown below:
+
+<span class="image-wrapper"><img src="/tp/diagrams/UndoSequenceDiagram-Model.png" alt="UndoSequenceDiagram-Model" width="" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span>
+
+Step 5. The user then decides to execute the command `list`. Commands that do not modify the address book, such as `list`, will not be pushed to the undo stack. Thus, the undo stack remains unchanged.
+
+Step 6. The user executes `clear`, which is pushed to the undo stack.
+
+The following activity diagram summarizes what happens when a user executes a new command:
+
+<span class="image-wrapper"><img src="/tp/diagrams/CommitActivityDiagram.png" width="400" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span>
+
+#### Design considerations:
+
+**Aspect: How undo executes:**
+
+* **Alternative 1:** Saves the entire address book.
+  * Pros: Easy to implement.
+  * Cons: May have performance issues in terms of memory usage.
+
+* **Alternative 2 (current implementation):** Individual command knows how to undo by itself.
+  * Pros: Will use less memory (e.g. for `delete`, just save the person being deleted).
+  * Cons: We must ensure that the implementation of each individual command are correct.
+
+--------------------------------------------------------------------------------------------------------------------
+
+## **Documentation, logging, testing, configuration, dev-ops**
+
+* [Documentation guide](Documentation.md)
+* [Testing guide](Testing.md)
+* [Logging guide](Logging.md)
+* [Configuration guide](Configuration.md)
+* [DevOps guide](DevOps.md)
+
+--------------------------------------------------------------------------------------------------------------------
+
+## **Appendix: Requirements**
+
+### Product scope
+
+**Target user profile**: University dormitory manager (teacher residents or admins at Dorm Halls)
+
+* has a need to manage a significant number of student contacts
+* prefer desktop apps over other types
+* has experience and prefers using CLI apps
+
+**Value proposition**: Provide fast and centralised access to vital resident information.
+
+* keeps track of residents' contact details
+* manages room number and roles of residents
+* allows for quick input of details and querying by different conditions for dorm managers of large dorms.
+
+### User stories
+
+Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
+
+| Priority | As a …​                   | I want to …​                                                 | So that I can…​                                                        |
+|----------|---------------------------|--------------------------------------------------------------|------------------------------------------------------------------------|
+| `* * *`  | forgetful dorm manager    | see usage instructions                                       | refer to instructions when I forget how to use the App                 |
+| `* * *`  | dorm manager              | add a new contact                                            | keep track of students in my dorm                                      |
+| `* * *`  | dorm manager              | delete a contact                                             | remove entries when residents leave the dorm to prevent clutter        |
+| `* * *`  | dorm manager              | view contacts                                                |                                                                        |
+| `* * *`  | dorm manager              | see emergency contacts of my residents                       | act quickly in the event of an emergency                               |
+| `* * *`  | strict dorm manager       | know my residents' room number                               | go check on them                                                       |
+| `* *`    | bustling dorm manager     | find a contact by their details (eg. name, room)             | locate contacts without having to go through the entire list           |
+| `* *`    | dorm manager              | edit a contact                                               | update contact details                                                 |
+| `* *`    | clumsy dorm manager       | undo my actions                                              | restore information if I accidentally delete them                      |
+| `* *`    | dorm manager              | give roles (responsibilities) to my residents                | foster communal living                                                 |
+| `* *`    | forgetful dorm manager    | keep track of the roles of my residents (eg. RA, CCA leader) | know their responsibilities                                            |
+| `* *`    | dorm manager              | find residents with certain roles (eg. RA, CCA leader)       | view and contact them as a group                                       |
+| `* *`    | impatient dorm manager    | load / save all resident details to a file                   | avoid typing in each resident's details                                |
+| `*`      | dorm manager              | sort contacts by name, room number                           | locate a contact easily                                                |
+| `*`      | forgetful dorm manager    | search by partial matches                                    | find contacts without memorising their full name                       |
+| `*`      | neat dorm manager         | group residents by block, floor, cluster, year               | keep contacts organised in specific groups                             |
+| `*`      | dorm manager              | filter search results by roles or groups                     | find contacts in specific groups quickly                               |
+| `*`      | dorm manager              | view a summary of resident groups                            | get an overview of the dorm population                                 |
+| `*`      | dorm manager              | keep track of demerit points of my residents                 | evict them when needed                                                 |
+| `*`      | anxious dorm manager      | know the phone, email and home address of my residents       | contact residents through multiple channels in case they don't respond |
+| `*`      | thoughtful dorm manager   | know the major of my residents                               | provide care and support during stressful periods                      |
+| `*`      | wholesome dorm manager    | know the clubs of my residents                               | support their arts showcases / sports competitions                     |
+| `*`      | enthusiastic dorm manager | know the food preferences of my residents                    | prepare welfare packs for them                                         |
+| `*`      | dorm manager              | know the medical conditions of my residents                  | provide timely medical assistance                                      |
+| `*`      | dorm manager              | know the nationality of my residents                         | better respect their culture                                           |
+| `*`      | thoughtful dorm manager   | add a small description of each resident                     | note the quirks and interests of each resident                         |
+| `*`      | dorm manager              | keep the commands short and powerful                         | use it effectively with CLI experience                                 |
+
+
+### Use cases
+
+(For all use cases below, the **System** is `DorManagerPro`, and the **Actor** is the `user` who refers to university dormitory managers unless specified otherwise.)
+
+**Use Case: UC01 - Add a profile**
+
+**MSS:**
+
+1. User requests to add a specific profile, specifying name, contact number and email address.
+2. DorManagerPro adds the profile.
+
+   Use case ends.
+
+**Extensions:**
+
+* 1a. DorManagerPro detects an error in the command format.
+    * 1a1. DorManagerPro requests for the correct command format.
+    * 1a2. User enters command again.
+
+  Steps 1a1-1a2 are repeated until the command is correct.
+  Use case resumes from step 2.
+
+* 1c. DorManagerPro detects that the specified profile already exists.
+    * 1c1. DorManagerPro informs the user and asks for another profile to add.
+    * 1c2. User specifies another profile to add.
+
+  Steps 1c1-1c2 are repeated until a valid profile is indicated.
+  Use case resumes from step 2.
+
+* 1d. DorManagerPro detects invalid parameters specified by user.
+    * 1d1. DorManagerPro requests for valid parameters.
+    * 1d2. User re-supplies parameters.
+
+  Steps 1d1-1d2 are repeated until the parameters are valid.
+  Use case resumes from step 2.
+
+* *a. At any time, User chooses to stop adding a profile.
+
+  Use case ends.
+
+**Use Case: UC02 - Edit profile**
+
+**Precondition: There is at least one profile added into DorManagerPro.**
+
+**MSS:**
+
+1. User requests to edit or add additional information for a specific profile. This can be the name, phone number, email address, address, emergency contact details, graduation year or tags.
+2. DorManagerPro updates the profile with the new or updated information.
+
+   Use case ends.
+
+**Extensions:**
+
+* 1a. DorManagerPro detects an error in the command format.
+    * 1a1. DorManagerPro requests for the correct command format.
+    * 1a2. User enters command again.
+
+  Steps 1a1-1a2 are repeated until the command is correct.
+  Use case resumes from step 2.
+
+* 1b. DorManagerPro cannot find the specified profile to update.
+    * 1b1. DorManagerPro requests for a profile that exists to update.
+    * 1b2. User specifies profile again.
+
+  Steps 1b1-1b2 are repeated until the command is correct.
+  Use case resumes from step 2.
+
+* 1c. DorManagerPro detects invalid parameters specified by user.
+    * 1c1. DorManagerPro requests for valid parameters.
+    * 1c2. User re-supplies parameters.
+
+  Steps 1c1-1c2 are repeated until the parameters are valid.
+  Use case resumes from step 2.
+
+* *a. At any time, User chooses to stop editing.
+
+  Use case ends.
+
+**Use Case: UC03 - Delete all graduated students**
+
+**Precondition: There is at least one graduated student profile added into DorManagerPro.**
+
+**MSS:**
+
+1. User requests to delete all graduated students from the DorManagerPro address book.
+2. DorManagerPro deletes all students with graduation years earlier than the current year.
+
+   Use case ends.
+
+**Extensions:**
+
+* 1a. DorManagerPro detects an error in the command format.
+    * 1a1. DorManagerPro requests for the correct command format.
+    * 1a2. User enters command again.
+
+  Steps 1a1-1a2 are repeated until the command is correct.
+  Use case resumes from step 2.
+
+* 1b. DorManagerPro cannot find any students who have graduated.
+    * 1b1. DorManagerPro displays an error message informing the user all students in the address book have yet to graduate.
+
+  Use case ends.
+
+* *a. At any time, User chooses to stop deleting all graduated students.
+
+  Use case ends.
+
+**Use Case: UC04 - View profiles**
+
+**Precondition: There is at least one profile added into DorManagerPro.**
+
+**MSS:**
+
+1. User requests to view all profiles.
+2. DorManagerPro displays all profiles.
+3. User requests to view certain profiles based on the profiles features (tags, roomNumber, number, name).
+4. DorManagerPro displays all profiles with all attached information.
+
+   Use case ends.
+
+**Extensions:**
+
+* 1a. DorManagerPro detects an error in the command format.
+    * 1a1. DorManagerPro requests for the correct command format.
+    * 1a2. User enters command again.
+
+  Steps 1a1-1a2 are repeated until the command is correct.
+  Use case resumes from step 2.
+
+* 3a. DorManagerPro detects an error in the command format.
+  * 3a1. DorManagerPro requests for the correct command format.
+  * 3a2. User enters command again.
+
+  Steps 3a1-3a2 are repeated until the command is correct.
+  Use case resumes from step 4.
+
+* *a. At any time, User chooses to stop viewing a profile.
+
+  Use case ends.
+
+**Use Case: UC05 - Delete a profile**
+
+**Precondition: There is at least one profile added into DorManagerPro.**
+
+**MSS:**
+
+1. User requests to delete a specific profile.
+2. DorManagerPro asks if user to confirm they want to delete the profile.
+3. User confirms.
+4. DorManagerPro deletes the profile.
+
+   Use case ends.
+
+**Extensions:**
+
+* 1a. DorManagerPro detects an error in the command format.
+    * 1a1. DorManagerPro requests for the correct command format.
+    * 1a2. User enters command again.
+
+  Steps 1a1-1a2 are repeated until the command is correct.
+  Use case resumes from step 2.
+
+* 1b. DorManagerPro cannot find the specified profile to delete.
+    * 1b1. DorManagerPro requests for a profile that exists to delete.
+    * 1b2. User specifies profile again.
+
+  Steps 1b1-1b2 are repeated until the command is correct.
+  Use case resumes from step 2.
+
+* 1c. DorManagerPro detects invalid parameters specified by user.
+    * 1c1. DorManagerPro requests for valid parameters.
+    * 1c2. User re-supplies parameters.
+
+  Steps 1c1-1c2 are repeated until the parameters are valid.
+  Use case resumes from step 2.
+
+* 2a. User expresses they do not want to delete the profile after all.
+    * 2a1. DorManagerPro acknowledges the rejection.
+
+  Use case ends.
+
+* *a. At any time, User chooses to stop deleting a profile.
+
+  Use case ends.
+
+
+**Use Case: UC06 - Undoing an action**
+
+**Precondition: There is at least one undoable action in the current session of DorManagerPro that has yet to be undone.**
+
+**MSS:**
+
+1. User requests to undo the latest undoable action.
+2. DorManagerPro restores the app to the state it was before the latest undoable action was carried out.
+
+   Use case ends.
+
+**Extensions:**
+
+* 1a. DorManagerPro detects an error in the command format.
+  * 1a1. DorManagerPro requests for the correct command format.
+  * 1a2. User enters command again.
+
+  Steps 1a1-1a2 are repeated until the command is correct.
+  Use case resumes from step 2.
+
+* 1b. DorManagerPro detects that there are no undoable actions in the current session of DorManagerPro that has yet to be undone.
+  * 1b1. DorManagerPro displays an error message informing the user that there are no undoable actions.
+
+  Use case ends.
+
+* *a. At any time, User chooses to stop undoing an action.
+
+  Use case ends.
+
+**Use Case: UC07 - Exporting the current data**
+
+**MSS:**
+
+1. User requests to export the current data.
+2. DorManagerPro exports the current data to a json file.
+
+   Use case ends.
+
+**Extensions:**
+
+* 1a. DorManagerPro detects an error in the command format.
+  * 1a1. DorManagerPro requests for the correct command format.
+  * 1a2. User enters command again.
+
+  Steps 1a1-1a2 are repeated until the command is correct.
+  Use case resumes from step 2.
+
+* *a. At any time, User chooses to stop exporting the current data.
+
+  Use case ends.
+
+**Use Case: UC08 - Importing data from a json file**
+
+**Precondition: There is a json file in the valid format required to load to the address book.**
+
+**MSS:**
+
+1. User requests to import data from a json file, specifying a file path to the json file.
+2. DorManagerPro displays all profiles loaded from the imported json file.
+
+   Use case ends.
+
+**Extensions:**
+
+* 1a. DorManagerPro detects an error in the command format.
+    * 1a1. DorManagerPro requests for the correct command format.
+    * 1a2. User enters command again.
+
+  Steps 1a1-1a2 are repeated until the command is correct.
+  Use case resumes from step 2.
+
+* 1b. DorManagerPro detects an invalid file path or file format specified by user.
+    * 1b1. DorManagerPro requests for valid file path.
+    * 1b2. User re-supplies file path.
+
+  Steps 1b1-1b2 are repeated until the parameters are valid.
+  Use case resumes from step 2.
+
+* *a. At any time, User chooses to stop importing.
+
+  Use case ends.
+
+
+
+### Non-Functional Requirements
+
+1. Should work on any _mainstream OS_ as long as it has Java `17` or above installed.
+2. Should work on Mac as long as javafx and java '17' both installed.
+3. Should be able to hold up to 1000 persons without noticeable sluggishness in performance for typical usage.
+4. A user with above average typing speed for regular English text (i.e., not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
+5. Should take less than 1000 milliseconds to finish every command operation.
+6. Should take less 1 gigabyte of storage.
+7. Should be able to work offline.
+8. A new user should be able to be reasonably familiar with the commands within 30 minutes.
+9. DorManagerPro should support all input in English and not other languages.
+
+### Glossary
+
+* **Mainstream OS**: Windows, Linux, Unix, MacOS
+* **Private contact detail**: A contact detail that is not meant to be shared with others
+* **Dorm**: A university or college hall of residence / hotel for students and teachers
+* **Dorm resident**: Student and / or teacher currently staying in a dorm
+* **Dorm manager**: User of DorManagerPro that has to keep track of the residents in their dorm
+* **Profile**: Collection of information related to a resident that serves as a block of interrelated data in DorManagerPro. Consists of name, contact number, room number, and emergency contact.
+* **Emergency contact**: Person to contact when the resident related to said contact gets into an emergency (injury, immigration related issues etc.). Consists of a name and contact number.
+* **Dorm room**: Rooms of the dorm where residents stay in. Corresponds to a floor and unit number that specify its location.
+* **Graduation Year**: The year during which the student will graduate.
+* **File path**: The path to the file. Is considered to be the location of the file. Can often be found by right-clicking the file as an option in the menu.
+* **JSON**: A type of file like `pdf` and `docx` that is often used for data storage.
+* **Parameter**: A value / characteristic used by a feature that is often defined by the feature, or otherwise by the real world.
+
+--------------------------------------------------------------------------------------------------------------------
+
+## **Appendix: Instructions for manual testing**
+
+Given below are instructions to test the app manually.
+
+<div class="alert box-container seamless" data-v-474166ec><!----> <div class="header-and-body" data-v-474166ec><!----> <div class="box-body-wrapper" data-v-474166ec><div class="icon-wrapper  text-info" data-v-474166ec><i class="fas fa-info" data-v-474166ec></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-474166ec></div> <div class="contents" data-v-474166ec>
+
+**Note:** These instructions only provide a starting point for testers to work on; testers are expected to do more *exploratory* testing.
+
+</div> <!----></div></div></div>
+
+### Launch and shutdown
+
+1. Initial launch
+
+   1. Download the jar file and copy into an empty folder
+
+   1. Double-click the jar file Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
+
+1. Saving window preferences
+
+   1. Resize the window to an optimum size. Move the window to a different location. Close the window.
+
+   1. Re-launch the app by double-clicking the jar file.<br>
+       Expected: The most recent window size and location is retained.
+
+### Deleting a person
+
+1. Deleting a person while all persons are being shown
+
+   1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+
+   2. Test case: `delete 1`<br>
+      Expected: Delete popup shows up. After confirming on the popup, first contact is deleted from the list. Details of the deleted contact shown in the status message.
+
+   3. Test case: `delete 0`<br>
+      Expected: No person is deleted. Error details shown in the status message.
+
+   4. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
+      Expected: Similar to previous.
+
+### Finding a person
+
+1. Finding with parameters missing.
+   1. Test case: `find` <br>
+      Expected: An error message is shown stating that the command format is incorrect and showing the user the correct format.
+   2. Test case: `find t/` <br>
+      Expected: Listing out everyone is the contact list.
+2. Finding a person with all possible parameters specified.
+   1. Prerequisites: There is a contact in the list with a name `John Doe`, a phone number of `98765432`, a room number of `08-0805`, and a tag of `friends`.
+   2. Test case:  `find n/John Doe p/98765432 r/08-0805 t/friends` <br>
+      Expected: Displaying the contact with name John Doe, a phone number of 98765432, and living in room in the room 08-0805, and has a tag of friends.
+3. Finding a person with parameter that does not conform to data validation.
+   1. Test case: `find n/John Doe p/abcd` <br>
+      Expected: An error message is shown informing the user about the correct data format for PHONE.
+   2. Test case: `find n/John Doe r/abcd` <br>
+      Expected: An error message is shown informing the user about the correct data format for ROOM_NUMBER.
+
+### Saving data
+
+1. Dealing with missing/corrupted data files
+   1. Test case: Edit a record of a person in DorManagerPro.json to have a name containing `/`, which is an invalid character in DorManagerPro. <br>
+      Expected: On launch, the application has no contacts as it does not read files that contain invalid data.
+
+### Exporting data
+
+1. Exporting a contact list with one or more contacts.
+   1. Prerequisites: There is at least one person in DorManagerPro
+   2. Test case: `export` <br>
+      Expected: A json file is exported to the data folder of the application, with the name of the json file being the time of export.
+   3. More positive tests can be done for different numbers of people in DorManagerPro
+
+2. Exporting a contact list with zero contacts
+   1. Prerequisites: There are no people in DorManagerPro
+   2. Test case: `export` <br>
+      Expected: A json file is exported to the data folder of the application, with the name of the json file being the time of export. The contents of the json file is as follows: `{ &quot;persons&quot; : [ ] }`
+
+### Importing data
+
+1. Importing a json file with valid data
+   1. Prerequisites: There is a json file with valid data in the device. In this case, it is assumed the file path to the json file is `./data/SaveFile.json`.
+   2. Test case: `import fp/./data/SaveFile.json` <br>
+      Expected: The contents of `SaveFile.json` is loaded into DorManagerPro.
+
+2. Importing a json file with invalid data
+   1. Prerequisites: There is a json file with invalid data in the device. In this case, it is assumed the file path to the json file is `./data/SaveFile.json`.
+   2. Test case: `import fp/./data/SaveFile.json`
+   Expected: No information is imported into DorManagerPro. Error details shown in the status message.
+
+3. Importing a file that is not of json format
+   1. Prerequisites: There is a file not of json format on the device. In this case, it is assumed the file path to this file is `./data/text`.
+   2. Test case: `import fp/./data/text`
+      Expected: Same as above.
+
+4. Importing a folder
+   1. Prerequisites: There is a folder on the device. In this case, it is assumed the file path to this file is `./data`.
+   2. Test case: `import fp/./data`
+      Expected: Same as above.
+
+5. Trying to import a file that does not exist on the device
+    1. Test case: `import fp/./data/SaveFile4.json` where SaveFile4.json does not exist on the device <br>
+       Expected: Same as above, with error message now instead specifying that the file path must correspond to an existing system path.
+
+### Adding a person
+
+1. Adding a person with only compulsory parameters specified.
+   1. Test case: `add n/John Doe p/98765432 e/johnd@example.com` <br>
+      Expected: John Doe is added to the address book with a success message, as shown below.
+      ![add success](images/AddCommandTestSuccessMessage.png)
+
+2. Adding a person with all possible parameters specified.
+   1. Test case: `add n/John Doe p/98765432 e/johnd@example.com r/05-0523 a/311, Clementi Ave 2, #02-25 t/Floor10 t/Table Tennis t/Floor 5` <br>
+      Expected: John Doe is added to the address books with all the other details and a success message.
+
+3. Adding a person with some compulsory parameters missing.
+   1. Test case: `add n/John Doe` <br>
+      Expected: An error message is shown stating that the command format is incorrect and showing the user the correct format.
+   2. Test case: `add n/John Doe e/johnd@example.com r/05-0523 a/311, Clementi Ave 2, #02-25 t/Floor10 t/Table Tennis t/Floor 5` <br>
+      Expected: Similar to (i).
+
+4. Adding a person with data that does not conform to data validation.
+   1. Test case: `add n/John Doe p/abcd e/johnd@example.com` <br>
+      Expected: An error message is shown informing the user about the correct data format for PHONE.
+   2. Test case: `add n/John Doe p/1234567 e/HAI` <br>
+      Expected: An error message is shown informing the user about the correct data format for EMAIL.
+
+5. Adding a person with duplicate phone.
+   1. Prerequisites: There is at least one person in the address book.
+   2. Test case:
+      1. Step 1: `add n/John Doe p/12345678 e/johnd@example.com` <br>
+      2. Step 2: `add n/Alex Yeoh p/12345678 e/heyhey@example.com` <br>
+         Expected: An error message appears informing the user that there is already someone with that phone number in the address book.
+
+### Editing a person
+
+1. Editing a person with only some optional parameters specified.
+   1. Prerequisites: There is at least one person in the address book and edit will not result in duplicates.
+   2. Test case: `edit 1 n/John Doe` <br>
+      Expected: The name of the first person in the address book is changed to John Doe. Success message shown in the status message.
+
+2. Editing a person with all possible parameters specified.
+   1. Prerequisites: There is at least one person in the address book and edit will not result in duplicates.
+   2. Test case: `edit 1 n/John Doe p/98765432 e/johndoe@example.com r/05-0523 a/311, Clementi Ave 2, #02-25 en/Bob ep/12346789 g/2020 t/Floor10` <br>
+      Expected: The first person in the address book is updated with the new details. Success message shown in the status message.
+
+3. Editing a person with data that does not conform to data validation.
+   1. Prerequisites: There is at least one person in the address book.
+   2. Test case: `edit 1 p/abcd` <br>
+      Expected: An error message is shown informing the user about the correct data format for PHONE.
+   3. Test case: `edit 1 e/HAI` <br>
+      Expected: An error message is shown informing the user about the correct data format for EMAIL.
+
+4. Editing a person with duplicate phone.
+   1. Prerequisites: There are at least two persons in the address book.
+   2. Test case:
+      1. Step 1: `edit 1 p/12345678` <br>
+      2. Step 2: `edit 2 p/12345678` <br>
+         Expected: An error message appears informing the user that there is already someone with that phone number in the address book.
+
+### Undo a command
+
+1. Undoing a `delete` command
+
+   1. Prerequisites: The previous successfully executed command is a `delete` command.
+   2. Test case: `undo`<br>
+      Expected: The previous deletion is reverted. Details of the restored contact shown in the status message.
+
+1. Undoing a `clear` command
+
+   1. Prerequisites: The previous successfully executed command is a `clear` command.
+   2. Test case: `undo`<br>
+      Expected: All contacts that were cleared are restored. Result &quot;Address book has been restored&quot; shown in the status message.
+
+1. No command to undo
+
+   1. Prerequisites: No undoable commands have been executed since the starting of the app.
+   2. Test case: `undo`<br>
+      Expected: No command is undone. Error message &quot;No commands to undo&quot; displayed in the status message.
+
+### Deleting all graduated students
+
+1. Deleting all graduated students when all persons are being shown.
+   1. Prerequisites: List all persons using the `list` command. Multiple persons in the list, with at least 1 person with GRADUATION_YEAR field earlier than the current year.
+   2. Test case: `clean`, executed in YEAR, where YEAR is the current year. <br>
+      Expected: All persons with GRADUATION_YEAR field YEAR - 1 or earlier deleted from the address book. Status message informs the user that graduated students have been deleted, and deleted persons visibly disappear from the list of all students.
+   3. Test case: `clean dasd`, executed in YEAR, where YEAR is the current year. <br>
+      Expected: Similar to (ii). All trailing characters in a valid command is ignored.
+2. Deleting all graduated students when only some persons are being shown, or when no people are shown.
+   1. Prerequisites: Multiple persons in the list, with at least 1 person with GRADUATION_YEAR field earlier than the current year. Find a specific student with the `find` command, typing `find n/NAME`, replacing NAME with the name of any person in the address book.
+   2. Test case: `clean`, executed in YEAR, where YEAR is the current year. <br>
+      Expected: All persons with GRADUATION_YEAR field YEAR - 1 or earlier deleted from the address book. Status message informs the user that graduated students have been deleted. However, if none of the graduated students have name NAME, the view does not change, as we continue to see the view of the address book after applying `find n\NAME`. Use `list` to see the effects of the deletion. An example is shown below with screenshots.
+      1. It is currently 2024. Alex is the only student with GRADUATION_YEAR 2023 or earlier. ![step 1](images/CleanManualTestingAfterFindStep1.png)
+      2. We execute `find n/Bernice`, such that only Bernice is in the view. ![step 2](images/CleanManualTestingAfterFindStep2.png)
+      3. We execute `clean`. The view remains the same. ![step 3](images/CleanManualTestingAfterFindStep2.png)
+      4. We execute `list` and see that Alex is deleted. ![step 4](images/CleanManualTestingAfterFindStep4.png)
+3. Attempting to delete all graduated students when there are none.
+   1. Prerequisites: No persons present in the address book with GRADUATION_YEAR field earlier than the current year.
+   2. Test case: `clean`, executed in YEAR, where YEAR is the current year. <br>
+      Expected: An error message displayed informing the user that there are no graduated students to be deleted.
+
+
+## **Appendix: Planned enhancements**
+
+Team size: 5
+
+1. **Add more precise functionality to the `clean` command**. The `clean` command currently does not allow removal of students who have graduated in the current year, as it can only detect the graduation year but not the month. We plan to add support for storing a more specific graduation date, such that we can accurately remove students who have graduated immediately after their graduation.
+
+2. **Add support for setting EmergencyName, EmergencyPhone and GraduationYear using the `add` command.**
+The `add` command currently does not allow setting emergency contact details and graduation year of students.
+The only way to set these fields is through the `edit` command, which can be inconvenient for users.
+We plan to add support for setting EmergencyName, EmergencyPhone and GraduationYear to the `add` command.
+
+3. **Add more features to the help command pop up window.** The `help` command pop up window currently only shows instructions for three commands, `add`, `edit` and `delete`. We plan
+to add instructions for all other features to make it easier to familiarise themselves with the commands without going to the external User Guide.
+
+4. **Add support to file path formatting in `import`.** Currently, the FILE_PATH parameter for the `import` command only takes in forward slashes, `/`, when taking in user input, e.g. `import fp/./data/SaveFile.json` would be a valid file path for `import`, but `import fp/.\data\SaveFile.json` would not be valid. We plan to add support to `\` as a delimiter between folders and files in the future to be more intuitive for users of all Operating Systems, especially those that use backslashes in file paths like Windows.
+
+5. **Improve specificity of `import` error messages.** Currently, the error message for when the file exists on the device but is otherwise incompatible with DorManagerPro, whether this be because it is of the wrong file type, has a format incompatible with DorManagerPro or contains invalid data is as follows: <br>
+Could not read data from file FILE_PATH due to inability to find or access the file. <br>
+This error message could be more specific and our team plans to update this to the following error message: <br>
+DorManagerPro could not access the file at FILE_PATH. This could be because the file is of the wrong type, it has a format incompatible with DorManagerPro or it contains invalid data. Please check that the file path leads to a JSON file with valid data and formatting.
+
+6. **Consistent behavior for `find`.** Currently, `find` has some inconsistent behaviour depending on the field that it is being searched by, making it counterintuitive for users. The problems are as following: <br>
+The name search is case-insensitive, but tag search is not. We plan to modify `find t/` tag search to make it case-insensitive. <br>
+Searching by name filters contacts that match at least one keyword (i.e. `OR` search). E.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`. However, searching by phone number only filters contacts that match exactly to the optional country code, optional area code, and compulsory number. E.g. `98765432` will not return `+65 98765432`.<br>
+We plan to modify `find p/` to allow searching by country code or area code only, and compulsory number only, so as to make this more versatile for users. <br>
+
+## **Appendix: Effort**
+
+### Overview
+
+As we have adapted AB3 for university dorm managers, our main efforts were in adding support for other necessary fields, enhancing the duplicate handling and data validation, and providing extra functions to streamline data saving, adding, updating and to safeguard against mistakes.
+This posed substantial difficulties for us, as we had to work within the AB3 model and implement the multiple features to be compatible with the rest of the app.
+
+Here are some of the achievements of DorManagerPro:
+* Fields
+  * Added fields for room number, emergency contacts, and graduation year.
+  * Implemented relevant duplicate handling and field constraints for room number, emergency contacts, and graduation years.
+  * More specific and relevant field constraints and duplication handling for name, phone number, email address and tags.
+* Features
+  * All commands that change the state of the address book are now undoable!
+  * It is now possible to export the state of the address book to a json file.
+  * It is now possible to import a json file into the address book.
+  * It is now possible to delete all students who have graduated at once in one command.
+
+Lines of Code: 24608
+
+[comment]: Should we also estimate difficulty level and effort required??
+
+### Challenges faced
+
+#### Challenge 1: Implementing undo functionality for import command
+
+The undo functionality was initially implemented by extending an abstract class `ConcreteCommand` with the `undo` abstract method.
+However, the import command is an undoable command that also extends the `FileAccessCommand` class.
 This posed a challenge as the import command could not extend two classes at once because Java does not allow multiple inheritance.
-To overcome this, we had to refactor the <code class="hljs inline no-lang" data-v-474166ec>ConcreteCommand</code> class to an interface <code class="hljs inline no-lang" data-v-474166ec>Undoable</code> and let all undoable commands implement this interface.
-This allowed us to implement the <code class="hljs inline no-lang" data-v-474166ec>undo</code> method in the import command.</p> <h4 id="challenge-2-creating-a-dependency-between-storage-and-fileaccesscommand-for-export-and-import" data-v-474166ec>Challenge 2: Creating a dependency between Storage and FileAccessCommand for export and import<a href="#challenge-2-creating-a-dependency-between-storage-and-fileaccesscommand-for-export-and-import" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h4> <p data-v-474166ec>Import and export was initially deemed odd to do since it would have to access <code class="hljs inline no-lang" data-v-474166ec>Storage</code>, whereas all other commands at the time only needed to have access to <code class="hljs inline no-lang" data-v-474166ec>Model</code> to be executed. Accordingly, we were fairly certain that it would have been inadequate for the <code class="hljs inline no-lang" data-v-474166ec>import</code> and <code class="hljs inline no-lang" data-v-474166ec>export</code> commands to inherit directly from <code class="hljs inline no-lang" data-v-474166ec>Command</code>.
-The workaround our team decided on was to create a new class <code class="hljs inline no-lang" data-v-474166ec>FileAccessCommand</code> that would require a <code class="hljs inline no-lang" data-v-474166ec>Model</code> and <code class="hljs inline no-lang" data-v-474166ec>Storage</code> for it's execute which <code class="hljs inline no-lang" data-v-474166ec>export</code> and <code class="hljs inline no-lang" data-v-474166ec>import</code> could then inherit from. As <code class="hljs inline no-lang" data-v-474166ec>FileAccessCommand</code> inherits from <code class="hljs inline no-lang" data-v-474166ec>Command</code> this allowed <code class="hljs inline no-lang" data-v-474166ec>export</code> and <code class="hljs inline no-lang" data-v-474166ec>import</code> to continue using the polymorphism when parsing commands and in the LogicManager while having a unique execute to carry out its functions.</p> <h4 id="challenge-3-removal-of-address-field-as-a-compulsory-field" data-v-474166ec>Challenge 3: Removal of address field as a compulsory field<a href="#challenge-3-removal-of-address-field-as-a-compulsory-field" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-474166ec></a></h4> <p data-v-474166ec>While AddressBook3 initially had address as a compulsory field when adding a person to the contact list, our team felt that in the context of DorManagerPro, addresses could instead be optional. In most cases, all the residents would by default live in the dorm managed by the user, and by extension have a common address.
+To overcome this, we had to refactor the `ConcreteCommand` class to an interface `Undoable` and let all undoable commands implement this interface.
+This allowed us to implement the `undo` method in the import command.
+
+#### Challenge 2: Creating a dependency between Storage and FileAccessCommand for export and import
+
+Import and export was initially deemed odd to do since it would have to access `Storage`, whereas all other commands at the time only needed to have access to `Model` to be executed. Accordingly, we were fairly certain that it would have been inadequate for the `import` and `export` commands to inherit directly from `Command`.
+The workaround our team decided on was to create a new class `FileAccessCommand` that would require a `Model` and `Storage` for it's execute which `export` and `import` could then inherit from. As `FileAccessCommand` inherits from `Command` this allowed `export` and `import` to continue using the polymorphism when parsing commands and in the LogicManager while having a unique execute to carry out its functions.
+
+#### Challenge 3: Removal of address field as a compulsory field
+
+While AddressBook3 initially had address as a compulsory field when adding a person to the contact list, our team felt that in the context of DorManagerPro, addresses could instead be optional. In most cases, all the residents would by default live in the dorm managed by the user, and by extension have a common address.
 We then had to contemplate between the outright removal of the field or only making it optional. We decided to make it optional as it could still provide helpful information such as the students permanent residence outside the dorm in case the user had to contact them.
-Regardless, it was still quite a challenge to make the once compulsory field optional since it was so intertwined with the original AddressBook3.</p></div> <!----></div></div></div></div> <nav id="page-nav" data-v-e6005420><div class="nav-component slim-scroll" data-v-e6005420><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#dormanagerpro-developer-guide" data-v-e6005420>DorManagerPro Developer Guide‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#acknowledgements" data-v-e6005420>Acknowledgements‎</a> <a class="nav-link py-1" href="#setting-up-getting-started" data-v-e6005420>Setting up, getting started‎</a> <a class="nav-link py-1" href="#design" data-v-e6005420>Design‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#architecture" data-v-e6005420>Architecture‎</a> <a class="nav-link py-1" href="#ui-component" data-v-e6005420>UI component‎</a> <a class="nav-link py-1" href="#logic-component" data-v-e6005420>Logic component‎</a> <a class="nav-link py-1" href="#model-component" data-v-e6005420>Model component‎</a> <a class="nav-link py-1" href="#storage-component" data-v-e6005420>Storage component‎</a> <a class="nav-link py-1" href="#common-classes" data-v-e6005420>Common classes‎</a></nav> <a class="nav-link py-1" href="#implementation" data-v-e6005420>Implementation‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#add-feature" data-v-e6005420>Add feature‎</a> <a class="nav-link py-1" href="#edit-feature" data-v-e6005420>Edit feature‎</a> <a class="nav-link py-1" href="#delete-command" data-v-e6005420>Delete Command‎</a> <a class="nav-link py-1" href="#clean-feature" data-v-e6005420>Clean feature‎</a> <a class="nav-link py-1" href="#find-command" data-v-e6005420>Find Command‎</a> <a class="nav-link py-1" href="#export-feature" data-v-e6005420>Export feature‎</a> <a class="nav-link py-1" href="#implementation-7" data-v-e6005420>Implementation‎</a> <a class="nav-link py-1" href="#design-considerations-2" data-v-e6005420>Design considerations:‎</a> <a class="nav-link py-1" href="#import-feature" data-v-e6005420>Import feature‎</a> <a class="nav-link py-1" href="#implementation-8" data-v-e6005420>Implementation‎</a> <a class="nav-link py-1" href="#design-considerations-3" data-v-e6005420>Design considerations:‎</a> <a class="nav-link py-1" href="#undo-feature" data-v-e6005420>Undo feature‎</a></nav> <a class="nav-link py-1" href="#documentation-logging-testing-configuration-dev-ops" data-v-e6005420>Documentation, logging, testing, configuration, dev-ops‎</a> <a class="nav-link py-1" href="#appendix-requirements" data-v-e6005420>Appendix: Requirements‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#product-scope" data-v-e6005420>Product scope‎</a> <a class="nav-link py-1" href="#user-stories" data-v-e6005420>User stories‎</a> <a class="nav-link py-1" href="#use-cases" data-v-e6005420>Use cases‎</a> <a class="nav-link py-1" href="#non-functional-requirements" data-v-e6005420>Non-Functional Requirements‎</a> <a class="nav-link py-1" href="#glossary" data-v-e6005420>Glossary‎</a></nav> <a class="nav-link py-1" href="#appendix-instructions-for-manual-testing" data-v-e6005420>Appendix: Instructions for manual testing‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#launch-and-shutdown" data-v-e6005420>Launch and shutdown‎</a> <a class="nav-link py-1" href="#deleting-a-person" data-v-e6005420>Deleting a person‎</a> <a class="nav-link py-1" href="#finding-a-person" data-v-e6005420>Finding a person‎</a> <a class="nav-link py-1" href="#saving-data" data-v-e6005420>Saving data‎</a> <a class="nav-link py-1" href="#exporting-data" data-v-e6005420>Exporting data‎</a> <a class="nav-link py-1" href="#importing-data" data-v-e6005420>Importing data‎</a> <a class="nav-link py-1" href="#adding-a-person" data-v-e6005420>Adding a person‎</a> <a class="nav-link py-1" href="#editing-a-person" data-v-e6005420>Editing a person‎</a> <a class="nav-link py-1" href="#undo-a-command" data-v-e6005420>Undo a command‎</a> <a class="nav-link py-1" href="#deleting-all-graduated-students" data-v-e6005420>Deleting all graduated students‎</a></nav> <a class="nav-link py-1" href="#appendix-planned-enhancements" data-v-e6005420>Appendix: Planned enhancements‎</a> <a class="nav-link py-1" href="#appendix-effort" data-v-e6005420>Appendix: Effort‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#overview" data-v-e6005420>Overview‎</a> <a class="nav-link py-1" href="#challenges-faced" data-v-e6005420>Challenges faced‎</a></nav></nav> <!----></nav></div> <!----></nav> <div aria-hidden="true" class="scroll-top-button fa-lg d-print-none" style="display:none;bottom:2%;right:2%;position:fixed;"><i class="fas fa-arrow-circle-up"></i></div></div> <footer><div class="text-center"><small>[<span><strong>Powered by</strong></span> <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 5.5.3</a>, generated on Tue, 12 Nov 2024, 13:02:32 GMT+8]</small></div></footer></div>
+Regardless, it was still quite a challenge to make the once compulsory field optional since it was so intertwined with the original AddressBook3.
+
+  </div> <nav id="page-nav" data-v-e6005420><div class="nav-component slim-scroll" data-v-e6005420><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#dormanagerpro-developer-guide" data-v-e6005420>DorManagerPro Developer Guide‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#acknowledgements" data-v-e6005420>Acknowledgements‎</a> <a class="nav-link py-1" href="#setting-up-getting-started" data-v-e6005420>Setting up, getting started‎</a> <a class="nav-link py-1" href="#design" data-v-e6005420>Design‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#architecture" data-v-e6005420>Architecture‎</a> <a class="nav-link py-1" href="#ui-component" data-v-e6005420>UI component‎</a> <a class="nav-link py-1" href="#logic-component" data-v-e6005420>Logic component‎</a> <a class="nav-link py-1" href="#model-component" data-v-e6005420>Model component‎</a> <a class="nav-link py-1" href="#storage-component" data-v-e6005420>Storage component‎</a> <a class="nav-link py-1" href="#common-classes" data-v-e6005420>Common classes‎</a></nav> <a class="nav-link py-1" href="#implementation" data-v-e6005420>Implementation‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#add-feature" data-v-e6005420>Add feature‎</a> <a class="nav-link py-1" href="#edit-feature" data-v-e6005420>Edit feature‎</a> <a class="nav-link py-1" href="#delete-command" data-v-e6005420>Delete Command‎</a> <a class="nav-link py-1" href="#clean-feature" data-v-e6005420>Clean feature‎</a> <a class="nav-link py-1" href="#find-command" data-v-e6005420>Find Command‎</a> <a class="nav-link py-1" href="#export-feature" data-v-e6005420>Export feature‎</a> <a class="nav-link py-1" href="#implementation-7" data-v-e6005420>Implementation‎</a></nav></nav> <!----></nav></div> <!----></nav> <div aria-hidden="true" class="scroll-top-button fa-lg d-print-none" style="display:none;bottom:2%;right:2%;position:fixed;"><i class="fas fa-arrow-circle-up"></i></div></div> <footer><div class="text-center"><small>[<span><strong>Powered by</strong></span> <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 5.5.3</a>, generated on Tue, 12 Nov 2024, 13:03:43 GMT+8]</small></div></footer></div>
 </body><script src="/tp/markbind/js/bootstrap-utility.min.js"></script>
 <script src="/tp/markbind/js/polyfill.min.js"></script>
 <script src="/tp/markbind/js/vue.min.js"></script>
