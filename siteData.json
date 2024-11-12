@@ -84,9 +84,7 @@
         "appendix-planned-enhancements": "Appendix: Planned enhancements",
         "appendix-effort": "Appendix: Effort",
         "overview": "Overview",
-        "challenges-faced": "Challenges faced",
-        "challenge-2-creating-a-dependency-between-storage-and-fileaccesscommand-for-export-and-import": "Challenge 2: Creating a dependency between Storage and FileAccessCommand for export and import",
-        "challenge-3-removal-of-address-field-as-a-compulsory-field": "Challenge 3: Removal of address field as a compulsory field"
+        "challenges-faced": "Challenges faced"
       },
       "headingKeywords": {}
     },
