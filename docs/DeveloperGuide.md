@@ -1075,8 +1075,6 @@ Here are some of the achievements of DorManagerPro:
 
 Lines of Code: 24608
 
-[comment]: Should we also estimate difficulty level and effort required??
-
 ### Challenges faced
 
 #### Challenge 1: Implementing undo functionality for import command
