@@ -11,7 +11,7 @@ with(this){return _c('h1',{attrs:{"id":"dormanagerpro-developer-guide"}},[_v("Do
 with(this){return _c('h2',{attrs:{"id":"acknowledgements"}},[_c('strong',[_v("Acknowledgements")]),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#acknowledgements","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_v("GitHub copilot was used by Li Yifeng as an auto-complete tool during most of the coding.")])])}
+with(this){return _c('ul',[_c('li',[_v("GitHub copilot was used by Li Yifeng as an auto-complete tool during most of the coding.")]),_v(" "),_c('li',[_v("Field constraints section of the User Guide was inspired by the similarly named section from ClubMembersContacts,\nW15-3 of AY2324 Semester 1 found "),_c('a',{attrs:{"href":"https://github.com/AY2324S1-CS2103T-W15-3/tp/blob/master/docs/UserGuide.md"}},[_v("here")]),_v(".")])])}
 },function anonymous(
 ) {
 with(this){return _c('h2',{attrs:{"id":"setting-up-getting-started"}},[_c('strong',[_v("Setting up, getting started")]),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#setting-up-getting-started","onclick":"event.stopPropagation()"}})])}
@@ -644,6 +644,6 @@ with(this){return _c('p',[_v("Import and export was initially deemed odd to do s
 with(this){return _c('h4',{attrs:{"id":"challenge-3-removal-of-address-field-as-a-compulsory-field"}},[_v("Challenge 3: Removal of address field as a compulsory field"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#challenge-3-removal-of-address-field-as-a-compulsory-field","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(", generated on Tue, 12 Nov 2024, 13:57:34 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(", generated on Wed, 4 Dec 2024, 22:19:06 GMT+8]")])])])}
 }];
   
